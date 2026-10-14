@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cam Fanus — Gizlilik, KVKK ve Koşullar / Privacy & Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --zemin:#eef7ff; --panel:#ffffff;
+  --ink:#123047; --ink-2:#406782; --ink-3:#5b7e96;
+  --cizgi:rgba(18,48,71,.13); --cizgi-2:rgba(18,48,71,.07);
+  --altin:#ffb340; --altin-ink:#8f5309; --altin-yum:rgba(255,179,64,.16);
+  --golge:rgba(28,74,112,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#081d2e; --panel:#0e2739;
+    --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+    --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+    --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+    --golge:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#081d2e; --panel:#0e2739;
+  --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+  --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+  --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+  --golge:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--zemin); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.sar{max-width:760px; margin:0 auto; padding:0 24px}
+header{border-bottom:1px solid var(--cizgi-2); padding:22px 0; margin-bottom:8px}
+header .sar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.marka{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:20px; letter-spacing:-.01em}
+.diller{display:flex; gap:6px}
+.diller button{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:7px 13px; border-radius:3px;
+  background:transparent; color:var(--ink-2); border:1px solid var(--cizgi);
+}
+.diller button[aria-pressed="true"]{
+  background:var(--altin-yum); color:var(--altin-ink);
+  border-color:color-mix(in srgb, var(--altin) 40%, transparent);
+}
+main{padding:26px 0 70px}
+h1{font-family:"Fraunces",Georgia,serif; font-weight:400; font-size:clamp(30px,5vw,42px);
+   line-height:1.12; letter-spacing:-.022em; margin:0 0 10px; text-wrap:balance}
+h2{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:22px;
+   letter-spacing:-.012em; margin:38px 0 10px; text-wrap:balance}
+h3{font-size:16px; font-weight:700; margin:22px 0 6px}
+p,li{color:var(--ink-2)}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:5px 0}
+b,strong{color:var(--ink)}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--cizgi)}
+a:hover{border-color:var(--altin)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--altin); outline-offset:3px; border-radius:2px}
+.tarih{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:26px;
+}
+.kutu{
+  background:var(--panel); border:1px solid var(--cizgi-2);
+  border-radius:5px; padding:18px 20px; margin:16px 0;
+  box-shadow:0 2px 10px var(--golge);
+}
+.kutu p:last-child{margin-bottom:0}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+.kaydir{overflow-x:auto}
+th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--cizgi-2); vertical-align:top}
+th{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:10.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+}
+td{color:var(--ink-2)}
+footer{border-top:1px solid var(--cizgi); padding:26px 0 44px}
+footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+.kunye{font-family:"DM Mono",ui-monospace,monospace; font-size:11px;
+       letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+[hidden]{display:none !important}
+</style>
+<style>.note{background:var(--panel);border:1px solid var(--cizgi-2);border-radius:5px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 10px var(--golge);color:var(--ink-2)}.upd{font-size:13px;color:var(--ink-3)}</style>
+</head>
+<body>
+<header><div class="sar"><span class="marka">cagan_inc · Cam Fanus</span><div class="diller"><button id="btnTr" aria-pressed="true">Türkçe</button><button id="btnEn" aria-pressed="false">English</button></div></div></header>
+<main>
+<section id="tr" class="sar">
+<h1>Cam Fanus</h1>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Son güncelleme 14 Ekim 2026</p>
+
+<h2>Gizlilik Politikası</h2>
+<p><b>Cam Fanus</b> uygulaması Çağan Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) tarafından yayınlanır.</p>
+<div class="note"><b>Kısa özet:</b> Cam Fanus hiçbir kişisel veri toplamaz, saklamaz veya paylaşmaz. Hesap, giriş, reklam, analitik, takip ve uygulama içi satın alma yoktur. Uygulama internete bağlanmadan, tamamen cihazında çalışır.</div>
+<h3>Toplanan veriler</h3>
+<p>Yoktur. Uygulama adını, e-postanı, konumunu, fotoğraflarını, kişilerini, cihaz kimliğini veya kullanım istatistiklerini istemez ve okumaz. Kamera, mikrofon, konum veya bildirim izni istemez.</p>
+<h3>Cihazda kalan bilgiler</h3>
+<p>Uygulama yalnızca "kaydırma ipucunu gördün" bilgisini cihazının yerel depolamasında tutabilir. Bu bilgi kişisel veri değildir, cihazından çıkmaz ve uygulamayı sildiğinde silinir.</p>
+<h3>Üçüncü taraflar</h3>
+<p>Uygulamada üçüncü taraf reklam, analitik, çökme raporlama veya sosyal medya yazılımı (SDK) bulunmaz. Sahnelerdeki tüm görseller ve yazı tipleri uygulamanın içinde gelir; çalışırken hiçbir sunucuya istek gönderilmez.</p>
+<h3>Çocuklar</h3>
+<p>Uygulama her yaşa uygundur ve çocuklar dahil hiç kimseden veri toplamaz.</p>
+<h3>Değişiklikler</h3>
+<p>Bu politika değişirse güncel hali uygulamada ve <a href="https://caganinc.com/camfanus.html" target="_blank" rel="noopener">caganinc.com/camfanus.html</a> adresinde yayınlanır.</p>
+<h3>İletişim</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+
+<h2>KVKK Aydınlatma Metni</h2>
+<p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") madde 10 uyarınca hazırlanmıştır.</p>
+<h3>Veri sorumlusu</h3>
+<p>Çağan Emek Davarcı (cagan_inc), Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>İşlenen kişisel veriler</h3>
+<p>Cam Fanus uygulaması <b>hiçbir kişisel veri işlemez</b>. Kimlik, iletişim, konum, görsel, cihaz kimliği, kullanım veya pazarlama verisi toplanmaz, kaydedilmez, aktarılmaz.</p>
+<h3>İşleme amacı ve hukuki sebep</h3>
+<p>Kişisel veri işlenmediğinden bir işleme amacı veya KVKK madde 5 ve 6 kapsamında bir hukuki sebep bulunmamaktadır.</p>
+<h3>Aktarım</h3>
+<p>Yurt içine veya yurt dışına herhangi bir kişisel veri aktarımı yapılmaz.</p>
+<h3>Toplama yöntemi</h3>
+<p>Uygulama internet bağlantısı kullanmaz; veri toplamaya yönelik bir yöntem veya yazılım içermez.</p>
+<h3>Haklarınız (KVKK madde 11)</h3>
+<p>Kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme, aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini isteme, bu işlemlerin aktarılan kişilere bildirilmesini isteme, otomatik analiz sonucu aleyhinize bir sonuca itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+<p>Başvurularınızı <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine iletebilirsiniz. Başvurular en geç 30 gün içinde ücretsiz olarak yanıtlanır.</p>
+
+<h2>Kullanım Koşulları</h2>
+<p>Cam Fanus'u indirerek ve kullanarak bu koşulları kabul etmiş olursun.</p>
+<h3>Lisans</h3>
+<p>Uygulama ücretsizdir; reklam ve uygulama içi satın alma içermez. Kişisel ve ticari olmayan kullanım için, Apple'ın Standart Son Kullanıcı Lisans Sözleşmesi (EULA) kapsamında sınırlı, devredilemez bir kullanım hakkı verilir.</p>
+<h3>İçerik</h3>
+<p>Sahneler, Fethiye'deki Yassıca Adaları ile Kapadokya'nın sanatsal, temsili minyatür canlandırmalarıdır. Hava durumu, sıcaklık, güneş ve mevsim gösterimleri gerçek zamanlı veya resmi bilgi değildir; seyahat, deniz veya hava kararlarında kullanılmamalıdır.</p>
+<h3>Fikri mülkiyet</h3>
+<p>Uygulamanın tasarımı, kodu ve görselleri cagan_inc'e aittir. İzinsiz kopyalanamaz, dağıtılamaz veya tersine mühendislik yapılamaz. Uygulama, MIT lisanslı three.js ile SIL Open Font License lisanslı Young Serif ve Figtree yazı tiplerini kullanır.</p>
+<h3>Sorumluluk</h3>
+<p>Uygulama "olduğu gibi" sunulur. Yürürlükteki mevzuatın izin verdiği ölçüde, kullanımdan doğabilecek dolaylı zararlardan sorumluluk kabul edilmez.</p>
+<h3>Uygulanacak hukuk</h3>
+<p>Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir.</p>
+<h3>İletişim</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+</section>
+<section id="en" class="sar" hidden>
+<h1>Cam Fanus</h1>
+<p class="tarih">Privacy · Terms · Last updated 14 October 2026</p>
+
+<h2>Privacy Policy</h2>
+<p><b>Cam Fanus</b> is published by Çağan Emek Davarcı (independent developer trading as <b>cagan_inc</b>, Türkiye).</p>
+<div class="note"><b>Summary:</b> Cam Fanus does not collect, store or share any personal data. There are no accounts, sign-in, ads, analytics, tracking or in-app purchases. The app works fully offline on your device.</div>
+<h3>Data collected</h3><p>None. The app does not ask for or read your name, email, location, photos, contacts, device identifiers or usage statistics, and requests no camera, microphone, location or notification permission.</p>
+<h3>Data kept on your device</h3><p>The app may store, in local storage, a flag noting that you have seen the swipe hint and which scene you viewed last. This is not personal data, never leaves your device and is deleted with the app.</p>
+<h3>Third parties</h3><p>No third-party advertising, analytics, crash-reporting or social SDKs are included. All graphics and fonts ship inside the app; it sends no network requests while running.</p>
+<h3>Children</h3><p>The app is suitable for all ages and collects no data from anyone, including children.</p>
+<h2>Terms of Use</h2>
+<p>Cam Fanus is free, with no ads and no in-app purchases, licensed under Apple's Standard EULA for personal, non-commercial use. The scenes are artistic, illustrative miniatures of the Yassıca Islands (Fethiye) and Cappadocia; the weather, temperature, sun and season displays are not real-time or official information. The app is provided "as is". Design, code and artwork belong to cagan_inc. The app uses three.js (MIT) and the Young Serif and Figtree fonts (SIL OFL). These terms are governed by the laws of the Republic of Türkiye.</p>
+<h2>Contact</h2><p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+</section>
+</main>
+<footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
+<script>
+const t = document.getElementById('tr'), e = document.getElementById('en'), bt = document.getElementById('btnTr'), be = document.getElementById('btnEn');
+function set(isEn){ t.hidden = isEn; e.hidden = !isEn; bt.setAttribute('aria-pressed', !isEn); be.setAttribute('aria-pressed', isEn); document.documentElement.lang = isEn ? 'en' : 'tr'; }
+bt.onclick = () => set(false); be.onclick = () => set(true); if (location.hash === '#en') set(true);
+</script>
+</body>
+</html>
