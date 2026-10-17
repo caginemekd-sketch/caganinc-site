@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapTown — Gizlilik, KVKK ve Koşullar / Privacy & Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --zemin:#eef7ff; --panel:#ffffff;
+  --ink:#123047; --ink-2:#406782; --ink-3:#5b7e96;
+  --cizgi:rgba(18,48,71,.13); --cizgi-2:rgba(18,48,71,.07);
+  --altin:#ffb340; --altin-ink:#8f5309; --altin-yum:rgba(255,179,64,.16);
+  --golge:rgba(28,74,112,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#081d2e; --panel:#0e2739;
+    --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+    --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+    --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+    --golge:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#081d2e; --panel:#0e2739;
+  --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+  --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+  --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+  --golge:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--zemin); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.sar{max-width:760px; margin:0 auto; padding:0 24px}
+header{border-bottom:1px solid var(--cizgi-2); padding:22px 0; margin-bottom:8px}
+header .sar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.marka{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:20px; letter-spacing:-.01em}
+.diller{display:flex; gap:6px}
+.diller button{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:7px 13px; border-radius:3px;
+  background:transparent; color:var(--ink-2); border:1px solid var(--cizgi);
+}
+.diller button[aria-pressed="true"]{
+  background:var(--altin-yum); color:var(--altin-ink);
+  border-color:color-mix(in srgb, var(--altin) 40%, transparent);
+}
+main{padding:26px 0 70px}
+h1{font-family:"Fraunces",Georgia,serif; font-weight:400; font-size:clamp(30px,5vw,42px);
+   line-height:1.12; letter-spacing:-.022em; margin:0 0 10px; text-wrap:balance}
+h2{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:22px;
+   letter-spacing:-.012em; margin:38px 0 10px; text-wrap:balance}
+h3{font-size:16px; font-weight:700; margin:22px 0 6px}
+p,li{color:var(--ink-2)}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:5px 0}
+b,strong{color:var(--ink)}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--cizgi)}
+a:hover{border-color:var(--altin)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--altin); outline-offset:3px; border-radius:2px}
+.tarih{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:26px;
+}
+.kutu{
+  background:var(--panel); border:1px solid var(--cizgi-2);
+  border-radius:5px; padding:18px 20px; margin:16px 0;
+  box-shadow:0 2px 10px var(--golge);
+}
+.kutu p:last-child{margin-bottom:0}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+.kaydir{overflow-x:auto}
+th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--cizgi-2); vertical-align:top}
+th{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:10.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+}
+td{color:var(--ink-2)}
+footer{border-top:1px solid var(--cizgi); padding:26px 0 44px}
+footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+.kunye{font-family:"DM Mono",ui-monospace,monospace; font-size:11px;
+       letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+[hidden]{display:none !important}
+</style>
+<style>.note{background:var(--panel);border:1px solid var(--cizgi-2);border-radius:5px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 10px var(--golge);color:var(--ink-2)}.muted{color:var(--ink-3)}hr{border:0;border-top:1px solid var(--cizgi-2);margin:36px 0}details{margin:8px 0}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}</style>
+</head>
+<body>
+<header><div class="sar"><span class="marka">cagan_inc · SnapTown</span><div class="diller"><button id="btnTr" aria-pressed="true">Türkçe</button><button id="btnEn" aria-pressed="false">English</button></div></div></header>
+<main>
+<section id="tr" class="sar">
+<h1>SnapTown</h1>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 17 Ekim 2026</p>
+
+<h2>Gizlilik Politikası</h2>
+<div class="note"><b>Kısa özet:</b> Hesap ve giriş yok; adını, e-postanı veya telefonunu istemiyoruz. Oyun ilerlemen cihazında kalır. Oyun reklam gösterir (Google AdMob), reklam ölçümü için TikTok ve Meta araçlarını kullanabilir ve oyunun nasıl oynandığını toplu olarak anlamak için Google Analytics for Firebase kullanır; bu hizmetler cihazınla ilgili bazı teknik veriler alır. Satın almalar Google Play üzerinden yapılır.</div>
+<h3>1. Kapsam ve veri sorumlusu</h3>
+<p>Bu politika, Google Play'de yayımlanan <b>SnapTown</b> oyununu ("Oyun") kapsar. Oyunu Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) yayımlar ve 6698 sayılı KVKK bakımından veri sorumlusudur. İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Cihazında kalan bilgiler</h3>
+<p>Oyun durumun, skorun ve rekorun, altın bakiyen, kupon bilgin, dil seçimin, öğretici ve puanlama penceresi tercihleri ile satın aldığın ürünlerin bilgisi yalnızca cihazında tutulur ve bize gönderilmez. Oyunu kaldırdığında silinir; bizde kopyası yoktur.</p>
+<h3>3. Reklamlar: Google AdMob</h3>
+<p>Oyun, Google AdMob ile banner, geçiş ve ödüllü reklamlar gösterir. Google Mobile Ads SDK; cihazının reklam kimliğini (sıfırlanabilir), cihaz modelini, işletim sistemini, dili, IP adresini ve buradan çıkarılan yaklaşık bölgeyi ve reklam etkileşimlerini; reklam gösterimi, kişiselleştirme, ölçüm ve dolandırıcılığın önlenmesi amacıyla toplayabilir. Oyun bu amaçla reklam kimliği (AD_ID) iznini bildirir. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de reklamlar yüklenmeden önce Google'ın onay formu gösterilir. Ayrıntılar: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google, uygulamalardan gelen bilgileri nasıl kullanır</a>.</p>
+<h3>3.1 Reklam ölçümü: TikTok ve Meta</h3>
+<p>Oyunun reklamlarını TikTok'ta ve Meta'nın platformlarında (Facebook, Instagram) yayımlayabiliriz. Bu reklamların etkisini ölçmek için oyunda <b>TikTok Business SDK</b> ve <b>Meta SDK</b> (Facebook SDK, uygulama olayları) kullanılabilir. Bu SDK'lar etkin olduğunda yükleme, açılış ve satın alma gibi olayları, cihaz bilgilerini (model, işletim sistemi, dil), IP adresini, Google Play yükleme kaynağını ve reklam kimliğini ilgili şirkete gönderir. Hangi sürümde hangi ölçüm aracının etkin olduğu, Google Play'deki veri güvenliği bölümünde belirtilir. Ayrıntılar: <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">TikTok Gizlilik Politikası</a>, <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Gizlilik İlkesi</a>.</p>
+<h3>4. Analitik: Google Analytics for Firebase</h3>
+<p>Oyunun toplu olarak nasıl oynandığını anlamak için Firebase Analytics kullanılır. Firebase; uygulama örneği kimliği, reklam kimliği, cihaz modeli, işletim sistemi, dil, ülke ve yaklaşık bölge ile ilk açılış, oturum, ekran görüntüleme ve uygulama içi satın alma gibi olayları otomatik olarak toplar. Bu bilgiler adına veya e-postana bağlanmaz; olay verileri 2 ay, kullanıcı düzeyindeki veriler en fazla 14 ay saklanır. Ayrıntılar: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase gizlilik bilgileri</a>.</p>
+<h3>5. Satın almalar: Google Play Faturalandırma</h3>
+<p>Reklamsız paket, Platinium paket ve Premium abonelik Google Play üzerinden satılır. İşlemi Google Play yürütür; kart ve fatura bilgilerin oyuna ve bize ulaşmaz, oyuna yalnızca satın almanın etkin olduğu bilgisi gelir.</p>
+<h3>6. Yapmadıklarımız</h3>
+<ul><li>Kesin konumuna, kameraya, mikrofona, rehberine veya dosyalarına erişmeyiz.</li><li>Çökme raporlama SDK'sı kullanmayız; sosyal medya SDK'ları yalnızca 3.1'de açıklanan reklam ölçümü için kullanılabilir.</li><li>Kişisel bilgileri satmayız.</li></ul>
+<h3>7. Bize e-posta gönderdiğinde</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazdığında e-posta adresini, adını ve mesajını yalnızca cevap vermek ve KVKK başvurularını sonuçlandırmak için işleriz. Yazışmalar Google'ın (Gmail) sunucularında saklanır ve talebin sonuçlanmasından sonra en geç iki yıl içinde silinir.</p>
+<h3>8. Yurt dışına aktarım</h3>
+<p>Google'ın (AdMob, Firebase, Google Play) ve reklam ölçümü kullanıldığında TikTok ile Meta'nın sunucuları Türkiye dışında, başta ABD olmak üzere farklı ülkelerde bulunabilir. Aktarımlar KVKK'nın 9. maddesindeki usul ve güvencelere uygun olarak yapılır.</p>
+<h3>9. Çocuklar</h3>
+<p>Oyun 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek veri toplanmaz. Bir çocuğun veri paylaştığını düşünüyorsan <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yaz.</p>
+<h3>10. Senin seçeneklerin</h3>
+<ul><li>Reklam kimliğini Android Ayarlar › Gizlilik › Reklamlar bölümünden sıfırlayabilir veya silebilirsin.</li><li>Reklamsız paketi satın alarak reklamları kaldırabilirsin.</li><li>Oyunu kaldırarak cihazındaki tüm oyun verilerini silebilirsin.</li></ul>
+<h3>11. Değişiklikler</h3>
+<p>Bu politika değişirse güncel metin oyunda ve <a href="https://caganinc.com/snaptown.html" target="_blank" rel="noopener">caganinc.com/snaptown.html</a> adresinde yayımlanır.</p>
+<h3>12. İletişim</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>KVKK Aydınlatma Metni</h2>
+<p>6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca hazırlanmıştır.</p>
+<h3>1. Veri sorumlusu</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
+<ul>
+<li><b>Cihaz ve reklam verileri</b> (reklam kimliği, cihaz modeli, işletim sistemi, dil, IP adresi, yaklaşık bölge, reklam etkileşimleri; Google AdMob ve etkin olduklarında TikTok ve Meta SDK'ları): ücretsiz oyunun reklamla sunulması, reklam ölçümü ve dolandırıcılığın önlenmesi. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat; Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de ayrıca onay formu gösterilir.</li>
+<li><b>Kullanım ve cihaz verileri</b> (uygulama örneği kimliği, olaylar, ülke; Firebase Analytics): oyunun geliştirilmesi için toplu istatistik. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat.</li>
+<li><b>Satın alma durumu</b> (Google Play): satın aldığın ürünlerin sunulması. Hukuki sebep: KVKK m. 5/2(c), sözleşmenin kurulması ve ifası.</li>
+<li><b>İletişim verileri</b> (yalnızca bize yazarsan): talebin cevaplanması. Hukuki sebep: KVKK m. 5/2(f) ve m. 5/2(ç).</li>
+</ul>
+<h3>3. Toplama yöntemi</h3>
+<p>Oyun ve içindeki yazılım geliştirme kitleri (SDK) aracılığıyla, elektronik ortamda ve kısmen otomatik yollarla; e-posta yoluyla.</p>
+<h3>4. Aktarım</h3>
+<p>Google LLC ve iştiraklerine (AdMob, Firebase, Google Play, Gmail), reklam ölçümü kullanıldığında TikTok Pte. Ltd. ve ilgili TikTok şirketleri ile Meta Platforms Ireland Ltd. ve Meta Platforms, Inc.'e, sunucuları yurt dışında olabileceğinden KVKK m. 9'daki usul ve güvencelere uygun olarak; yasal talep hâlinde yetkili kamu kurum ve kuruluşları ile yargı mercilerine (KVKK m. 8/2(a)).</p>
+<h3>5. Saklama süreleri</h3>
+<p>Analitik olay verileri 2 ay, kullanıcı düzeyindeki analitik veriler en fazla 14 ay; e-posta yazışmaları talebin sonuçlanmasından sonra en fazla iki yıl saklanır. Reklam verileri Google'ın saklama politikasına tabidir.</p>
+<h3>6. Hakların (KVKK m. 11)</h3>
+<p>Kişisel verilerinin işlenip işlenmediğini öğrenme; bilgi talep etme; amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme; aktarıldığı üçüncü kişileri bilme; düzeltilmesini, KVKK m. 7 çerçevesinde silinmesini veya yok edilmesini ve bunların aktarılan kişilere bildirilmesini isteme; otomatik analiz sonucu aleyhine çıkan sonuca itiraz etme ve zararın giderilmesini talep etme haklarına sahipsin.</p>
+<h3>7. Başvuru</h3>
+<p>Başvurunu adını, soyadını, yazışma veya e-posta adresini ve talebini belirterek <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine iletebilirsin. En geç <b>30 gün</b> içinde ücretsiz sonuçlandırılır; işlem ayrıca maliyet gerektirirse Kurul tarifesindeki ücret alınabilir. Cevabı yetersiz bulursan KVKK m. 14 uyarınca Kişisel Verileri Koruma Kurulu'na şikâyette bulunabilirsin. Reklam ve analitik verileri için Google'a da doğrudan başvurabilirsin.</p>
+<hr>
+
+<h2>Kullanım Koşulları</h2>
+<p>Bu Koşullar, Google Play'de yayımlanan <b>SnapTown</b> oyununun ("Oyun") kullanımını düzenler. Oyun Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) ("biz") tarafından sunulur. Oyunu kullanarak bu Koşulları ve <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Hizmet Şartları</a>'nı kabul etmiş olursun.</p>
+<h3>1. Lisans</h3>
+<p>Oyunu kişisel, ticari olmayan amaçlarla kullanman için sınırlı, devredilemez bir hak verilir. Oyunu kopyalayamaz, değiştiremez, tersine mühendislik uygulayamaz veya hile yazılımlarıyla kullanamazsın.</p>
+<h3>2. Oyun içi para ve satın almalar</h3>
+<ul>
+<li>Altın gibi oyun içi para ve öğelerin gerçek para karşılığı yoktur, nakde çevrilemez ve devredilemez.</li>
+<li>Oyun ilerlemen ve altın bakiyen yalnızca cihazında tutulur; oyunu kaldırırsan veya cihaz değiştirirsen kaybolabilir. Google Play üzerinden satın aldığın kalıcı ürünler (reklamsız ve Platinium paketleri) ile aboneliğin, aynı Google hesabıyla oyunda geri yüklenebilir.</li>
+<li>Premium abonelik Google hesabına faturalandırılır ve dönem bitmeden iptal edilmezse aynı süre için otomatik olarak yenilenir. <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play abonelikleri</a> sayfasından yönetebilir ve iptal edebilirsin; iptal, içinde bulunulan dönemin sonunda geçerli olur.</li>
+<li>Satın almalar ve iadeler Google Play kurallarına tabidir. Anında ifa edilen dijital içeriklerde, Mesafeli Sözleşmeler Yönetmeliği m. 15/1(ğ) uyarınca, onayınla ifaya başlanmasıyla cayma hakkı kullanılamayabilir. Kanundan doğan tüketici hakların saklıdır.</li>
+</ul>
+<h3>3. Reklamlar</h3>
+<p>Oyunun ücretsiz sürümü reklam içerir. Reklamların içeriğinden reklamveren sorumludur; reklamdaki bir bağlantıya tıkladığında üçüncü kişilerin koşulları geçerli olur.</p>
+<h3>4. Fikri mülkiyet</h3>
+<p>Oyunun adı, tasarımı, kodu, görselleri ve sesleri 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunur ve bize aittir. Üçüncü taraf bileşenler kendi lisanslarına tabidir (Lisanslar sekmesi).</p>
+<h3>5. Değişiklikler ve süreklilik</h3>
+<p>Oyunu geliştirme, değiştirme veya bazı özellikleri kaldırma hakkımız saklıdır; ücretli bir ürünü kaldırırsak mevzuattan doğan hakların korunur. Koşulların güncel hâli oyunda ve <a href="https://caganinc.com/snaptown.html" target="_blank" rel="noopener">caganinc.com/snaptown.html</a> adresinde yayımlanır.</p>
+<h3>6. Sorumluluk</h3>
+<p>Oyun "olduğu gibi" sunulur. Mevzuatın izin verdiği ölçüde dolaylı zararlardan sorumlu değiliz. Bu sınırlama, kast veya ağır ihmalden doğan sorumluluğumuzu (6098 sayılı TBK m. 115) ve 6502 sayılı Tüketicinin Korunması Hakkında Kanun başta olmak üzere sözleşmeyle kaldırılamayan haklarını etkilemez.</p>
+<h3>7. Uygulanacak hukuk ve uyuşmazlık</h3>
+<p>Türkiye Cumhuriyeti hukuku uygulanır. Önce <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresinden bize ulaşmanı rica ederiz. Tüketici olarak, Ticaret Bakanlığı'nın her yıl ilan ettiği parasal sınırlar içinde <b>Tüketici Hakem Heyeti</b>'ne, bu sınırların üzerinde <b>Tüketici Mahkemesi</b>'ne başvurabilirsin. Türkiye dışında yaşıyorsan kendi ülkendeki zorunlu tüketici hakların saklıdır.</p>
+<h3>8. İletişim</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>Lisanslar</h2>
+<p>SnapTown'un oyun kodu, görselleri ve sesleri bize aittir. Oyun aşağıdaki bileşenleri ve hizmetleri kullanır:</p>
+<ul>
+<li><b>AndroidX</b> ve <b>Kotlin standart kütüphanesi</b> — Apache License 2.0 (metni aşağıda).</li>
+<li><b>Google Mobile Ads SDK</b>, <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google koşulları</a></li>
+<li><b>Google Analytics for Firebase</b> — <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase koşulları</a></li>
+<li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok ticari ürün koşulları</a></li>
+<li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Koşulları</a></li>
+<li><b>Google Play Billing Library</b> — <a href="https://developer.android.com/studio/terms" target="_blank" rel="noopener">Android SDK Lisans Sözleşmesi</a></li>
+</ul>
+<details><summary><b>Apache License</b> 2.0 · AndroidX, Kotlin</summary><pre>Apache License
+
+Version 2.0, January 2004
+
+http://www.apache.org/licenses/ 
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+"License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+
+"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
+
+"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+
+"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.
+
+"Source" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.
+
+"Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+
+"Work" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).
+
+"Derivative Works" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.
+
+"Contribution" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as "Not a Contribution."
+
+"Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
+
+2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
+
+3. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.
+
+4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:
+
+You must give any other recipients of the Work or Derivative Works a copy of this License; and
+
+You must cause any modified files to carry prominent notices stating that You changed the files; and
+
+You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
+
+If the Work includes a "NOTICE" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License. You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
+
+5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+
+6. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.
+
+7. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
+
+8. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS</pre></details>
+</section>
+<section id="en" class="sar" hidden>
+<h1>SnapTown</h1>
+<p class="tarih">Privacy · KVKK · Terms · Licenses · Last updated 17 October 2026</p>
+
+<h2>Privacy Policy</h2>
+<div class="note"><b>In short:</b> No account and no sign-in; we never ask for your name, email or phone number. Your progress stays on your device. The game shows ads (Google AdMob), may use TikTok and Meta tools for ad measurement, and uses Google Analytics for Firebase to understand, in aggregate, how it is played; these services receive some technical data about your device. Purchases are made through Google Play.</div>
+<h3>1. Scope and data controller</h3>
+<p>This policy covers the <b>SnapTown</b> game (the "Game") on Google Play, published by Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye, the data controller under Turkish Personal Data Protection Law No. 6698 ("KVKK"). Contact: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Information that stays on your device</h3>
+<p>Your game state, score and best score, gold balance, coupon status, language, tutorial and rating-prompt choices, and which products you bought are kept only on your device and never sent to us. They are deleted when you uninstall the Game; we keep no copy.</p>
+<h3>3. Ads: Google AdMob</h3>
+<p>The Game shows banner, interstitial and rewarded ads through Google AdMob. The Google Mobile Ads SDK may collect the resettable advertising ID, device model, operating system, language, IP address and the approximate region derived from it, and ad interactions, for ad delivery, personalisation, measurement and fraud prevention. The Game declares the advertising ID (AD_ID) permission for this. In the EEA, the UK and Switzerland, Google's consent form is shown before ads load. Details: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from apps</a>.</p>
+<h3>3.1 Ad measurement: TikTok and Meta</h3>
+<p>We may advertise the Game on TikTok and on Meta's platforms (Facebook, Instagram). To measure these ads, the Game may use the <b>TikTok Business SDK</b> and the <b>Meta SDK</b> (Facebook SDK, app events). When enabled, these SDKs send events such as install, app open and purchases, device information (model, OS, language), IP address, the Google Play install source and the advertising ID to the respective company. Which tools are active in a given version is shown in the data safety section on Google Play. Details: <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">TikTok Privacy Policy</a>, <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Privacy Policy</a>.</p>
+<h3>4. Analytics: Google Analytics for Firebase</h3>
+<p>Firebase Analytics helps us understand, in aggregate, how the Game is played. It automatically collects the app instance ID, the advertising ID, device model, OS, language, country and approximate region, and events such as first open, sessions, screen views and in-app purchases. This is not linked to your name or email and event data is kept for 2 months, user-level data for up to 14 months. Details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a>.</p>
+<h3>5. Purchases: Google Play Billing</h3>
+<p>The ad-free pack, the Platinium pack and the Premium subscription are sold through Google Play. Google Play handles the transaction; your card and billing details never reach the Game or us; the Game only learns that a purchase is active.</p>
+<h3>6. What we do not do</h3>
+<ul><li>We do not access your precise location, camera, microphone, contacts or files.</li><li>We use no crash-reporting SDK; social media SDKs may be used only for the ad measurement described in 3.1.</li><li>We do not sell personal information.</li></ul>
+<h3>7. When you email us</h3>
+<p>When you write to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>, we process your email address, name and message only to reply and handle KVKK requests. Emails are stored by Google (Gmail) and deleted within two years after your request is closed.</p>
+<h3>8. International transfers</h3>
+<p>The servers of Google (AdMob, Firebase, Google Play) and, when ad measurement is used, TikTok and Meta may be located outside Türkiye, mainly in the United States. Transfers follow the procedures and safeguards of KVKK Article 9.</p>
+<h3>9. Children</h3>
+<p>The Game is not directed at children under 13, and we do not knowingly collect their data. If you believe a child has shared data, write to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>.</p>
+<h3>10. Your choices</h3>
+<ul><li>Reset or delete the advertising ID in Android Settings › Privacy › Ads.</li><li>Remove ads by buying the ad-free pack.</li><li>Uninstall the Game to delete all game data on your device.</li></ul>
+<h3>11. Changes</h3>
+<p>If this policy changes, the current version is published in the Game and at <a href="https://caganinc.com/snaptown.html" target="_blank" rel="noopener">caganinc.com/snaptown.html</a>.</p>
+<h3>12. Contact</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>KVKK Information Notice</h2>
+<p>Prepared under Article 10 of Turkish Personal Data Protection Law No. 6698 ("KVKK") and the Communiqué on the Obligation to Inform.</p>
+<h3>1. Data controller</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Data, purposes and legal bases</h3>
+<ul>
+<li><b>Device and ad data</b> (advertising ID, device model, OS, language, IP address, approximate region, ad interactions; Google AdMob and, when enabled, the TikTok and Meta SDKs): providing the free game with ads, measurement and fraud prevention. Legal basis: legitimate interest, Art. 5/2(f); a consent form is also shown in the EEA, UK and Switzerland.</li>
+<li><b>Usage and device data</b> (app instance ID, events, country; Firebase Analytics): aggregate statistics to improve the Game. Legal basis: legitimate interest, Art. 5/2(f).</li>
+<li><b>Purchase status</b> (Google Play): providing what you bought. Legal basis: performance of a contract, Art. 5/2(c).</li>
+<li><b>Contact data</b> (only if you write to us): answering you. Legal bases: Art. 5/2(f) and 5/2(ç).</li>
+</ul>
+<h3>3. Collection method</h3>
+<p>Electronically, partly by automated means, through the Game and its SDKs, and by email.</p>
+<h3>4. Transfers</h3>
+<p>To Google LLC and affiliates (AdMob, Firebase, Google Play, Gmail) and, when ad measurement is used, TikTok Pte. Ltd. and related companies and Meta Platforms Ireland Ltd. and Meta Platforms, Inc., whose servers may be abroad, following KVKK Art. 9; to competent authorities and courts when legally required (Art. 8/2(a)).</p>
+<h3>5. Retention</h3>
+<p>Analytics data: events 2 months, user-level data up to 14 months. Emails: up to two years after your request is closed. Ad data follows Google's retention policy.</p>
+<h3>6. Your rights (KVKK Art. 11)</h3>
+<p>You may ask whether your data is processed and request information; learn the purpose and whether it is used accordingly; know the recipients; ask for correction, deletion or destruction under Art. 7 and notification of recipients; object to a result against you arising solely from automated analysis; and claim compensation for unlawful processing.</p>
+<h3>7. How to apply</h3>
+<p>Send your request to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> with your name, a postal or email address for the reply and your request. We answer free of charge within <b>30 days</b>. If you find the answer insufficient, you may complain to the Personal Data Protection Board under KVKK Art. 14. For ad and analytics data you can also contact Google directly.</p>
+<hr>
+
+<h2>Terms of Use</h2>
+<p>These Terms govern your use of <b>SnapTown</b> (the "Game") on Google Play, provided by Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye ("we"). By playing you accept these Terms and the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a>.</p>
+<h3>1. Licence</h3>
+<p>You get a limited, non-transferable right to use the Game for personal, non-commercial purposes. You may not copy, modify or reverse-engineer it, or use cheats.</p>
+<h3>2. Virtual currency and purchases</h3>
+<ul>
+<li>Gold and other in-game items have no real-money value and cannot be cashed out or transferred.</li>
+<li>Your progress and gold are stored only on your device and may be lost if you uninstall or change devices. Permanent products bought on Google Play (ad-free and Platinium packs) and your subscription can be restored with the same Google account.</li>
+<li>The Premium subscription is charged to your Google account and renews automatically for the same period unless cancelled before the period ends. Manage or cancel it in <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play subscriptions</a>; cancellation takes effect at the end of the current period.</li>
+<li>Purchases and refunds follow Google Play's rules. Your statutory consumer rights are not affected.</li>
+</ul>
+<h3>3. Ads</h3>
+<p>The free version contains ads. Advertisers are responsible for their ads; third-party terms apply when you follow an ad's link.</p>
+<h3>4. Intellectual property</h3>
+<p>The Game's name, design, code, graphics and sounds belong to us and are protected by Turkish Law No. 5846. Third-party components are governed by their own licences (Licenses tab).</p>
+<h3>5. Changes and availability</h3>
+<p>We may improve, change or remove features; your statutory rights are preserved if a paid product is removed. The current Terms are published in the Game and at <a href="https://caganinc.com/snaptown.html" target="_blank" rel="noopener">caganinc.com/snaptown.html</a>.</p>
+<h3>6. Liability</h3>
+<p>The Game is provided "as is". To the extent permitted by law we are not liable for indirect damages. This does not limit our liability for intent or gross negligence (Turkish Code of Obligations Art. 115) or rights that cannot be excluded by contract, in particular under Consumer Protection Law No. 6502.</p>
+<h3>7. Governing law and disputes</h3>
+<p>Turkish law applies. Please contact us first at <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>. As a consumer in Türkiye you may apply to the Consumer Arbitration Committee within the yearly monetary limits, or to the Consumer Courts above them. If you live outside Türkiye, the mandatory consumer rules of your country continue to apply.</p>
+<h3>8. Contact</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>Licenses</h2>
+<p>SnapTown's game code, graphics and sounds are our own. The Game uses these components and services:</p>
+<ul>
+<li><b>AndroidX</b> and the <b>Kotlin standard library</b> — Apache License 2.0 (text below).</li>
+<li><b>Google Mobile Ads SDK</b>, <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google terms</a></li>
+<li><b>Google Analytics for Firebase</b> — <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase terms</a></li>
+<li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok business product terms</a></li>
+<li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Terms</a></li>
+<li><b>Google Play Billing Library</b> — <a href="https://developer.android.com/studio/terms" target="_blank" rel="noopener">Android SDK License Agreement</a></li>
+</ul>
+<details><summary><b>Apache License</b> 2.0 · AndroidX, Kotlin</summary><pre>Apache License
+
+Version 2.0, January 2004
+
+http://www.apache.org/licenses/ 
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+"License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+
+"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
+
+"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+
+"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.
+
+"Source" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.
+
+"Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+
+"Work" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).
+
+"Derivative Works" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.
+
+"Contribution" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as "Not a Contribution."
+
+"Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
+
+2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
+
+3. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.
+
+4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:
+
+You must give any other recipients of the Work or Derivative Works a copy of this License; and
+
+You must cause any modified files to carry prominent notices stating that You changed the files; and
+
+You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
+
+If the Work includes a "NOTICE" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License. You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
+
+5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+
+6. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.
+
+7. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
+
+8. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS</pre></details>
+</section>
+</main>
+<footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
+<script>
+const t = document.getElementById('tr'), e = document.getElementById('en'), bt = document.getElementById('btnTr'), be = document.getElementById('btnEn');
+function set(isEn){ t.hidden = isEn; e.hidden = !isEn; bt.setAttribute('aria-pressed', !isEn); be.setAttribute('aria-pressed', isEn); document.documentElement.lang = isEn ? 'en' : 'tr'; }
+bt.onclick = () => set(false); be.onclick = () => set(true); if (location.hash === '#en') set(true);
+</script>
+</body>
+</html>

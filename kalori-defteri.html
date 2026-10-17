@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalori Defteri AI — Gizlilik, KVKK ve Koşullar / Privacy & Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --zemin:#eef7ff; --panel:#ffffff;
+  --ink:#123047; --ink-2:#406782; --ink-3:#5b7e96;
+  --cizgi:rgba(18,48,71,.13); --cizgi-2:rgba(18,48,71,.07);
+  --altin:#ffb340; --altin-ink:#8f5309; --altin-yum:rgba(255,179,64,.16);
+  --golge:rgba(28,74,112,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#081d2e; --panel:#0e2739;
+    --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+    --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+    --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+    --golge:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#081d2e; --panel:#0e2739;
+  --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+  --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+  --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+  --golge:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--zemin); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.sar{max-width:760px; margin:0 auto; padding:0 24px}
+header{border-bottom:1px solid var(--cizgi-2); padding:22px 0; margin-bottom:8px}
+header .sar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.marka{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:20px; letter-spacing:-.01em}
+.diller{display:flex; gap:6px}
+.diller button{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:7px 13px; border-radius:3px;
+  background:transparent; color:var(--ink-2); border:1px solid var(--cizgi);
+}
+.diller button[aria-pressed="true"]{
+  background:var(--altin-yum); color:var(--altin-ink);
+  border-color:color-mix(in srgb, var(--altin) 40%, transparent);
+}
+main{padding:26px 0 70px}
+h1{font-family:"Fraunces",Georgia,serif; font-weight:400; font-size:clamp(30px,5vw,42px);
+   line-height:1.12; letter-spacing:-.022em; margin:0 0 10px; text-wrap:balance}
+h2{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:22px;
+   letter-spacing:-.012em; margin:38px 0 10px; text-wrap:balance}
+h3{font-size:16px; font-weight:700; margin:22px 0 6px}
+p,li{color:var(--ink-2)}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:5px 0}
+b,strong{color:var(--ink)}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--cizgi)}
+a:hover{border-color:var(--altin)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--altin); outline-offset:3px; border-radius:2px}
+.tarih{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:26px;
+}
+.kutu{
+  background:var(--panel); border:1px solid var(--cizgi-2);
+  border-radius:5px; padding:18px 20px; margin:16px 0;
+  box-shadow:0 2px 10px var(--golge);
+}
+.kutu p:last-child{margin-bottom:0}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+.kaydir{overflow-x:auto}
+th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--cizgi-2); vertical-align:top}
+th{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:10.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+}
+td{color:var(--ink-2)}
+footer{border-top:1px solid var(--cizgi); padding:26px 0 44px}
+footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+.kunye{font-family:"DM Mono",ui-monospace,monospace; font-size:11px;
+       letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+[hidden]{display:none !important}
+</style>
+<style>.note{background:var(--panel);border:1px solid var(--cizgi-2);border-radius:5px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 10px var(--golge);color:var(--ink-2)}.muted{color:var(--ink-3)}hr{border:0;border-top:1px solid var(--cizgi-2);margin:36px 0}details{margin:8px 0}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}</style>
+</head>
+<body>
+<header><div class="sar"><span class="marka">cagan_inc · Kalori Defteri AI</span><div class="diller"><button id="btnTr" aria-pressed="true">Türkçe</button><button id="btnEn" aria-pressed="false">English</button></div></div></header>
+<main>
+<section id="tr" class="sar">
+<h1>Kalori Defteri AI</h1>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 17 Ekim 2026</p>
+
+<h2>Gizlilik Politikası</h2>
+<div class="note"><b>Kısa özet:</b> Hesap ve giriş yok. Günlüğün (öğünler, su, adın) yalnızca cihazında durur ve bize gönderilmez. Fotoğraf analizi isteğe bağlıdır; bir fotoğraf yalnızca o fotoğraf için onay kutusunu işaretlediğinde, analiz için Google Gemini'ye gönderilir. Uygulama reklam gösterir (Google AdMob) ve reklam ölçümü için TikTok SDK'sı, Android'de kullanım istatistiği için Firebase Analytics kullanır; bu hizmetler cihazınla ilgili bazı teknik veriler alır.</div>
+<h3>1. Kapsam ve veri sorumlusu</h3>
+<p>Bu politika, App Store veya Google Play'da yayımlanan <b>Kalori Defteri AI</b> uygulamasını ("Uygulama") kapsar. Uygulamayı Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) yayımlar ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") bakımından veri sorumlusudur. İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Cihazında kalan bilgiler</h3>
+<p>Aşağıdakiler yalnızca cihazının uygulama depolamasında tutulur; bize veya başka birine gönderilmez:</p>
+<ul>
+<li>İsteğe bağlı olarak yazdığın adın,</li>
+<li>öğün kayıtların, besin değerleri, su kayıtların,</li>
+<li>günlük enerji ve su referansın, dil tercihin,</li>
+<li>18 yaş ve koşulları kabul onayın, haftalık fotoğraf analizi hakkı sayacın ve abonelik durumunun bilgisi.</li>
+</ul>
+<p>Öğün ve beslenme kayıtları sağlığınla ilgili bilgi içerebilir. Bu kayıtlar cihazından çıkmadığı sürece bizim tarafımızdan işlenmez. Günlüğünü <b>Ayarlar › Günlüğümü dışa aktar</b> ile dosya olarak alabilirsin; dosyayı nereye göndereceğini sen seçersin. <b>Ayarlar › Hesabımı ve verilerimi sil</b> ile ya da uygulamayı silerek tüm verileri silebilirsin. Cihaz yedeklemesini (iCloud, Google) açtıysan bu veriler senin yedeğinde de bulunabilir.</p>
+<h3>3. Fotoğrafla öğün analizi (isteğe bağlı)</h3>
+<ul>
+<li>Bir fotoğrafı çektiğinde ya da galeriden seçtiğinde, fotoğraf <b>yalnızca o fotoğraf için onay kutusunu işaretlersen</b> gönderilir. Onay vermezsen hiçbir görsel gönderilmez.</li>
+<li>Fotoğraf en fazla 1280 piksele küçültülür ve şifreli bağlantıyla (HTTPS) Cloudflare üzerinde çalışan aracı sunucumuza, oradan da Google'ın Gemini API hizmetine iletilir. Fotoğrafla birlikte adın, günlüğün veya cihaz kimliğin gönderilmez.</li>
+<li>Aracı sunucumuz fotoğrafı ve sonucu kaydetmez; yalnızca iletir. Kötüye kullanımı önlemek için Cloudflare, IP adresini dakikalık istek sınırı amacıyla geçici olarak işler.</li>
+<li><b>Önemli:</b> Gemini API'nin ücretsiz katmanı kullanılmaktadır. Google, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşullarında</a> bu katmanda gönderilen içeriğin ürünlerini geliştirmek için kullanılabileceğini ve insanlar tarafından incelenebileceğini belirtir. Bu yüzden fotoğrafta başka kişilerin yüzlerinin, belgelerin, ekranların veya sağlık bilgilerinin bulunmamasına dikkat et.</li>
+<li>Sonuç bir tahmindir; kaydetmeden önce her kalemi kontrol edip düzeltebilirsin. Öğünlerini fotoğrafsız, elle eklemek her zaman mümkündür.</li>
+</ul>
+<h3>4. İzinler</h3>
+<p>iOS'ta kamera ve fotoğraf arşivi izni yalnızca fotoğraf eklemek istediğinde sorulur. Android sürümü kamera izni istemez; fotoğrafı sistemin kamera veya galeri ekranından seçersin. Android'de reklam kimliği (AD_ID) izni reklam SDK'sı için kullanılır.</p>
+<h3>5. Reklamlar: Google AdMob</h3>
+<p>Uygulama, Plus aboneliği olmayan kullanıcılara Google AdMob ile reklam gösterir; ödüllü reklam izleyerek ek fotoğraf analizi hakkı kazanılabilir. Uygulama reklam isteklerini <b>kişiselleştirilmemiş reklam</b> olarak gönderir. Buna rağmen Google Mobile Ads SDK; reklam kimliği (Android, sıfırlanabilir), cihaz modeli, işletim sistemi, dil, IP adresi ve buradan çıkarılan yaklaşık bölge ile reklam etkileşimlerini; reklam gösterimi, sıklık sınırı, ölçüm ve dolandırıcılığın önlenmesi amacıyla toplayabilir. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de reklamlar yüklenmeden önce Google'ın onay formu gösterilir. Tercihlerini <b>Ayarlar › Reklam gizlilik tercihleri</b> ile değiştirebilirsin. Günlüğün ve fotoğrafların reklam hizmetlerine gönderilmez. Ayrıntılar: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google, uygulamalardan gelen bilgileri nasıl kullanır</a>.</p>
+<h3>6. Reklam ölçümü: TikTok ve Meta</h3>
+<p>Uygulamanın reklamlarını TikTok'ta ve Meta'nın platformlarında (Facebook, Instagram) yayımlayabiliriz. Bu reklamların işe yarayıp yaramadığını ölçmek için uygulamada <b>TikTok Business SDK</b> ve <b>Meta SDK</b> (Facebook SDK, uygulama olayları) kullanılabilir. Bu SDK'lar etkin olduğunda uygulamanın yüklenmesi, açılması ve satın alma gibi olayları, cihaz bilgilerini (model, işletim sistemi, dil), IP adresini, Google Play yükleme kaynağını ve Android'de reklam kimliğini ilgili şirkete gönderir. iOS'ta bu SDK'lar ATT izni istemez ve IDFA'ya erişmez; ölçüm Apple'ın SKAdNetwork altyapısıyla yapılır. Hangi sürümde hangi ölçüm aracının etkin olduğu, mağaza sayfasındaki veri güvenliği ve gizlilik bölümünde belirtilir. Günlüğün, öğün fotoğrafların ve sağlık bilgilerin bu şirketlere gönderilmez. Ayrıntılar: <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">TikTok Gizlilik Politikası</a>, <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Gizlilik İlkesi</a>.</p>
+<h3>6.1 Analitik: Google Analytics for Firebase (yalnızca Android)</h3>
+<p>Android sürümünde uygulamanın toplu olarak nasıl kullanıldığını anlamak için Firebase Analytics kullanılır. Firebase; uygulama örneği kimliği, reklam kimliği, cihaz modeli, işletim sistemi, dil, ülke ve yaklaşık bölge ile ilk açılış, oturum ve uygulama içi satın alma gibi olayları otomatik olarak toplar. Günlüğün, öğün fotoğrafların ve adın Firebase'e gönderilmez. Olay verileri 2 ay, kullanıcı düzeyindeki veriler en fazla 14 ay saklanır. Ayrıntılar: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase gizlilik bilgileri</a>.</p>
+<h3>7. Abonelik ve satın alma</h3>
+<p>Kalori Defteri Plus aboneliği Apple (iOS) veya Google Play (Android) üzerinden satılır ve doğrulanır. Kart ve fatura bilgilerin uygulamaya ve bize ulaşmaz; uygulamaya yalnızca aboneliğin etkin olup olmadığı bilgisi gelir. Araya başka bir ödeme veya abonelik hizmeti girmez.</p>
+<h3>8. Değerlendirme isteği</h3>
+<p>Uygulama, Apple'ın veya Google Play'in uygulama içi değerlendirme penceresini gösterebilir. Puan ve yorumun doğrudan mağazaya gider; kimin puan verdiğini göremeyiz.</p>
+<h3>9. Bize e-posta gönderdiğinde</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazdığında e-posta adresini, yazdıysan adını ve mesajını yalnızca sana cevap vermek, hata bildirimini incelemek veya KVKK başvurunu sonuçlandırmak için işleriz. Yazışmalar e-posta hizmet sağlayıcımız Google'ın (Gmail) sunucularında saklanır ve talebin sonuçlanmasından sonra en geç iki yıl içinde silinir.</p>
+<h3>10. Yurt dışına aktarım</h3>
+<p>Fotoğraf analizi (Cloudflare, Google), reklam (Google) ve reklam ölçümü (TikTok, Meta) hizmetlerinin sunucuları Türkiye dışında, başta ABD olmak üzere farklı ülkelerde bulunabilir. Fotoğraf analizi için aktarım, her fotoğrafta verdiğin açık onaya dayanır. Diğer aktarımlar KVKK'nın 9. maddesindeki usul ve güvencelere uygun olarak yapılır; ayrıntılar KVKK sekmesindedir.</p>
+<h3>11. Yaş sınırı</h3>
+<p>Uygulama 18 yaş ve üzeri kullanıcılar içindir; başlangıçta 18 yaşında veya daha büyük olduğunu onaylaman istenir. Bilerek 18 yaş altındaki kişilerden veri işlemeyiz.</p>
+<h3>12. Senin seçeneklerin</h3>
+<ul>
+<li>Fotoğraf analizini hiç kullanmayabilir, öğünlerini elle ekleyebilirsin.</li>
+<li>Reklam tercihleri: Ayarlar › Reklam gizlilik tercihleri.</li>
+<li>Reklam kimliğini Android'de Ayarlar › Gizlilik › Reklamlar bölümünden sıfırlayabilir veya silebilirsin; iOS'ta kamera ve fotoğraf izinlerini Ayarlar'dan kapatabilirsin.</li>
+<li>Günlüğünü dışa aktarabilir, Ayarlar › Hesabımı ve verilerimi sil ile silebilirsin.</li>
+</ul>
+<h3>13. Değişiklikler</h3>
+<p>Bu politika değişirse güncel metin uygulamada ve <a href="https://caganinc.com/kalori-defteri.html" target="_blank" rel="noopener">caganinc.com/kalori-defteri.html</a> adresinde yayımlanır.</p>
+<h3>14. İletişim</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>KVKK Aydınlatma Metni</h2>
+<p>6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca hazırlanmıştır.</p>
+<h3>1. Veri sorumlusu</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
+<ul>
+<li><b>Öğün fotoğrafı</b> (yalnızca onay verdiğin fotoğraf; beslenme alışkanlığına ilişkin bilgi içerebilir): tahmini besin değerlerinin hesaplanması. Hukuki sebep: KVKK m. 5/1 ve m. 6/3 kapsamında, her fotoğraf için ayrı ayrı verdiğin <b>açık rıza</b>.</li>
+<li><b>IP adresi</b> (fotoğraf analizinde, aracı sunucuda geçici): kötüye kullanımın ve aşırı isteklerin önlenmesi. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat.</li>
+<li><b>Cihaz ve reklam verileri</b> (reklam kimliği veya uygulamaya özgü tanımlayıcılar, cihaz modeli, işletim sistemi, dil, IP adresi, yaklaşık bölge, reklam etkileşimleri): ücretsiz sürümün reklamla sunulması, reklam ölçümü ve dolandırıcılığın önlenmesi. Bu veriler Google AdMob, (etkin olduklarında) TikTok ve Meta SDK'ları ile Android sürümünde Google Analytics for Firebase tarafından toplanır. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat; Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de ayrıca onay formu gösterilir.</li>
+<li><b>Abonelik durumu</b>: Plus özelliklerinin sunulması. Hukuki sebep: KVKK m. 5/2(c), sözleşmenin kurulması ve ifası.</li>
+<li><b>İletişim verileri</b> (e-posta adresi, ad, mesaj içeriği; yalnızca bize yazarsan): taleplerinin cevaplanması ve KVKK başvurularının sonuçlandırılması. Hukuki sebep: KVKK m. 5/2(f) ve m. 5/2(ç).</li>
+</ul>
+<p>Günlük kayıtların (öğünler, su, ad) yalnızca cihazında tutulur ve tarafımızdan işlenmez.</p>
+<h3>3. Toplama yöntemi</h3>
+<p>Veriler, uygulama ve uygulamadaki yazılım geliştirme kitleri (SDK) aracılığıyla elektronik ortamda, kısmen otomatik yollarla ve e-posta yoluyla toplanır.</p>
+<h3>4. Aktarım</h3>
+<ul>
+<li>Öğün fotoğrafı: Cloudflare, Inc. (aracı sunucu) ve Google LLC (Gemini API) — yurt dışı. Dayanak: her fotoğrafta verdiğin açık rıza (KVKK m. 9).</li>
+<li>Cihaz ve reklam verileri: Google LLC ve iştirakleri (AdMob, Firebase), TikTok Pte. Ltd. ve ilgili TikTok şirketleri, Meta Platforms Ireland Ltd. ve Meta Platforms, Inc. — yurt dışı; KVKK m. 9'daki usul ve güvencelere uygun olarak.</li>
+<li>Abonelik: Apple Inc. veya Google LLC (mağazaya göre) — ödeme ve doğrulama için.</li>
+<li>E-posta yazışmaları: Google LLC (Gmail) — yurt dışı.</li>
+<li>Kanunen yetkili kamu kurum ve kuruluşları ile yargı mercileri — yasal talep hâlinde (KVKK m. 8/2(a)).</li>
+</ul>
+<h3>5. Saklama süreleri</h3>
+<p>Fotoğraf ve analiz sonucu tarafımızdan saklanmaz. E-posta yazışmaları talebin sonuçlanmasından sonra en geç iki yıl içinde silinir. Reklam ve ölçüm hizmetlerinin topladığı veriler, ilgili şirketlerin saklama politikalarına tabidir.</p>
+<h3>6. Hakların (KVKK m. 11)</h3>
+<p>Kişisel verilerinin işlenip işlenmediğini öğrenme; işlenmişse bilgi talep etme; işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme; yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme; eksik veya yanlış işlenmişse düzeltilmesini isteme; KVKK m. 7 çerçevesinde silinmesini veya yok edilmesini isteme; bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme; münhasıran otomatik sistemlerle analiz sonucu aleyhine bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zararın giderilmesini talep etme haklarına sahipsin. Açık rızanı her zaman geri alabilirsin; bunun için fotoğraf analizini kullanmaman yeterlidir.</p>
+<h3>7. Başvuru</h3>
+<p>Başvurunu, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'e uygun olarak adını, soyadını, yazışma veya e-posta adresini ve talebini belirterek <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine iletebilirsin. Başvurun en geç <b>30 gün</b> içinde ücretsiz sonuçlandırılır; işlem ayrıca maliyet gerektirirse Kişisel Verileri Koruma Kurulu'nun tarifesindeki ücret alınabilir. Cevabı yetersiz bulursan KVKK m. 14 uyarınca Kurul'a şikâyette bulunabilirsin. Google, TikTok ve Apple'ın kendi işlemeleri için doğrudan bu şirketlere de başvurabilirsin.</p>
+<hr>
+
+<h2>Kullanım Koşulları</h2>
+<p>Bu Koşullar, <b>Kalori Defteri AI</b> uygulamasının ("Uygulama") kullanımını düzenler. Uygulama Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) ("biz") tarafından sunulur. Uygulamayı kullanarak bu Koşulları kabul etmiş olursun.</p>
+<h3>1. Mağaza koşulları</h3>
+<p>iOS'ta lisans, <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standart Son Kullanıcı Lisans Sözleşmesi</a> kapsamında verilir; bu Koşullar onu tamamlar ve lisans konusunda çelişki olursa Apple EULA uygulanır. Bu Koşullar Apple ile değil, seninle bizim aramızdadır; Uygulamanın içeriği, bakımı, desteği ve uygulamayla ilgili talepler bakımından Apple değil biz sorumluyuz. Apple ve iştirakleri bu Koşulların lehdar üçüncü kişileridir. Android'de <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Hizmet Şartları</a> da geçerlidir.</p>
+<h3>2. Yaş</h3>
+<p>Uygulama 18 yaş ve üzeri içindir.</p>
+<h3>3. Sağlık uyarısı</h3>
+<p>Uygulama bir beslenme günlüğüdür; <b>tıbbi cihaz değildir</b> ve tıbbi, diyet veya beslenme tavsiyesi vermez. Kalori ve besin değerleri, özellikle fotoğraf analiziyle elde edilenler, tahminidir; porsiyon, gizli yağ ve pişirme yöntemi nedeniyle gerçek değerden farklı olabilir. Kaydetmeden önce kontrol et. Hamilelik, emzirme, diyabet, yeme bozukluğu veya başka bir sağlık durumun varsa, beslenme kararlarını bir hekim veya diyetisyene danışarak ver.</p>
+<h3>4. Plus aboneliği</h3>
+<ul>
+<li>Plus; reklamsız kullanım ve haftalık fotoğraf analizi hakkı gibi ek özellikler sunar. Fiyat, dönem ve içerik satın alma ekranında gösterilir.</li>
+<li>Abonelik mağaza hesabına faturalandırılır ve dönem bitmeden en az 24 saat önce iptal edilmezse aynı süre için otomatik olarak yenilenir.</li>
+<li>Aboneliği <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> / <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> sayfasından yönetebilir ve iptal edebilirsin. İptal, içinde bulunulan dönemin sonunda geçerli olur.</li>
+<li>Satın almalar ve iadeler App Store veya Google Play kurallarına tabidir. Anında ifa edilen dijital içeriklerde, Mesafeli Sözleşmeler Yönetmeliği m. 15/1(ğ) uyarınca, onayınla ifaya başlanmasıyla cayma hakkı kullanılamayabilir. Kanundan doğan tüketici hakların saklıdır.</li>
+</ul>
+<h3>5. Fotoğraflar ve içerik</h3>
+<p>Yalnızca paylaşmaya yetkili olduğun fotoğrafları analiz için gönder. Başka kişilerin yüzlerini, kimlik bilgilerini veya özel belgeleri içeren fotoğraf gönderme. Analiz hizmetini, kötüye kullanmak, otomatik istek göndermek veya sınırları aşmak için kullanamazsın.</p>
+<h3>6. Lisans ve fikri mülkiyet</h3>
+<p>Uygulamayı kişisel, ticari olmayan amaçlarla kullanman için sınırlı, devredilemez bir hak verilir. Uygulamanın adı, tasarımı, kodu ve içerikleri 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunur. Açık kaynak bileşenler kendi lisanslarına tabidir (Lisanslar sekmesi).</p>
+<h3>7. Hizmetin sürekliliği</h3>
+<p>Fotoğraf analizi üçüncü taraf hizmetlere (Cloudflare, Google) bağlıdır; zaman zaman yavaşlayabilir veya kullanılamayabilir. Özellikleri geliştirme, değiştirme veya kaldırma hakkımız saklıdır; ücretli bir özelliği kaldırırsak mevzuattan doğan hakların korunur.</p>
+<h3>8. Sorumluluk</h3>
+<p>Uygulama "olduğu gibi" sunulur. Mevzuatın izin verdiği ölçüde dolaylı zararlardan sorumlu değiliz. Bu sınırlama, kast veya ağır ihmalden doğan sorumluluğumuzu (6098 sayılı TBK m. 115) ve 6502 sayılı Tüketicinin Korunması Hakkında Kanun başta olmak üzere sözleşmeyle kaldırılamayan haklarını etkilemez.</p>
+<h3>9. Değişiklikler</h3>
+<p>Koşulları güncelleyebiliriz; güncel metin uygulamada ve <a href="https://caganinc.com/kalori-defteri.html" target="_blank" rel="noopener">caganinc.com/kalori-defteri.html</a> adresinde yayımlanır.</p>
+<h3>10. Uygulanacak hukuk ve uyuşmazlık</h3>
+<p>Türkiye Cumhuriyeti hukuku uygulanır. Önce <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresinden bize ulaşmanı rica ederiz. Tüketici olarak, Ticaret Bakanlığı'nın her yıl ilan ettiği parasal sınırlar içinde yerleşim yerindeki veya işlemin yapıldığı yerdeki <b>Tüketici Hakem Heyeti</b>'ne, bu sınırların üzerinde <b>Tüketici Mahkemesi</b>'ne başvurabilirsin. Türkiye dışında yaşıyorsan, kendi ülkendeki zorunlu tüketici hakların saklıdır.</p>
+<h3>11. İletişim</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>Lisanslar</h2>
+<p>Kalori Defteri AI aşağıdaki açık kaynak yazılımları ve hizmetleri kullanır.</p>
+<h3>Hizmetler ve SDK'lar</h3>
+<ul>
+<li><b>Google Mobile Ads SDK</b> ve <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google koşulları</a></li>
+<li><b>Google Gemini API</b> — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşulları</a></li>
+<li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok ticari ürün koşulları</a></li>
+<li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Koşulları</a></li>
+<li><b>Cloudflare Workers</b> — <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">Cloudflare koşulları</a></li>
+<li><b>Google Analytics for Firebase</b> (Android) — <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase koşulları</a></li>
+</ul>
+<h3>Açık kaynak yazılımlar ve yazı tipleri</h3>
+<details><summary><b>@capacitor-community/admob</b> 8.1.0 · MIT</summary><pre>MIT License
+
+Copyright (c) 2021 Capacitor Community
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor-community/in-app-review</b> 8.0.0 · MIT</summary><pre>The MIT License (MIT)
+
+Copyright (c) 2022 Daniel Suchý
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/android</b> 8.5.1 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/app</b> 8.1.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/camera</b> 8.2.4 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/core</b> 8.5.1 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/filesystem</b> 8.1.3 · MIT</summary><pre>MIT License
+
+Copyright (c) 2025 Ionic
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/ios</b> 8.5.2 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/preferences</b> 8.0.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/share</b> 8.0.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@fontsource-variable/dm-sans</b> 5.3.0 · OFL-1.1</summary><pre>Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts) DMSans-Italic[opsz,wght].ttf: Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details>
+<details><summary><b>@fontsource-variable/manrope</b> 5.3.0 · OFL-1.1</summary><pre>Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details>
+<details><summary><b>cordova-plugin-purchase</b> 13.18.0 · MIT</summary><pre>The MIT License
+
+Copyright (c) 2014-, Jean-Christophe HOELT and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```</pre></details>
+<details><summary><b>lucide-react</b> 0.577.0 · ISC</summary><pre>ISC License
+
+Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2026 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2026.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+---
+
+The MIT License (MIT) (for portions derived from Feather)
+
+Copyright (c) 2013-2026 Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>react</b> 19.2.8 · MIT</summary><pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>react-dom</b> 19.2.8 · MIT</summary><pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+</section>
+<section id="en" class="sar" hidden>
+<h1>Kalori Defteri AI</h1>
+<p class="tarih">Privacy · KVKK · Terms · Licenses · Last updated 17 October 2026</p>
+
+<h2>Privacy Policy</h2>
+<div class="note"><b>In short:</b> No account and no sign-in. Your diary (meals, water, your name) stays on your device and is never sent to us. Photo analysis is optional: a photo is sent to Google Gemini for analysis only when you tick the consent box for that photo. The app shows ads (Google AdMob) and uses the TikTok SDK for ad measurement, plus Firebase Analytics for usage statistics on Android; these services receive some technical data about your device.</div>
+<h3>1. Scope and data controller</h3>
+<p>This policy covers the <b>Kalori Defteri AI</b> app (the "App") on the App Store or Google Play. The App is published by Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye, the data controller under Turkish Personal Data Protection Law No. 6698 ("KVKK"). Contact: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Information that stays on your device</h3>
+<p>The following is kept only in the App's storage on your device and is never sent to us or anyone else: the name you optionally enter; your meal entries, nutrition values and water entries; your daily energy and water references and language; your 18+ and terms confirmation, your weekly photo-analysis counter and whether your subscription is active. Meal records may say something about your health; as long as they stay on your device, we do not process them. You can export your diary with <b>Settings › Export my diary</b>, and erase everything with <b>Settings › Delete my account and data</b> or by deleting the App. If you use device backups (iCloud, Google), this data may also be in your backup.</p>
+<h3>3. Photo meal analysis (optional)</h3>
+<ul>
+<li>A photo you take or pick is sent <b>only if you tick the consent box for that photo</b>. Without consent, no image is sent.</li>
+<li>The photo is resized to at most 1280 pixels and sent over HTTPS to our relay on Cloudflare and from there to Google's Gemini API. Your name, diary or device identifiers are not sent with it.</li>
+<li>Our relay does not store the photo or the result; it only passes them on. To prevent abuse, Cloudflare processes your IP address briefly for a per-minute request limit.</li>
+<li><b>Important:</b> the free tier of the Gemini API is used. Google's <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a> say content sent on this tier may be used to improve Google's products and may be reviewed by people. Please avoid photos showing other people's faces, documents, screens or health information.</li>
+<li>The result is an estimate that you can check and correct before saving. You can always add meals by hand, without photos.</li>
+</ul>
+<h3>4. Permissions</h3>
+<p>On iOS, camera and photo access is requested only when you add a photo. The Android version does not request camera permission; you pick the photo through the system camera or gallery screen. On Android the advertising ID (AD_ID) permission is used by the ads SDK.</p>
+<h3>5. Ads: Google AdMob</h3>
+<p>Users without Plus see ads through Google AdMob; watching a rewarded ad can earn an extra photo analysis. The App requests <b>non-personalised ads</b>. Even so, the Google Mobile Ads SDK may collect the advertising ID (Android, resettable), device model, operating system, language, IP address and the approximate region derived from it and ad interactions, for ad delivery, frequency capping, measurement and fraud prevention. In the EEA, the UK and Switzerland, Google's consent form is shown before ads load. Change your choices in <b>Settings › Ad privacy choices</b>. Your diary and photos are never sent to ad services. Details: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from apps</a>.</p>
+<h3>6. Ad measurement: TikTok and Meta</h3>
+<p>We may advertise the app on TikTok and on Meta's platforms (Facebook, Instagram). To measure whether these ads work, the app may use the <b>TikTok Business SDK</b> and the <b>Meta SDK</b> (Facebook SDK, app events). When enabled, these SDKs send events such as install, app open and purchases, device information (model, OS, language), IP address, the Google Play install source and, on Android, the advertising ID to the respective company. On iOS these SDKs do not ask for ATT permission or access the IDFA; measurement uses Apple's SKAdNetwork. Which measurement tools are active in a given version is shown in the data safety / privacy section of the store listing. Your diary, meal photos and health information are not sent to these companies. Details: <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">TikTok Privacy Policy</a>, <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Privacy Policy</a>.</p>
+<h3>6.1 Analytics: Google Analytics for Firebase (Android only)</h3>
+<p>On Android we use Firebase Analytics to understand how the app is used in aggregate. Firebase automatically collects the app instance ID, advertising ID, device model, OS, language, country and approximate region, and events such as first open, sessions and in-app purchases. Your diary, meal photos and name are never sent to Firebase. Event data is kept for 2 months and user-level data for up to 14 months. Details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a>.</p>
+<h3>7. Subscription and purchases</h3>
+<p>Kalori Defteri Plus is sold and verified by Apple (iOS) or Google Play (Android). Your card and billing details never reach the App or us; the App only learns whether your subscription is active. No other payment or subscription service is involved.</p>
+<h3>8. Review prompt</h3>
+<p>The App may show the store's in-app review prompt. Ratings and reviews go directly to the store; we cannot see who rated.</p>
+<h3>9. When you email us</h3>
+<p>When you write to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>, we process your email address, your name if given and your message only to reply, look into a bug or handle a KVKK request. Emails are stored by our email provider Google (Gmail) and deleted within two years after your request is closed.</p>
+<h3>10. International transfers</h3>
+<p>The servers of the photo analysis (Cloudflare, Google), ads (Google) and ad measurement (TikTok, Meta) services may be located outside Türkiye, mainly in the United States. Transfers for photo analysis rely on the consent you give for each photo; other transfers follow the procedures and safeguards of KVKK Article 9 (see the KVKK tab).</p>
+<h3>11. Age</h3>
+<p>The App is for users aged 18 and over; you confirm this when you start. We do not knowingly process data of people under 18.</p>
+<h3>12. Your choices</h3>
+<ul>
+<li>You can skip photo analysis and add meals by hand.</li>
+<li>Ad choices: Settings › Ad privacy choices.</li>
+<li>Reset or delete the advertising ID in Android Settings › Privacy › Ads; turn off camera and photo access in iOS Settings.</li>
+<li>Export your diary, or delete it in Settings › Delete my account and data.</li>
+</ul>
+<h3>13. Changes</h3>
+<p>If this policy changes, the current version is published in the App and at <a href="https://caganinc.com/kalori-defteri.html" target="_blank" rel="noopener">caganinc.com/kalori-defteri.html</a>.</p>
+<h3>14. Contact</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>KVKK Information Notice</h2>
+<p>Prepared under Article 10 of Turkish Personal Data Protection Law No. 6698 ("KVKK") and the Communiqué on the Obligation to Inform.</p>
+<h3>1. Data controller</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Data, purposes and legal bases</h3>
+<ul>
+<li><b>Meal photo</b> (only photos you consent to; may reveal eating habits): estimating nutrition values. Legal basis: your <b>explicit consent</b>, given separately for each photo (KVKK Art. 5/1 and 6/3).</li>
+<li><b>IP address</b> (briefly, at the relay during photo analysis): preventing abuse and excessive requests. Legal basis: legitimate interest, Art. 5/2(f).</li>
+<li><b>Device and ad data</b> (advertising ID or app-specific identifiers, device model, OS, language, IP address, approximate region, ad interactions), collected by the Google AdMob SDK, the TikTok and Meta SDKs (when enabled) and, on Android, Google Analytics for Firebase: providing the free version with ads, ad measurement, aggregate usage statistics and fraud prevention. Legal basis: legitimate interest, Art. 5/2(f); a consent form is also shown in the EEA, UK and Switzerland.</li>
+<li><b>Subscription status</b>: providing Plus features. Legal basis: performance of a contract, Art. 5/2(c).</li>
+<li><b>Contact data</b> (email, name, message; only if you write to us): answering you and handling KVKK requests. Legal bases: Art. 5/2(f) and 5/2(ç).</li>
+</ul>
+<p>Your diary (meals, water, name) stays on your device and is not processed by us.</p>
+<h3>3. Collection method</h3>
+<p>Electronically, partly by automated means, through the App and the SDKs in it, and by email.</p>
+<h3>4. Transfers</h3>
+<ul>
+<li>Meal photo: Cloudflare, Inc. (relay) and Google LLC (Gemini API), abroad, based on your consent for each photo (KVKK Art. 9).</li>
+<li>Device and ad data: Google LLC and affiliates (AdMob, Firebase), TikTok Pte. Ltd. and related TikTok companies, Meta Platforms Ireland Ltd. and Meta Platforms, Inc., abroad, following the procedures and safeguards of KVKK Art. 9.</li>
+<li>Subscription: Apple Inc. or Google LLC, depending on the store, for payment and verification.</li>
+<li>Email: Google LLC (Gmail), abroad.</li>
+<li>Competent authorities and courts, when legally required (Art. 8/2(a)).</li>
+</ul>
+<h3>5. Retention</h3>
+<p>We do not store photos or results. Emails are deleted within two years after your request is closed. Data collected by ad and measurement services follows those companies' retention policies.</p>
+<h3>6. Your rights (KVKK Art. 11)</h3>
+<p>You may ask whether your data is processed and request information; learn the purpose and whether it is used accordingly; know the third parties it is transferred to in Türkiye or abroad; ask for correction; ask for deletion or destruction under Art. 7; ask that recipients are notified; object to a result against you arising solely from automated analysis; and claim compensation for unlawful processing. You can withdraw your consent at any time by not using photo analysis.</p>
+<h3>7. How to apply</h3>
+<p>Send your request to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> with your name, a postal or email address for the reply and your request. We answer free of charge within <b>30 days</b>; if a request involves extra cost, the fee in the Personal Data Protection Board's tariff may be charged. If you find the answer insufficient, you may complain to the Board under KVKK Art. 14. For their own processing you can also contact Google, TikTok and Apple directly.</p>
+<hr>
+
+<h2>Terms of Use</h2>
+<p>These Terms govern your use of <b>Kalori Defteri AI</b> (the "App"), provided by Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye ("we"). By using the App you accept these Terms.</p>
+<h3>1. Store terms</h3>
+<p>On iOS the App is licensed under the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a>; these Terms supplement it, and the Apple EULA prevails on licensing. These Terms are between you and us, not Apple; we, not Apple, are responsible for the App, its content, maintenance, support and related claims. Apple and its subsidiaries are third-party beneficiaries of these Terms. On Android the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a> also apply.</p>
+<h3>2. Age</h3>
+<p>The App is for people aged 18 and over.</p>
+<h3>3. Health notice</h3>
+<p>The App is a food diary; it is <b>not a medical device</b> and gives no medical, diet or nutrition advice. Calorie and nutrition values, especially from photo analysis, are estimates and can differ from reality because of portion size, hidden fat and cooking method. Check them before saving. If you are pregnant or breastfeeding, have diabetes, an eating disorder or another health condition, make nutrition decisions with a doctor or dietitian.</p>
+<h3>4. Plus subscription</h3>
+<ul>
+<li>Plus offers extras such as ad-free use and weekly photo analyses. Price, period and contents are shown on the purchase screen.</li>
+<li>The subscription is charged to your store account and renews automatically for the same period unless cancelled at least 24 hours before the period ends.</li>
+<li>Manage or cancel it in <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> / <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a>. Cancellation takes effect at the end of the current period.</li>
+<li>Purchases and refunds follow the App Store or Google Play's rules. Your statutory consumer rights are not affected.</li>
+</ul>
+<h3>5. Photos and content</h3>
+<p>Only send photos you have the right to share. Do not send photos showing other people's faces, identity details or private documents. You may not misuse the analysis service, send automated requests or work around its limits.</p>
+<h3>6. Licence and intellectual property</h3>
+<p>You get a limited, non-transferable right to use the App for personal, non-commercial purposes. The App's name, design, code and content are protected by Turkish Law No. 5846 on Intellectual and Artistic Works. Open-source components are governed by their own licences (Licenses tab).</p>
+<h3>7. Availability</h3>
+<p>Photo analysis depends on third-party services (Cloudflare, Google) and may sometimes be slow or unavailable. We may improve, change or remove features; your statutory rights are preserved if a paid feature is removed.</p>
+<h3>8. Liability</h3>
+<p>The App is provided "as is". To the extent permitted by law we are not liable for indirect damages. This does not limit our liability for intent or gross negligence (Turkish Code of Obligations Art. 115) or rights that cannot be excluded by contract, in particular under Consumer Protection Law No. 6502.</p>
+<h3>9. Changes</h3>
+<p>We may update these Terms; the current version is published in the App and at <a href="https://caganinc.com/kalori-defteri.html" target="_blank" rel="noopener">caganinc.com/kalori-defteri.html</a>.</p>
+<h3>10. Governing law and disputes</h3>
+<p>Turkish law applies. Please contact us first at <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>. As a consumer in Türkiye you may apply to the Consumer Arbitration Committee within the yearly monetary limits, or to the Consumer Courts above them. If you live outside Türkiye, the mandatory consumer rules of your country continue to apply.</p>
+<h3>11. Contact</h3>
+<p>Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2>Licenses</h2>
+<p>Kalori Defteri AI uses the following open-source software and services.</p>
+<h3>Services and SDKs</h3>
+<ul>
+<li><b>Google Mobile Ads SDK</b> and <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google terms</a></li>
+<li><b>Google Gemini API</b> — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a></li>
+<li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok business product terms</a></li>
+<li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Terms</a></li>
+<li><b>Cloudflare Workers</b> — <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">Cloudflare terms</a></li>
+<li><b>Google Analytics for Firebase</b> (Android) — <a href="https://firebase.google.com/terms" target="_blank" rel="noopener">Firebase terms</a></li>
+</ul>
+<h3>Open-source software and typefaces</h3>
+<details><summary><b>@capacitor-community/admob</b> 8.1.0 · MIT</summary><pre>MIT License
+
+Copyright (c) 2021 Capacitor Community
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor-community/in-app-review</b> 8.0.0 · MIT</summary><pre>The MIT License (MIT)
+
+Copyright (c) 2022 Daniel Suchý
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/android</b> 8.5.1 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/app</b> 8.1.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/camera</b> 8.2.4 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/core</b> 8.5.1 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/filesystem</b> 8.1.3 · MIT</summary><pre>MIT License
+
+Copyright (c) 2025 Ionic
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/ios</b> 8.5.2 · MIT</summary><pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/preferences</b> 8.0.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@capacitor/share</b> 8.0.1 · MIT</summary><pre>Copyright 2020-present Ionic
+https://ionic.io
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre></details>
+<details><summary><b>@fontsource-variable/dm-sans</b> 5.3.0 · OFL-1.1</summary><pre>Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts) DMSans-Italic[opsz,wght].ttf: Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details>
+<details><summary><b>@fontsource-variable/manrope</b> 5.3.0 · OFL-1.1</summary><pre>Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details>
+<details><summary><b>cordova-plugin-purchase</b> 13.18.0 · MIT</summary><pre>The MIT License
+
+Copyright (c) 2014-, Jean-Christophe HOELT and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```</pre></details>
+<details><summary><b>lucide-react</b> 0.577.0 · ISC</summary><pre>ISC License
+
+Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2026 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2026.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+---
+
+The MIT License (MIT) (for portions derived from Feather)
+
+Copyright (c) 2013-2026 Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>react</b> 19.2.8 · MIT</summary><pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary><b>react-dom</b> 19.2.8 · MIT</summary><pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+</section>
+</main>
+<footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
+<script>
+const t = document.getElementById('tr'), e = document.getElementById('en'), bt = document.getElementById('btnTr'), be = document.getElementById('btnEn');
+function set(isEn){ t.hidden = isEn; e.hidden = !isEn; bt.setAttribute('aria-pressed', !isEn); be.setAttribute('aria-pressed', isEn); document.documentElement.lang = isEn ? 'en' : 'tr'; }
+bt.onclick = () => set(false); be.onclick = () => set(true); if (location.hash === '#en') set(true);
+</script>
+</body>
+</html>
