@@ -3,70 +3,499 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cagan Inc — Mobil Uygulamalar</title>
-<meta name="description" content="Cagan Inc, mobil uygulamalar geliştiren bağımsız bir stüdyodur.">
+<title>Cagan Inc</title>
+<meta name="description" content="Cagan Inc, mobil uygulamalar geliştiren bağımsız bir stüdyo. Kalori Defteri AI, SnapTown ve Miniyurt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --zemin:#eef7ff; --panel:#ffffff; --ink:#123047; --ink-2:#406782; --cizgi:rgba(18,48,71,.13); --vurgu:#ffb340; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --zemin:#081d2e; --panel:#0e2739; --ink:#e4f1fb; --ink-2:#a9c6da; --cizgi:rgba(196,224,244,.16); }
+:root{
+  --mist:#E4ECEC;      /* sabah denizi sisi: zemin */
+  --lagoon:#129C93;    /* Ölüdeniz turkuazı: vurgu */
+  --tuff:#E3AE82;      /* Kapadokya tüfü: ikincil */
+  --ink:#16293A;       /* derin Ege: metin */
+  --foam:#FFFFFF;
+  --line:rgba(22,41,58,.16);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
 }
-:root[data-theme="dark"] { --zemin:#081d2e; --panel:#0e2739; --ink:#e4f1fb; --ink-2:#a9c6da; --cizgi:rgba(196,224,244,.16); }
-* { box-sizing: border-box; }
-body { margin:0; background:var(--zemin); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; line-height:1.6; }
-main { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
-h1 { font-size: 2.2rem; margin: 0 0 8px; }
-.lead { color: var(--ink-2); margin: 0 0 36px; font-size: 1.1rem; }
-h2 { font-size: 1.2rem; margin: 36px 0 12px; }
-.kart { background: var(--panel); border: 1px solid var(--cizgi); border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; }
-.kart h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.kart p { margin: 0 0 12px; color: var(--ink-2); font-size: .95rem; }
-.magaza a { display:inline-block; margin: 0 8px 6px 0; padding: 7px 14px; border-radius: 10px; border: 1px solid var(--cizgi); color: var(--ink); text-decoration: none; font-size: .9rem; }
-.magaza a:hover { border-color: var(--vurgu); }
-footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--cizgi); color: var(--ink-2); font-size: .92rem; }
-footer a { color: var(--ink); }
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--mist);color:var(--ink);font:400 1.0625rem/1.6 var(--body);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lagoon);outline-offset:4px;border-radius:4px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+
+/* üst bar */
+.bar{position:fixed;inset:0 0 auto;z-index:20;padding:18px 0;mix-blend-mode:multiply}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center}
+.mark{font:700 1.25rem/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.bar nav{display:flex;gap:28px}
+.bar nav a{text-decoration:none;font-weight:500;font-size:.95rem;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s}
+.bar nav a:hover{background-size:100% 1.5px}
+
+/* sahne: solda metin akar, sağda dünya sabit kalır */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);position:relative}
+.copy{position:relative;z-index:2}
+.dock{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-items:center}
+.globe{position:relative;width:min(600px,46vw,86svh);aspect-ratio:1}
+.globe canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+.globe::after{content:"";position:absolute;left:50%;bottom:2%;width:62%;height:9%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(22,41,58,.2),transparent);z-index:-1}
+.globe-hint{position:absolute;left:0;right:0;bottom:-8px;text-align:center;font-size:.9rem;opacity:.75}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 64px}
+.hero h1{font:800 clamp(3.4rem,8.4vw,8.2rem)/.86 var(--display);font-variation-settings:"wdth" 78;letter-spacing:-.035em;margin-bottom:32px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ch{display:inline-block;will-change:transform}
+.hero p{max-width:34ch;font-size:1.2rem;line-height:1.55}
+
+.app{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:96px 0;border-top:1px solid var(--line)}
+.app .count{font:500 .95rem/1 var(--body);color:var(--lagoon);margin-bottom:20px}
+.app h2{font:750 clamp(2.6rem,5.6vw,5.2rem)/.92 var(--display);font-variation-settings:"wdth" 82;letter-spacing:-.03em;margin-bottom:24px;max-width:11ch}
+.app p{max-width:38ch;margin-bottom:28px}
+.app .facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 28px}
+.app .facts li{border:1px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:.9rem}
+.stores{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--ink);color:var(--foam);text-decoration:none;font-weight:600;font-size:.98rem;transition:background .25s}
+.btn:hover{background:var(--lagoon)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--foam)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* iletişim */
+.contact{padding:20vh 0 12vh;border-top:1px solid var(--line)}
+.contact p{max-width:40ch;margin-bottom:28px;font-size:1.15rem}
+.mail{display:block;font:800 clamp(2.4rem,9vw,9.5rem)/.9 var(--display);letter-spacing:-.04em;font-variation-settings:"wdth" 75;text-decoration:none;transition:font-variation-settings .6s cubic-bezier(.2,.8,.2,1),color .3s;word-break:break-word;margin-bottom:32px}
+.mail:hover{font-variation-settings:"wdth" 100;color:var(--lagoon)}
+.copybtn{font:600 .98rem var(--body);cursor:pointer;border:0}
+
+footer{padding:32px 0 40px;border-top:1px solid var(--line);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+
+@media (max-width:900px){
+  .bar{mix-blend-mode:normal;background:var(--mist)}
+  .stage{grid-template-columns:1fr}
+  .dock{grid-row:1;height:46svh;top:56px;z-index:3;background:var(--mist);margin-top:56px}
+  .globe{width:min(92vw,42svh)}
+  .globe-hint{display:none}
+  .copy{grid-row:2}
+  .hero{min-height:0;padding:0}
+  .app{min-height:80svh;padding:64px 0}
+  .bar nav{gap:18px}
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>Cagan Inc</h1>
-  <p class="lead">Mobil uygulamalar geliştiren bağımsız bir stüdyo.</p>
 
-  <h2>Uygulamalarımız</h2>
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">caganinc</a>
+    <nav aria-label="Ana menü">
+      <a href="#uygulamalar">Uygulamalar</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
 
-  <div class="kart">
-    <h3>Kalori Defteri AI</h3>
-    <p>Yemeklerini fotoğrafla, kalori ve besin takibini kolayca yap.</p>
-    <div class="magaza">
-      <a href="https://apps.apple.com/app/id6816335981">App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=com.caganinc.kaloritakip">Google Play</a>
+<main id="top">
+  <div class="stage wrap">
+    <div class="copy">
+      <section class="hero" data-scene="mini">
+        <h1 class="sr">Cagan Inc, mobil uygulamalar geliştiren bağımsız bir stüdyo</h1>
+      </section>
+
+      <div id="uygulamalar">
+        <section class="app" data-scene="kal" aria-labelledby="a1">
+          <div class="count">Uygulama 1 / 3</div>
+          <h2 id="a1">Kalori Defteri AI</h2>
+          <p>Yemeğinin fotoğrafını çek, kalorisini ve besin değerlerini gör. Günlük takibi kolaylaştıran yapay zekâ destekli bir defter.</p>
+          <div class="stores">
+            <a class="btn" href="https://apps.apple.com/app/id6816335981" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>App Store'dan indir</a>
+            <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.caganinc.kaloritakip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l9.5-9.7-9.5-9.7zm10.6 10.8 2.7 2.8-11.4 6.5 8.7-9.3zm0-2.2L5.5 1.6l11.4 6.5-2.7 2.8zm3.9-2.1 3.1 1.8c.9.5.9 1.4 0 1.9l-3.1 1.8-3-3 3-2.5z"/></svg>Google Play'den indir</a>
+          </div>
+        </section>
+
+        <section class="app" data-scene="snap" aria-labelledby="a2">
+          <div class="count">Uygulama 2 / 3</div>
+          <h2 id="a2">SnapTown</h2>
+          <p>Üç binayı birleştir, şehrin büyüsün. Acelesi olmayan, internetsiz de oynanan sakin bir birleştirme bulmacası.</p>
+          <div class="stores">
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.snaptown" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l9.5-9.7-9.5-9.7zm10.6 10.8 2.7 2.8-11.4 6.5 8.7-9.3zm0-2.2L5.5 1.6l11.4 6.5-2.7 2.8zm3.9-2.1 3.1 1.8c.9.5.9 1.4 0 1.9l-3.1 1.8-3-3 3-2.5z"/></svg>Google Play'den indir</a>
+          </div>
+        </section>
+
+        <section class="app" data-scene="mini" aria-labelledby="a3">
+          <div class="count">Uygulama 3 / 3</div>
+          <h2 id="a3">Miniyurt</h2>
+          <p>Türkiye'nin 18 manzarası 3D minyatür olarak. Her yerin bilgi kartı ve 20 saniyelik yarışması var; doğru bil, pasaportuna damga bas.</p>
+          <ul class="facts"><li>Reklamsız</li><li>Uygulama içi satın alma yok</li><li>Veri toplamaz</li></ul>
+          <div class="stores">
+            <a class="btn ghost" href="camfanus.html">Gizlilik, KVKK ve koşullar</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="dock">
+      <div class="globe" id="globe" role="img" aria-label="Üzerinde Kapadokya, SnapTown kasabası ve bir yemek tabağı olan dönen küçük bir dünya">
+        <canvas id="globeCanvas"></canvas>
+        <div class="globe-hint" aria-hidden="true">Üstüne gel ya da sürükle</div>
+      </div>
     </div>
   </div>
 
-  <div class="kart">
-    <h3>SnapTown</h3>
-    <p>Üç binayı birleştir, şehrin büyüsün. Çevrimdışı çalışan sakin bir birleştirme bulmacası.</p>
-    <div class="magaza">
-      <a href="https://play.google.com/store/apps/details?id=com.snaptown">Google Play</a>
+  <section class="contact" id="iletisim">
+    <div class="wrap">
+      <p>Soru, destek ya da bir fikrin mi var? Yaz, dönüş yapalım.</p>
+      <a class="mail" href="mailto:cagan@caganinc.com">cagan@<wbr>caganinc.com</a>
+      <button class="btn copybtn" id="copy" type="button">E-postayı kopyala</button>
     </div>
-  </div>
-
-  <div class="kart">
-    <h3>Miniature Türkiye: 3D Dioramas</h3>
-    <p>Fethiye'nin Yassıca Adaları ve Kapadokya, cam kutularda yaşayan minyatür 3D manzaralar. Reklamsız, satın almasız, veri toplamaz.</p>
-    <div class="magaza">
-      <a href="camfanus.html">Gizlilik, KVKK ve Koşullar</a>
-    </div>
-  </div>
-
-  <h2>İletişim</h2>
-  <p>Soru ve destek için: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
-
-  <footer>
-    <p>© 2026 Cagan Inc.<br>
-    <a href="gizlilik.html">Gizlilik Politikası</a> &nbsp;·&nbsp;
-    <a href="gizlilik.html#kvkk">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp;
-    <a href="sartlar.html">Kullanım Koşulları</a></p>
-  </footer>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cagan Inc</span>
+    <nav aria-label="Yasal">
+      <a href="gizlilik.html">Gizlilik Politikası</a>
+      <a href="gizlilik.html#kvkk">KVKK Aydınlatma Metni</a>
+      <a href="sartlar.html">Kullanım Koşulları</a>
+      <a href="kalori-defteri.html">Kalori Defteri AI</a>
+      <a href="snaptown.html">SnapTown</a>
+      <a href="camfanus.html">Miniyurt</a>
+      <a href="veri-silme.html">Veri silme</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+// sayfa: yumuşak kaydırma, açılış, butonlar
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ekranın ortasından geçen bölüm, dünyanın hangi bölgeye döneceğini belirler
+  const sections = [...document.querySelectorAll('[data-scene]')];
+  window.__scene = 'mini';
+  const pick = () => {
+    const mid = innerHeight / 2;
+    const sec = sections.find(s => { const r = s.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
+    if (sec) window.__scene = sec.dataset.scene;
+  };
+  addEventListener('scroll', pick, { passive: true });
+  addEventListener('resize', pick);
+  pick();
+
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText('cagan@caganinc.com'); btn.textContent = 'Kopyalandı'; }
+    catch { btn.textContent = 'cagan@caganinc.com'; }
+    setTimeout(() => btn.textContent = 'E-postayı kopyala', 2200);
+  });
+
+  if (!window.gsap || reduce) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+  const lenis = new Lenis({ lerp: .1 });
+  lenis.on('scroll', ScrollTrigger.update);
+  lenis.on('scroll', pick);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: a.getAttribute('href') === '#top' ? 0 : -40 }); }
+  }));
+
+  // Açılışta dünya ekranın ortasında; ilk bölümü kaydırdıkça sağ sütundaki yerine kayar
+  gsap.matchMedia().add('(min-width: 901px)', () => {
+    const centerOffset = () => {
+      const r = document.querySelector('.dock').getBoundingClientRect();
+      return innerWidth / 2 - (r.left + r.width / 2);
+    };
+    gsap.fromTo('#globe', { x: centerOffset }, {
+      x: 0, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1, invalidateOnRefresh: true }
+    });
+  });
+
+  document.querySelectorAll('.app h2').forEach(h =>
+    gsap.from(h, { yPercent: 40, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: h, start: 'top 85%' } }));
+
+  // Mıknatıs butonlar
+  document.querySelectorAll('.btn').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: .5, ease: 'power3' });
+    const yTo = gsap.quickTo(b, 'y', { duration: .5, ease: 'power3' });
+    b.addEventListener('pointermove', e => {
+      const r = b.getBoundingClientRect();
+      xTo((e.clientX - r.left - r.width / 2) * .25);
+      yTo((e.clientY - r.top - r.height / 2) * .35);
+    });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+})();
+</script>
+
+<script type="module">
+// küçük dünya: üstüne gelince döner, sürüklenebilir, kaydırınca ilgili bölgeye döner
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const box = document.getElementById('globe');
+const canvas = document.getElementById('globeCanvas');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); }
+catch { box.style.display = 'none'; throw new Error('WebGL yok'); }
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, .1, 100);
+camera.position.set(0, 0, 5.3);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x7fa9a6, 1.5));
+const sun = new THREE.DirectionalLight(0xfff0dc, 2.4);
+sun.position.set(-3, 4, 5);
+scene.add(sun);
+
+const tilt = new THREE.Group();   // eğim, imleçle hafifçe oynar
+const spin = new THREE.Group();   // dönüş
+tilt.rotation.x = .32;
+tilt.add(spin);
+scene.add(tilt);
+
+// --- yardımcılar ---
+const UP = new THREE.Vector3(0, 1, 0);
+const D = THREE.MathUtils.degToRad;
+const dir = (lat, lon) => new THREE.Vector3(Math.cos(D(lat)) * Math.sin(D(lon)), Math.sin(D(lat)), Math.cos(D(lat)) * Math.cos(D(lon)));
+const SITES = { mini: dir(24, 0), kal: dir(18, 125), snap: dir(26, 240) };
+const LON = { mini: 0, kal: 125, snap: 240 };
+
+// yumuşak, tekrarlanabilir gürültü (kıtaların şekli)
+const noise = p =>
+  Math.sin(p.x * 2.3 + 1.1) * Math.sin(p.y * 2.9 + .4) * Math.sin(p.z * 2.1 + 2.3) +
+  .5 * Math.sin(p.x * 5.1 + 3.0) * Math.sin(p.y * 4.7 + 1.9) * Math.sin(p.z * 5.3 + .7) +
+  .25 * Math.sin(p.x * 9.7) * Math.sin(p.y * 10.3 + 2.2) * Math.sin(p.z * 9.1 + 1.3);
+// uygulama bölgeleri her zaman kara olsun
+const landness = p => {
+  let n = noise(p) - .08;
+  for (const s of Object.values(SITES)) n += Math.max(0, p.dot(s) - .9) * 9;
+  return n;
+};
+const heightAt = p => { const n = landness(p); return n > 0 ? 1.035 + Math.min(n, .5) * .07 : 1; };
+
+// --- gezegen ---
+const geo = new THREE.IcosahedronGeometry(1, 24);
+const pos = geo.attributes.position;
+const v = new THREE.Vector3();
+for (let i = 0; i < pos.count; i++) {
+  v.fromBufferAttribute(pos, i).normalize();
+  v.multiplyScalar(heightAt(v));
+  pos.setXYZ(i, v.x, v.y, v.z);
+}
+const colors = new Float32Array(pos.count * 3);
+const C = {
+  deep: new THREE.Color('#0C7C78'), sea: new THREE.Color('#1FB3A6'), shallow: new THREE.Color('#6FD6C8'),
+  sand: new THREE.Color('#EED9A4'), grass: new THREE.Color('#79B064'), grass2: new THREE.Color('#5E9A55'),
+  tuff: new THREE.Color('#DDA57A'), field: new THREE.Color('#E9C46A')
+};
+const a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3(), m = new THREE.Vector3();
+for (let i = 0; i < pos.count; i += 3) {
+  a.fromBufferAttribute(pos, i); b.fromBufferAttribute(pos, i + 1); c.fromBufferAttribute(pos, i + 2);
+  m.copy(a).add(b).add(c).divideScalar(3);
+  const h = m.length(); m.normalize();
+  const n = landness(m);
+  let col;
+  if (h < 1.01) col = n > -.12 ? C.shallow : n > -.45 ? C.sea : C.deep;
+  else if (n < .06) col = C.sand;
+  else if (m.dot(SITES.mini) > .94) col = C.tuff;
+  else if (m.dot(SITES.kal) > .96) col = C.field;
+  else col = noise(m.clone().multiplyScalar(3)) > 0 ? C.grass : C.grass2;
+  for (let k = 0; k < 3; k++) colors.set([col.r, col.g, col.b], (i + k) * 3);
+}
+geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+geo.computeVertexNormals();
+spin.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: .85 })));
+
+// --- yüzeye nesne yerleştirme ---
+const mat = col => new THREE.MeshStandardMaterial({ color: col, flatShading: true, roughness: .8 });
+function around(base, du, dv) {
+  const t1 = new THREE.Vector3().crossVectors(base, UP).normalize();
+  const t2 = new THREE.Vector3().crossVectors(t1, base).normalize();
+  return base.clone().addScaledVector(t1, du).addScaledVector(t2, dv).normalize();
+}
+function put(obj, d, lift = 0) {
+  obj.position.copy(d).multiplyScalar(heightAt(d) - .004 + lift);
+  obj.quaternion.setFromUnitVectors(UP, d);
+  spin.add(obj);
+  return obj;
+}
+const anim = [];
+
+// Kapadokya: peribacaları ve bir sıcak hava balonu
+[[0,0,.15],[.07,.03,.12],[-.06,.05,.11],[.03,-.07,.13],[-.05,-.05,.09],[.1,-.04,.08],[-.1,0,.1]].forEach(([u, w, h]) => {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(.018, .03, h, 7), mat('#E8B98F'));
+  body.position.y = h / 2;
+  const cap = new THREE.Mesh(new THREE.ConeGeometry(.026, .045, 7), mat('#9C6B4A'));
+  cap.position.y = h + .018;
+  g.add(body, cap);
+  put(g, around(SITES.mini, u, w));
+});
+const balloon = new THREE.Group();
+const env = new THREE.Mesh(new THREE.SphereGeometry(.045, 12, 10), mat('#E5533D'));
+env.scale.y = 1.15;
+const basket = new THREE.Mesh(new THREE.BoxGeometry(.018, .016, .018), mat('#6B4A33'));
+basket.position.y = -.068;
+balloon.add(env, basket);
+const balloonHolder = put(new THREE.Group(), around(SITES.mini, -.02, .16));
+balloonHolder.add(balloon);
+anim.push(t => { balloon.position.y = .26 + Math.sin(t * 1.3) * .03; });
+
+// SnapTown: renkli evler ve büyüyüp küçülen kule
+const houseCols = ['#F2C14E', '#E86F5A', '#7FB7E6', '#FFFFFF', '#F2C14E', '#E86F5A'];
+[[-.07,-.06],[0,-.08],[.08,-.05],[-.08,.03],[.08,.04],[0,.08],[-.04,.09],[.06,.1]].forEach(([u, w], i) => {
+  const h = .03 + (i % 3) * .015;
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(.045, h, .045), mat(houseCols[i % houseCols.length]));
+  body.position.y = h / 2;
+  const roof = new THREE.Mesh(new THREE.ConeGeometry(.036, .03, 4), mat('#B5503F'));
+  roof.position.y = h + .015; roof.rotation.y = Math.PI / 4;
+  g.add(body, roof);
+  put(g, around(SITES.snap, u, w));
+});
+const tower = new THREE.Mesh(new THREE.BoxGeometry(.06, .2, .06), mat('#4A90C9'));
+tower.geometry.translate(0, .1, 0);
+put(tower, SITES.snap);
+anim.push(t => { const k = (Math.sin(t * 1.4) + 1) / 2; tower.scale.y = .35 + k * k * .9; });
+
+// Kalori Defteri: dev bir tabak ve üstünde tarayan çerçeve
+const plate = new THREE.Group();
+const dish = new THREE.Mesh(new THREE.CylinderGeometry(.16, .12, .025, 36), mat('#FFFFFF'));
+dish.position.y = .012;
+const rice = new THREE.Mesh(new THREE.SphereGeometry(.05, 10, 8), mat('#F7EFD9'));
+rice.scale.y = .45; rice.position.set(-.05, .03, .02);
+const meat = new THREE.Mesh(new THREE.BoxGeometry(.06, .03, .045), mat('#A95A37'));
+meat.position.set(.05, .04, -.02); meat.rotation.y = .4;
+plate.add(dish, rice, meat);
+[[.03,.06,'#4E9A47'],[.07,.05,'#5DAE52'],[-.02,-.07,'#E2463A'],[.06,-.07,'#3F8A3C']].forEach(([x, z, col]) => {
+  const s = new THREE.Mesh(new THREE.SphereGeometry(.018, 8, 6), mat(col));
+  s.position.set(x, .035, z); plate.add(s);
+});
+const scanner = new THREE.LineSegments(
+  new THREE.EdgesGeometry(new THREE.BoxGeometry(.36, .002, .36)),
+  new THREE.LineBasicMaterial({ color: 0x129C93 }));
+plate.add(scanner);
+put(plate, SITES.kal);
+anim.push(t => { scanner.position.y = .07 + (Math.sin(t * 2) + 1) * .06; });
+
+// ağaçlar: geri kalan karaya serpiştirilmiş
+const tree = new THREE.ConeGeometry(.022, .07, 6);
+tree.translate(0, .035, 0);
+const treeMat = mat('#2F6B3E');
+for (let i = 0; i < 220; i++) {
+  const d = new THREE.Vector3(Math.sin(i * 12.9898) , Math.sin(i * 78.233), Math.sin(i * 37.719)).normalize();
+  const n = landness(d);
+  if (n < .12 || Object.values(SITES).some(s => d.dot(s) > .9)) continue;
+  const t = put(new THREE.Mesh(tree, treeMat), d);
+  t.scale.setScalar(.7 + (i % 5) * .12);
+}
+
+// bulutlar
+const clouds = new THREE.Group();
+spin.add(clouds);
+const cloudMat = new THREE.MeshStandardMaterial({ color: 0xffffff, flatShading: true, roughness: 1 });
+for (let i = 0; i < 7; i++) {
+  const g = new THREE.Group();
+  for (let k = 0; k < 3; k++) {
+    const p = new THREE.Mesh(new THREE.IcosahedronGeometry(.05 + k * .012, 0), cloudMat);
+    p.position.set((k - 1) * .06, 0, (k % 2) * .02);
+    g.add(p);
+  }
+  const d = dir(-40 + i * 17, i * 53);
+  g.position.copy(d).multiplyScalar(1.32);
+  g.quaternion.setFromUnitVectors(UP, d);
+  clouds.add(g);
+}
+
+// --- boyut ---
+function resize() {
+  const w = box.clientWidth, h = box.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(box);
+resize();
+
+// --- etkileşim ---
+// imleç dünyanın üstündeyken döner; hız ve yön imlecin merkeze uzaklığına bağlı
+let hover = false, dragging = false, lastX = 0, lastInput = -1e9;
+let yaw = 0, vel = 0, tiltTarget = .32, scale = reduce ? 1 : 0;
+const globeRadiusPx = () => {
+  const half = box.clientHeight / 2;
+  const d = camera.position.z;
+  return half / Math.tan(D(camera.fov / 2)) / Math.sqrt(d * d - 1) * scale;
+};
+function local(e) {
+  const r = box.getBoundingClientRect();
+  return { x: e.clientX - r.left - r.width / 2, y: e.clientY - r.top - r.height / 2 };
+}
+let pointer = { x: 0, y: 0 };
+box.addEventListener('pointermove', e => {
+  pointer = local(e);
+  hover = Math.hypot(pointer.x, pointer.y) < globeRadiusPx() * 1.05;
+  box.style.cursor = dragging ? 'grabbing' : hover ? 'grab' : '';
+  if (dragging) { vel = (e.clientX - lastX) * .006; yaw += vel; lastX = e.clientX; }
+  if (hover || dragging) lastInput = performance.now();
+});
+box.addEventListener('pointerleave', () => { hover = false; });
+box.addEventListener('pointerdown', e => {
+  if (!hover && e.pointerType === 'mouse') return;
+  dragging = true; lastX = e.clientX;
+  box.setPointerCapture(e.pointerId);
+});
+const stop = () => { dragging = false; box.style.cursor = hover ? 'grab' : ''; };
+box.addEventListener('pointerup', stop);
+box.addEventListener('pointercancel', stop);
+
+// --- döngü ---
+const clock = new THREE.Clock();
+const wrapTo = (from, to) => to + Math.round((from - to) / (Math.PI * 2)) * Math.PI * 2;
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+  if (!reduce) scale += (1 - scale) * Math.min(1, dt * 2.5);
+  tilt.scale.setScalar(.0001 + scale);
+
+  const R = globeRadiusPx() || 1;
+  if (dragging) {
+    // sürüklerken hız pointermove'da güncellenir
+  } else if (hover) {
+    const ox = THREE.MathUtils.clamp(pointer.x / R, -1, 1);
+    const target = (Math.sign(ox) || 1) * (.6 + Math.abs(ox) * 2.4) * dt;
+    vel += (target - vel) * Math.min(1, dt * 4);
+    yaw += vel;
+    tiltTarget = .32 + THREE.MathUtils.clamp(pointer.y / R, -1, 1) * .25;
+  } else {
+    vel *= Math.pow(.04, dt);           // atalet
+    yaw += vel;
+    tiltTarget = .32;
+    if (performance.now() - lastInput > 900 && Math.abs(vel) < .002) {
+      // etkileşim bitince, kaydırılan bölümün bölgesine dön
+      const goal = wrapTo(yaw, -D(LON[window.__scene] ?? 0));
+      yaw += (goal - yaw) * Math.min(1, dt * 2.2);
+    }
+  }
+  spin.rotation.y = yaw;
+  tilt.rotation.x += (tiltTarget - tilt.rotation.x) * Math.min(1, dt * 3);
+  if (!reduce) {
+    clouds.rotation.y = t * .05;
+    anim.forEach(f => f(t));
+  }
+  renderer.render(scene, camera);
+});
+</script>
 </body>
 </html>
