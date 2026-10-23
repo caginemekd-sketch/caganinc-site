@@ -98,7 +98,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 17 Ekim 2026</p>
 
 <h2>Gizlilik Politikası</h2>
-<div class="note"><b>Kısa özet:</b> Hesap ve giriş yok. Günlüğün (öğünler, su, adın, kalori hesaplayıcıya girdiğin bilgiler) yalnızca cihazında durur ve bize gönderilmez. Fotoğraf analizi isteğe bağlıdır; bir fotoğraf yalnızca o fotoğraf için onay kutusunu işaretlediğinde, analiz için Google Gemini'ye gönderilir. Uygulama reklam gösterir (Google AdMob) ve reklam ölçümü için TikTok SDK'sı, Android'de kullanım istatistiği için Firebase Analytics kullanır; bu hizmetler cihazınla ilgili bazı teknik veriler alır.</div>
+<div class="note"><b>Kısa özet:</b> Hesap ve giriş yok. Günlüğün (öğünler, su, adın, kalori hesaplayıcıya girdiğin bilgiler) yalnızca cihazında durur ve bize gönderilmez. Fotoğraf analizi isteğe bağlıdır; bir fotoğraf yalnızca o fotoğraf için onay kutusunu işaretlediğinde, analiz için OpenAI'ye (yedek olarak Google Gemini'ye) gönderilir. Uygulama reklam gösterir (Google AdMob) ve reklam ölçümü için TikTok SDK'sı, Android'de kullanım istatistiği için Firebase Analytics kullanır; bu hizmetler cihazınla ilgili bazı teknik veriler alır.</div>
 <h3>1. Kapsam ve veri sorumlusu</h3>
 <p>Bu politika, App Store veya Google Play'da yayımlanan <b>Kalori Defteri AI</b> uygulamasını ("Uygulama") kapsar. Uygulamayı Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) yayımlar ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") bakımından veri sorumlusudur. İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
 <h3>2. Cihazında kalan bilgiler</h3>
@@ -113,9 +113,9 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>3. Fotoğrafla öğün analizi (isteğe bağlı)</h3>
 <ul>
 <li>Bir fotoğrafı çektiğinde ya da galeriden seçtiğinde, fotoğraf <b>yalnızca o fotoğraf için onay kutusunu işaretlersen</b> gönderilir. Onay vermezsen hiçbir görsel gönderilmez.</li>
-<li>Fotoğraf en fazla 1280 piksele küçültülür ve şifreli bağlantıyla (HTTPS) Cloudflare üzerinde çalışan aracı sunucumuza, oradan da Google'ın Gemini API hizmetine iletilir. Fotoğrafla birlikte adın, günlüğün veya cihaz kimliğin gönderilmez.</li>
+<li>Fotoğraf en fazla 1280 piksele küçültülür ve şifreli bağlantıyla (HTTPS) Cloudflare üzerinde çalışan aracı sunucumuza, oradan da OpenAI API hizmetine iletilir. OpenAI'ye ulaşılamazsa aynı fotoğraf yedek olarak Google'ın Gemini API hizmetine gönderilebilir. Fotoğrafla birlikte adın, günlüğün veya cihaz kimliğin gönderilmez.</li>
 <li>Aracı sunucumuz fotoğrafı ve sonucu kaydetmez; yalnızca iletir. Kötüye kullanımı önlemek için sunucu, tüm kullanıcılar için ortak bir toplam istek sınırı uygular; isteğin iletilmesi sırasında Cloudflare IP adresini geçici olarak işler.</li>
-<li><b>Önemli:</b> Gemini API'nin ücretsiz katmanı kullanılmaktadır. Google, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşullarında</a> bu katmanda gönderilen içeriğin ürünlerini geliştirmek için kullanılabileceğini ve insanlar tarafından incelenebileceğini belirtir. Bu yüzden fotoğrafta başka kişilerin yüzlerinin, belgelerin, ekranların veya sağlık bilgilerinin bulunmamasına dikkat et.</li>
+<li><b>Önemli:</b> OpenAI, <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">API veri politikasında</a> API ile gönderilen içeriği modellerini eğitmek için kullanmadığını, kötüye kullanımı izlemek için en fazla 30 gün saklayabileceğini belirtir. Yedek olarak kullanılan Gemini API'nin ücretsiz katmanında ise Google, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşullarında</a> gönderilen içeriğin ürünlerini geliştirmek için kullanılabileceğini ve insanlar tarafından incelenebileceğini belirtir. Bu yüzden fotoğrafta başka kişilerin yüzlerinin, belgelerin, ekranların veya sağlık bilgilerinin bulunmamasına dikkat et.</li>
 <li>Sonuç bir tahmindir; kaydetmeden önce her kalemi kontrol edip düzeltebilirsin. Öğünlerini fotoğrafsız, elle eklemek her zaman mümkündür.</li>
 </ul>
 <h3>4. İzinler</h3>
@@ -166,7 +166,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <p>Veriler, uygulama ve uygulamadaki yazılım geliştirme kitleri (SDK) aracılığıyla elektronik ortamda, kısmen otomatik yollarla ve e-posta yoluyla toplanır.</p>
 <h3>4. Aktarım</h3>
 <ul>
-<li>Öğün fotoğrafı: Cloudflare, Inc. (aracı sunucu) ve Google LLC (Gemini API) — yurt dışı. Dayanak: her fotoğrafta verdiğin açık rıza (KVKK m. 9).</li>
+<li>Öğün fotoğrafı: Cloudflare, Inc. (aracı sunucu) OpenAI, L.L.C. (OpenAI API) ve yedek olarak Google LLC (Gemini API) — yurt dışı. Dayanak: her fotoğrafta verdiğin açık rıza (KVKK m. 9).</li>
 <li>Cihaz ve reklam verileri: Google LLC ve iştirakleri (AdMob, Firebase), TikTok Pte. Ltd. ve ilgili TikTok şirketleri, Meta Platforms Ireland Ltd. ve Meta Platforms, Inc. — yurt dışı; KVKK m. 9'daki usul ve güvencelere uygun olarak.</li>
 <li>Abonelik: Apple Inc. veya Google LLC (mağazaya göre) — ödeme ve doğrulama için.</li>
 <li>E-posta yazışmaları: Google LLC (Gmail) — yurt dışı.</li>
@@ -217,7 +217,8 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>Hizmetler ve SDK'lar</h3>
 <ul>
 <li><b>Google Mobile Ads SDK</b> ve <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google koşulları</a></li>
-<li><b>Google Gemini API</b> — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşulları</a></li>
+<li><b>OpenAI API</b> — <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">OpenAI API veri politikası</a></li>
+<li><b>Google Gemini API</b> (yedek) — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşulları</a></li>
 <li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok ticari ürün koşulları</a></li>
 <li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Koşulları</a></li>
 <li><b>Cloudflare Workers</b> — <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">Cloudflare koşulları</a></li>
@@ -738,7 +739,7 @@ SOFTWARE.</pre></details>
 <p class="tarih">Privacy · KVKK · Terms · Licenses · Last updated 17 October 2026</p>
 
 <h2>Privacy Policy</h2>
-<div class="note"><b>In short:</b> No account and no sign-in. Your diary (meals, water, your name, what you enter in the calorie calculator) stays on your device and is never sent to us. Photo analysis is optional: a photo is sent to Google Gemini for analysis only when you tick the consent box for that photo. The app shows ads (Google AdMob) and uses the TikTok SDK for ad measurement, plus Firebase Analytics for usage statistics on Android; these services receive some technical data about your device.</div>
+<div class="note"><b>In short:</b> No account and no sign-in. Your diary (meals, water, your name, what you enter in the calorie calculator) stays on your device and is never sent to us. Photo analysis is optional: a photo is sent to OpenAI (with Google Gemini as a fallback) for analysis only when you tick the consent box for that photo. The app shows ads (Google AdMob) and uses the TikTok SDK for ad measurement, plus Firebase Analytics for usage statistics on Android; these services receive some technical data about your device.</div>
 <h3>1. Scope and data controller</h3>
 <p>This policy covers the <b>Kalori Defteri AI</b> app (the "App") on the App Store or Google Play. The App is published by Çağın Emek Davarcı, an independent developer trading as <b>cagan_inc</b> in Türkiye, the data controller under Turkish Personal Data Protection Law No. 6698 ("KVKK"). Contact: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
 <h3>2. Information that stays on your device</h3>
@@ -746,9 +747,9 @@ SOFTWARE.</pre></details>
 <h3>3. Photo meal analysis (optional)</h3>
 <ul>
 <li>A photo you take or pick is sent <b>only if you tick the consent box for that photo</b>. Without consent, no image is sent.</li>
-<li>The photo is resized to at most 1280 pixels and sent over HTTPS to our relay on Cloudflare and from there to Google's Gemini API. Your name, diary or device identifiers are not sent with it.</li>
+<li>The photo is resized to at most 1280 pixels and sent over HTTPS to our relay on Cloudflare and from there to the OpenAI API. If OpenAI cannot be reached, the same photo may be sent to Google's Gemini API as a fallback. Your name, diary or device identifiers are not sent with it.</li>
 <li>Our relay does not store the photo or the result; it only passes them on. To prevent abuse, the relay applies one overall request limit shared by all users; Cloudflare processes your IP address briefly while delivering the request.</li>
-<li><b>Important:</b> the free tier of the Gemini API is used. Google's <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a> say content sent on this tier may be used to improve Google's products and may be reviewed by people. Please avoid photos showing other people's faces, documents, screens or health information.</li>
+<li><b>Important:</b> OpenAI's <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">API data policy</a> says content sent through the API is not used to train its models and may be kept for up to 30 days for abuse monitoring. For the fallback free tier of the Gemini API, Google's <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a> say content may be used to improve Google's products and may be reviewed by people. Please avoid photos showing other people's faces, documents, screens or health information.</li>
 <li>The result is an estimate that you can check and correct before saving. You can always add meals by hand, without photos.</li>
 </ul>
 <h3>4. Permissions</h3>
@@ -799,7 +800,7 @@ SOFTWARE.</pre></details>
 <p>Electronically, partly by automated means, through the App and the SDKs in it, and by email.</p>
 <h3>4. Transfers</h3>
 <ul>
-<li>Meal photo: Cloudflare, Inc. (relay) and Google LLC (Gemini API), abroad, based on your consent for each photo (KVKK Art. 9).</li>
+<li>Meal photo: Cloudflare, Inc. (relay) OpenAI, L.L.C. (OpenAI API) and, as a fallback, Google LLC (Gemini API), abroad, based on your consent for each photo (KVKK Art. 9).</li>
 <li>Device and ad data: Google LLC and affiliates (AdMob, Firebase), TikTok Pte. Ltd. and related TikTok companies, Meta Platforms Ireland Ltd. and Meta Platforms, Inc., abroad, following the procedures and safeguards of KVKK Art. 9.</li>
 <li>Subscription: Apple Inc. or Google LLC, depending on the store, for payment and verification.</li>
 <li>Email: Google LLC (Gmail), abroad.</li>
@@ -850,7 +851,8 @@ SOFTWARE.</pre></details>
 <h3>Services and SDKs</h3>
 <ul>
 <li><b>Google Mobile Ads SDK</b> and <b>User Messaging Platform</b> — <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google terms</a></li>
-<li><b>Google Gemini API</b> — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a></li>
+<li><b>OpenAI API</b> — <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">OpenAI API data policy</a></li>
+<li><b>Google Gemini API</b> (fallback) — <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a></li>
 <li><b>TikTok Business SDK</b> — <a href="https://ads.tiktok.com/i18n/official/policy/business-products-terms" target="_blank" rel="noopener">TikTok business product terms</a></li>
 <li><b>Meta SDK</b> (Facebook SDK) — <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Terms</a></li>
 <li><b>Cloudflare Workers</b> — <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">Cloudflare terms</a></li>
