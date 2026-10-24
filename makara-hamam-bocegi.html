@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makara Hamam Böceği — Gizlilik, KVKK ve Koşullar / Privacy & Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --zemin:#eef7ff; --panel:#ffffff;
+  --ink:#123047; --ink-2:#406782; --ink-3:#5b7e96;
+  --cizgi:rgba(18,48,71,.13); --cizgi-2:rgba(18,48,71,.07);
+  --altin:#ffb340; --altin-ink:#8f5309; --altin-yum:rgba(255,179,64,.16);
+  --golge:rgba(28,74,112,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#081d2e; --panel:#0e2739;
+    --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+    --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+    --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+    --golge:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#081d2e; --panel:#0e2739;
+  --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+  --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+  --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+  --golge:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--zemin); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.sar{max-width:760px; margin:0 auto; padding:0 24px}
+header{border-bottom:1px solid var(--cizgi-2); padding:22px 0; margin-bottom:8px}
+header .sar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.marka{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:20px; letter-spacing:-.01em}
+.diller{display:flex; gap:6px}
+.diller button{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:7px 13px; border-radius:3px;
+  background:transparent; color:var(--ink-2); border:1px solid var(--cizgi);
+}
+.diller button[aria-pressed="true"]{
+  background:var(--altin-yum); color:var(--altin-ink);
+  border-color:color-mix(in srgb, var(--altin) 40%, transparent);
+}
+main{padding:26px 0 70px}
+h1{font-family:"Fraunces",Georgia,serif; font-weight:400; font-size:clamp(30px,5vw,42px);
+   line-height:1.12; letter-spacing:-.022em; margin:0 0 10px; text-wrap:balance}
+h2{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:22px;
+   letter-spacing:-.012em; margin:38px 0 10px; text-wrap:balance}
+h3{font-size:16px; font-weight:700; margin:22px 0 6px}
+p,li{color:var(--ink-2)}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:5px 0}
+b,strong{color:var(--ink)}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--cizgi)}
+a:hover{border-color:var(--altin)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--altin); outline-offset:3px; border-radius:2px}
+.tarih{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:26px;
+}
+.kutu{
+  background:var(--panel); border:1px solid var(--cizgi-2);
+  border-radius:5px; padding:18px 20px; margin:16px 0;
+  box-shadow:0 2px 10px var(--golge);
+}
+.kutu p:last-child{margin-bottom:0}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+.kaydir{overflow-x:auto}
+th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--cizgi-2); vertical-align:top}
+th{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:10.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+}
+td{color:var(--ink-2)}
+footer{border-top:1px solid var(--cizgi); padding:26px 0 44px}
+footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+.kunye{font-family:"DM Mono",ui-monospace,monospace; font-size:11px;
+       letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+[hidden]{display:none !important}
+</style>
+<style>.note{background:var(--panel);border:1px solid var(--cizgi-2);border-radius:5px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 10px var(--golge);color:var(--ink-2)}.upd{font-size:13px;color:var(--ink-3)}hr{border:0;border-top:1px solid var(--cizgi-2);margin:36px 0}details{margin:8px 0}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}</style>
+</head>
+<body>
+<header><div class="sar"><span class="marka">cagan_inc · Makara Hamam Böceği</span><div class="diller"><button id="btnTr" aria-pressed="true">Türkçe</button><button id="btnEn" aria-pressed="false">English</button></div></div></header>
+<main>
+<section id="tr" class="sar">
+<h1>Makara Hamam Böceği</h1>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Son güncelleme 24 Ekim 2026</p>
+
+<h2>Gizlilik Politikası</h2>
+<div class="note"><b>Kısa özet:</b> Hesap ve giriş yok. Oyun ilerlemen (bakım değerleri, altın, elmas, rekorlar, eşyalar) yalnızca cihazında durur. Mikrofon kaydın cihazından çıkmaz. Uygulama Google AdMob ile kişiselleştirilmemiş reklam gösterir; satın almalar Google Play veya Apple üzerinden yapılır. Analitik veya takip yazılımı kullanmayız.</div>
+<h3>1. Kapsam ve veri sorumlusu</h3>
+<p>Bu politika, Google Play'de ve App Store'da yayımlanan <b>Makara Hamam Böceği</b> (İngilizce adı <b>Funny Cockroach</b>, paket adı <code>com.caganinc.hamambocegi</code>; "Uygulama") oyununu kapsar. Uygulamayı Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye; "biz") yayımlar ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") bakımından veri sorumlusudur. İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Cihazında kalan bilgiler</h3>
+<p>Karakterlerin bakım değerleri (açlık, enerji, mutluluk, hastalık), altın ve elmas bakiyen, satın aldığın ya da kazandığın eşyalar, kırıntı avı ve yılan oyunu rekorların, seçtiğin karakter ve dil, ses ve reklam tercihleri cihazının yerel depolamasında tutulur. Bu bilgiler bir hesaba veya kimliğe bağlanmaz ve bize gönderilmez. Uygulamayı silersen bu bilgiler de silinir.</p>
+<h3>3. Mikrofon</h3>
+<ul>
+<li>Mikrofona yalnızca sen <b>konuşma düğmesine</b> bastığında erişilir; uygulama ilk kullanımda işletim sisteminin mikrofon iznini ister. İzni vermezsen oyunun geri kalanı çalışmaya devam eder.</li>
+<li>Kayıt en fazla <b>8 saniye</b> sürer ve karakterin sesiyle tekrar edilmek üzere <b>yalnızca cihazında</b> işlenir. Ses kaydı bize, reklam ağına veya başka bir üçüncü tarafa gönderilmez, saklanmaz; karakter değiştiğinde veya uygulama kapandığında silinir.</li>
+<li>Konuşmanı yazıya çevirmeyiz ve sesinden kimlik ya da biyometrik bilgi çıkarmayız.</li>
+</ul>
+<h3>4. Reklamlar (Google AdMob)</h3>
+<p>Uygulamanın ücretsiz sürümü Google AdMob üzerinden alt banner, geçiş ve isteğe bağlı ödüllü reklamlar gösterir. Tüm reklam isteklerinde <b>kişiselleştirilmemiş reklam</b> talep ederiz. Buna rağmen Google, reklamı göstermek, sıklığını sınırlamak, dolandırıcılığı önlemek ve ölçmek için cihazınla ilgili bazı teknik verileri işler: reklam kimliği (Android'de reklam kimliği; iOS'ta izin verilmedikçe IDFA kullanılmaz), IP adresi ve buna göre yaklaşık konum, cihaz modeli, işletim sistemi, dil ve reklam etkileşimleri. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara reklamlar başlamadan önce Google'ın onay penceresi gösterilir; tercihini ayarlar ekranından değiştirebilirsin. Android'de reklam kimliğini cihaz ayarlarından sıfırlayabilir veya silebilirsin. Ayrıntılar: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google'ın iş ortağı uygulamalarındaki veri kullanımı</a>. <b>Kırıntı VIP Pass</b> üyeliğinde reklam gösterilmez.</p>
+<h3>5. Satın almalar</h3>
+<p>Kırıntı VIP Pass aboneliği ve altın/elmas paketleri Android'de <b>Google Play Faturalandırma</b>, iOS'ta <b>Apple uygulama içi satın alma</b> ile yapılır. Ödeme bilgilerin (kart numarası, fatura adresi vb.) Google veya Apple tarafından işlenir; biz bunları görmeyiz ve saklamayız. Satın alma ve abonelik durumu doğrudan mağaza üzerinden cihazında doğrulanır; araya bizim sunucumuz girmez. Mağazalar kendi işlemleri için bağımsız veri sorumlusudur: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Gizlilik Politikası</a>.</p>
+<h3>6. Paylaşım</h3>
+<p>Paylaş düğmesine dokunduğunda cihazının paylaşım menüsü açılır; neyin nereye gönderileceğini sen seçersin. Seçtiğin uygulama kendi gizlilik kurallarına tabidir.</p>
+<h3>7. Kullanmadığımız şeyler</h3>
+<p>Uygulamada hesap, giriş, analitik, çökme raporlama, sosyal medya veya reklam ölçüm (TikTok, Meta vb.) yazılımı yoktur. Konum, kişiler, kamera veya fotoğraf arşivi izni istenmez. Verini satmayız.</p>
+<h3>8. Bize e-posta gönderdiğinde</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazdığında e-posta adresini, yazdıysan adını ve mesajını yalnızca yanıt vermek, sorunu çözmek veya KVKK başvurunu sonuçlandırmak için işleriz ve konu kapandıktan sonra en geç 2 yıl saklarız.</p>
+<h3>9. Çocuklar</h3>
+<p>Uygulama, çocuklar dahil kimseden bilerek kişisel veri toplamaz; reklamlar kişiselleştirilmemiş olarak istenir. Satın almalar mağazanın ebeveyn denetimleriyle (Google Play ailesi, Apple Ekran Süresi / Satın Almadan Önce Sor) sınırlanabilir. Çocuğunun bize kişisel bilgi gönderdiğini düşünen veliler bize yazarak silinmesini isteyebilir.</p>
+<h3>10. Güvenlik ve saklama</h3>
+<p>Oyun verileri işletim sisteminin uygulamaya ayırdığı korumalı alanda durur. Reklam ve satın alma verilerini Google ve Apple kendi saklama sürelerine göre tutar.</p>
+<h3>11. Hakların ve değişiklikler</h3>
+<p>KVKK kapsamındaki hakların aşağıdaki KVKK Aydınlatma Metni'nde anlatılmıştır. Bu politikayı uygulamanın işleyişi değişirse güncelleriz; güncel metin <a href="https://caganinc.com/makara-hamam-bocegi.html">caganinc.com/makara-hamam-bocegi.html</a> adresinde yayımlanır.</p>
+<hr>
+
+<h2>KVKK Aydınlatma Metni</h2>
+<p>Bu metin, 6698 sayılı Kanun'un 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca hazırlanmıştır.</p>
+<h3>1. Veri sorumlusu</h3>
+<p>Çağın Emek Davarcı (cagan_inc), Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
+<ul>
+<li><b>Cihaz ve reklam verileri</b> (reklam kimliği, IP adresi, yaklaşık bölge, cihaz modeli, işletim sistemi, dil, reklam etkileşimleri): ücretsiz sürümün reklamla sunulması, reklam sıklığının sınırlanması, dolandırıcılığın önlenmesi. Bu veriler Google AdMob tarafından toplanır. Hukuki sebep: KVKK m. 5/2(f) meşru menfaat; Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de ayrıca onay alınır.</li>
+<li><b>Satın alma bilgileri</b> (satın alınan ürün, abonelik durumu, işlem kimliği): satın aldığın içeriğin ve VIP ayrıcalıklarının sağlanması. Hukuki sebep: KVKK m. 5/2(c) sözleşmenin ifası. Ödeme bilgilerini Google/Apple işler.</li>
+<li><b>Ses kaydı:</b> yalnızca cihazında, oyun özelliği için anlık işlenir; bize aktarılmaz ve saklanmaz.</li>
+<li><b>İletişim bilgileri</b> (e-posta, ad, mesaj): taleplerinin yanıtlanması. Hukuki sebep: KVKK m. 5/2(c) ve (ç).</li>
+</ul>
+<h3>3. Toplama yöntemi</h3>
+<p>Veriler uygulama içindeki Google AdMob ve mağaza ödeme yazılımları aracılığıyla elektronik ortamda otomatik olarak, e-posta ile yazdığında ise senin tarafından iletilerek toplanır.</p>
+<h3>4. Aktarım</h3>
+<p>Cihaz ve reklam verileri Google LLC ve iştiraklerine; satın alma verileri ilgili mağazaya (Google LLC veya Apple Inc.) aktarılır. Bu şirketlerin sunucuları başta ABD olmak üzere yurt dışında bulunabilir; aktarım KVKK m. 9'daki usul ve güvencelere uygun olarak yapılır. Kanunen yetkili kamu kurumlarının talebi halinde ilgili mevzuat çerçevesinde paylaşım yapılabilir.</p>
+<h3>5. Hakların (KVKK m. 11)</h3>
+<p>Kişisel verinin işlenip işlenmediğini öğrenme, bilgi talep etme, işleme amacını öğrenme, aktarıldığı kişileri bilme, eksik veya yanlışsa düzeltilmesini, silinmesini ya da yok edilmesini isteme, bu işlemlerin aktarılan kişilere bildirilmesini isteme, otomatik analiz sonucu aleyhine bir sonuca itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin.</p>
+<h3>6. Başvuru</h3>
+<p>Başvurunu adını, soyadını, iletişim adresini ve talebini belirterek <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine iletebilirsin. Başvurun en geç 30 gün içinde ücretsiz sonuçlandırılır. Google ve Apple'ın kendi işlemleri için doğrudan bu şirketlere de başvurabilirsin.</p>
+<hr>
+
+<h2>Kullanım Koşulları</h2>
+<h3>1. Kabul</h3>
+<p>Uygulamayı indirerek veya kullanarak bu koşulları kabul etmiş olursun. iOS'ta Apple'ın <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standart Lisans Sözleşmesi (EULA)</a> da geçerlidir; Apple bu koşulların tarafı değildir ve uygulamaya destek vermekle yükümlü değildir.</p>
+<h3>2. Lisans</h3>
+<p>Sana Uygulamayı kişisel ve ticari olmayan amaçla, sahibi olduğun veya kontrol ettiğin cihazlarda kullanman için devredilemez, münhasır olmayan bir lisans veriyoruz. Uygulamayı kopyalamak, tersine mühendislik yapmak, hile veya otomatik araç kullanmak ya da yasa dışı amaçlarla kullanmak yasaktır.</p>
+<h3>3. Sanal para ve eşyalar</h3>
+<p>Altın, elmas ve oyun içi eşyalar yalnızca oyun içinde kullanılan, gerçek para değeri olmayan sanal içeriklerdir; nakde çevrilemez, devredilemez. Satın aldığın paketler cihazındaki oyun kaydına eklenir; uygulamayı silmen veya cihaz değiştirmen halinde yedeklenemeyen ilerleme kaybolabilir.</p>
+<h3>4. Kırıntı VIP Pass aboneliği</h3>
+<p>Abonelik seçtiğin döneme göre (haftalık veya aylık) otomatik yenilenir ve ücret mağaza hesabından alınır. Mağazada sunulduğunda yeni aboneler için ücretsiz deneme süresi bulunabilir; deneme bitmeden iptal etmezsen ücretli dönem başlar. Yenilemeyi, dönem bitmeden en az 24 saat önce Google Play veya App Store abonelik ayarlarından iptal edebilirsin; iptal mevcut dönemin sonunda geçerli olur. İadeler mağazanın iade kurallarına tabidir.</p>
+<h3>5. Mikrofon ve içerik</h3>
+<p>Konuşma özelliğini başkalarının rızası olmadan onları kaydetmek veya hakaret, taciz ya da hukuka aykırı içerik üretmek için kullanmamalısın. Kayıt cihazında kalır ve paylaştığın içerikten sen sorumlusun.</p>
+<h3>6. Fikri mülkiyet</h3>
+<p>Karakterler, görseller, sesler ve yazılım cagan_inc'e veya lisans verenlerine aittir. Üçüncü taraf açık kaynak bileşenler kendi lisanslarına tabidir.</p>
+<h3>7. Garanti ve sorumluluk</h3>
+<p>Uygulama eğlence amaçlıdır ve "olduğu gibi" sunulur. Kesintisiz veya hatasız çalışacağını garanti etmeyiz. Kanunun izin verdiği ölçüde, dolaylı zararlardan sorumlu değiliz; tüketici olarak kanundan doğan hakların saklıdır.</p>
+<h3>8. Değişiklik ve sona erme</h3>
+<p>Uygulamayı ve bu koşulları güncelleyebiliriz; güncel metin bu sayfada yayımlanır. Koşulları ihlal edersen lisansın sona erebilir.</p>
+<h3>9. Uygulanacak hukuk</h3>
+<p>Bu koşullar Türkiye Cumhuriyeti hukukuna tabidir. Tüketici uyuşmazlıklarında Tüketici Hakem Heyetleri ve Tüketici Mahkemeleri yetkilidir.</p>
+<h3>10. İletişim</h3>
+<p>Çağın Emek Davarcı (cagan_inc), Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+</section>
+
+<section id="en" class="sar" hidden>
+<h1>Funny Cockroach (Makara Hamam Böceği)</h1>
+<p class="tarih">Privacy · KVKK · Terms of Use · Last updated October 24, 2026</p>
+
+<h2>Privacy Policy</h2>
+<div class="note"><b>In short:</b> No account and no sign-in. Your game progress (care stats, coins, gems, records, items) stays on your device. Your microphone recording never leaves your device. The app shows non-personalized ads through Google AdMob; purchases are made through Google Play or Apple. We do not use analytics or tracking software.</div>
+<h3>1. Scope and data controller</h3>
+<p>This policy covers the game <b>Funny Cockroach</b> (Turkish name <b>Makara Hamam Böceği</b>, package <code>com.caganinc.hamambocegi</code>; the "App"), published on Google Play and the App Store by Çağın Emek Davarcı (independent developer publishing as <b>cagan_inc</b>, Türkiye; "we"), the data controller under Turkish Law No. 6698 on the Protection of Personal Data ("KVKK"). Contact: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Information that stays on your device</h3>
+<p>Your characters' care stats (hunger, energy, happiness, sickness), coin and gem balance, purchased or earned items, crumb hunt and snake game records, selected character and language, and sound and ad preferences are stored in your device's local storage. They are not linked to an account or identity and are not sent to us. Deleting the App deletes them.</p>
+<h3>3. Microphone</h3>
+<ul>
+<li>The microphone is used only while you press the <b>talk button</b>; the App asks for the system microphone permission on first use. If you decline, the rest of the game keeps working.</li>
+<li>A recording lasts at most <b>8 seconds</b> and is processed <b>only on your device</b> to replay it in the character's voice. It is not sent to us, to the ad network or to any third party, is not stored, and is deleted when you switch character or close the App.</li>
+<li>We do not transcribe your speech or derive identity or biometric information from your voice.</li>
+</ul>
+<h3>4. Ads (Google AdMob)</h3>
+<p>The free version shows banner, interstitial and optional rewarded ads through Google AdMob. We request <b>non-personalized ads</b> for every ad request. Google still processes some technical data to serve, frequency-cap, measure and protect ads against fraud: the advertising identifier (Android advertising ID; on iOS the IDFA is not used unless you allow it), IP address and approximate location derived from it, device model, operating system, language and ad interactions. Users in the European Economic Area, the United Kingdom and Switzerland see Google's consent form before ads start and can change their choice in settings. On Android you can reset or delete your advertising ID in device settings. Details: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from partner apps</a>. <b>Kırıntı VIP Pass</b> members see no ads.</p>
+<h3>5. Purchases</h3>
+<p>The Kırıntı VIP Pass subscription and coin/gem packs are bought through <b>Google Play Billing</b> on Android and <b>Apple In-App Purchase</b> on iOS. Your payment details are processed by Google or Apple; we never see or store them. Purchase and subscription status is verified with the store on your device; no server of ours is involved. The stores act as independent controllers for their own processing: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>
+<h3>6. Sharing</h3>
+<p>When you tap Share, your device's share sheet opens and you choose what to send and where. The app you choose follows its own privacy rules.</p>
+<h3>7. What we do not use</h3>
+<p>The App has no account, sign-in, analytics, crash reporting, social media or ad measurement (TikTok, Meta, etc.) software. It does not ask for location, contacts, camera or photo library access. We do not sell your data.</p>
+<h3>8. When you email us</h3>
+<p>When you write to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>, we use your email address, your name if given and your message only to reply, solve the issue or handle a data request, and keep it for at most 2 years after the matter is closed.</p>
+<h3>9. Children</h3>
+<p>The App does not knowingly collect personal data from anyone, including children, and ads are requested as non-personalized. Purchases can be limited with store parental controls (Google Play Family, Apple Screen Time / Ask to Buy). Parents who believe their child sent us personal information can ask us to delete it.</p>
+<h3>10. Security and retention</h3>
+<p>Game data stays in the sandbox the operating system gives the App. Google and Apple keep ad and purchase data according to their own retention periods.</p>
+<h3>11. Your rights and changes</h3>
+<p>Your rights under KVKK are described in the KVKK notice below; if you live outside Türkiye, your local data protection rights also apply. We update this policy when the App changes; the current text is published at <a href="https://caganinc.com/makara-hamam-bocegi.html#en">caganinc.com/makara-hamam-bocegi.html</a>.</p>
+<hr>
+
+<h2>KVKK Information Notice</h2>
+<p>This notice is provided under Article 10 of Law No. 6698 and the related Communiqué on the obligation to inform.</p>
+<h3>1. Data controller</h3>
+<p>Çağın Emek Davarcı (cagan_inc), Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Data processed, purposes and legal grounds</h3>
+<ul>
+<li><b>Device and ad data</b> (advertising ID, IP address, approximate region, device model, OS, language, ad interactions): providing the free version with ads, frequency capping and fraud prevention, collected by Google AdMob. Legal ground: legitimate interest (KVKK Art. 5/2(f)); consent is also requested in the EEA, the UK and Switzerland.</li>
+<li><b>Purchase data</b> (product, subscription status, transaction ID): delivering purchased content and VIP benefits. Legal ground: performance of a contract (Art. 5/2(c)). Payment details are processed by Google/Apple.</li>
+<li><b>Voice recording:</b> processed only on your device in real time for the game feature; never transferred or stored.</li>
+<li><b>Contact data</b> (email, name, message): answering your requests. Legal ground: Art. 5/2(c) and (ç).</li>
+</ul>
+<h3>3. Method of collection</h3>
+<p>Data is collected electronically and automatically through the Google AdMob and store payment software in the App, and by you when you email us.</p>
+<h3>4. Transfers</h3>
+<p>Device and ad data is transferred to Google LLC and its affiliates; purchase data to the relevant store (Google LLC or Apple Inc.). Their servers may be located abroad, mainly in the United States; transfers follow the procedures and safeguards of KVKK Art. 9. Data may be shared with authorities when legally required.</p>
+<h3>5. Your rights (KVKK Art. 11)</h3>
+<p>You may learn whether your data is processed, request information, learn the purpose and recipients, request correction, deletion or destruction and notification of these to recipients, object to adverse results of automated analysis, and claim compensation for damages.</p>
+<h3>6. Applications</h3>
+<p>Send your request with your name, surname, contact address and request to <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>. We will respond free of charge within 30 days. You can also contact Google and Apple directly about their own processing.</p>
+<hr>
+
+<h2>Terms of Use</h2>
+<h3>1. Acceptance</h3>
+<p>By downloading or using the App you accept these terms. On iOS, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard License Agreement (EULA)</a> also applies; Apple is not a party to these terms and has no obligation to support the App.</p>
+<h3>2. License</h3>
+<p>We grant you a non-transferable, non-exclusive license to use the App for personal, non-commercial purposes on devices you own or control. Copying, reverse engineering, cheating or automation tools and unlawful use are prohibited.</p>
+<h3>3. Virtual currency and items</h3>
+<p>Coins, gems and in-game items are virtual content for use in the game only, with no real-money value; they cannot be exchanged for cash or transferred. Purchased packs are added to the game save on your device; progress that cannot be backed up may be lost if you delete the App or change devices.</p>
+<h3>4. Kırıntı VIP Pass subscription</h3>
+<p>The subscription renews automatically for the period you choose (weekly or monthly) and is charged to your store account. Where offered by the store, new subscribers may get a free trial; if you do not cancel before it ends, the paid period starts. You can cancel renewal in your Google Play or App Store subscription settings at least 24 hours before the period ends; cancellation takes effect at the end of the current period. Refunds follow the store's refund policy.</p>
+<h3>5. Microphone and content</h3>
+<p>Do not use the talk feature to record others without their consent or to create insulting, harassing or unlawful content. Recordings stay on your device and you are responsible for anything you share.</p>
+<h3>6. Intellectual property</h3>
+<p>Characters, artwork, sounds and software belong to cagan_inc or its licensors. Third-party open-source components are subject to their own licenses.</p>
+<h3>7. Warranty and liability</h3>
+<p>The App is provided for entertainment "as is". We do not guarantee uninterrupted or error-free operation. To the extent permitted by law we are not liable for indirect damages; your statutory consumer rights are not affected.</p>
+<h3>8. Changes and termination</h3>
+<p>We may update the App and these terms; the current version is published on this page. Your license may end if you breach these terms.</p>
+<h3>9. Governing law</h3>
+<p>These terms are governed by the laws of the Republic of Türkiye. Consumer disputes fall under the Consumer Arbitration Committees and Consumer Courts; mandatory consumer protection laws of your country of residence remain unaffected.</p>
+<h3>10. Contact</h3>
+<p>Çağın Emek Davarcı (cagan_inc), Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+</section>
+</main>
+<footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
+<script>
+const t = document.getElementById('tr'), e = document.getElementById('en'), bt = document.getElementById('btnTr'), be = document.getElementById('btnEn');
+function set(isEn){ t.hidden = isEn; e.hidden = !isEn; bt.setAttribute('aria-pressed', !isEn); be.setAttribute('aria-pressed', isEn); document.documentElement.lang = isEn ? 'en' : 'tr'; }
+bt.onclick = () => set(false); be.onclick = () => set(true); if (location.hash === '#en') set(true);
+</script>
+</body>
+</html>
