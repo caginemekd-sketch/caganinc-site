@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İşini Kap — Gizlilik, KVKK ve Koşullar / Privacy & Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --zemin:#eef7ff; --panel:#ffffff;
+  --ink:#123047; --ink-2:#406782; --ink-3:#5b7e96;
+  --cizgi:rgba(18,48,71,.13); --cizgi-2:rgba(18,48,71,.07);
+  --altin:#ffb340; --altin-ink:#8f5309; --altin-yum:rgba(255,179,64,.16);
+  --golge:rgba(28,74,112,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#081d2e; --panel:#0e2739;
+    --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+    --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+    --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+    --golge:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#081d2e; --panel:#0e2739;
+  --ink:#e4f1fb; --ink-2:#a9c6da; --ink-3:#89aac1;
+  --cizgi:rgba(196,224,244,.16); --cizgi-2:rgba(196,224,244,.08);
+  --altin:#ffc465; --altin-ink:#ffd48c; --altin-yum:rgba(255,196,101,.14);
+  --golge:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--zemin); color:var(--ink);
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.sar{max-width:760px; margin:0 auto; padding:0 24px}
+header{border-bottom:1px solid var(--cizgi-2); padding:22px 0; margin-bottom:8px}
+header .sar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.marka{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:20px; letter-spacing:-.01em}
+.diller{display:flex; gap:6px}
+.diller button{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; cursor:pointer;
+  padding:7px 13px; border-radius:3px;
+  background:transparent; color:var(--ink-2); border:1px solid var(--cizgi);
+}
+.diller button[aria-pressed="true"]{
+  background:var(--altin-yum); color:var(--altin-ink);
+  border-color:color-mix(in srgb, var(--altin) 40%, transparent);
+}
+main{padding:26px 0 70px}
+h1{font-family:"Fraunces",Georgia,serif; font-weight:400; font-size:clamp(30px,5vw,42px);
+   line-height:1.12; letter-spacing:-.022em; margin:0 0 10px; text-wrap:balance}
+h2{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:22px;
+   letter-spacing:-.012em; margin:38px 0 10px; text-wrap:balance}
+h3{font-size:16px; font-weight:700; margin:22px 0 6px}
+p,li{color:var(--ink-2)}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:5px 0}
+b,strong{color:var(--ink)}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--cizgi)}
+a:hover{border-color:var(--altin)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--altin); outline-offset:3px; border-radius:2px}
+.tarih{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:26px;
+}
+.kutu{
+  background:var(--panel); border:1px solid var(--cizgi-2);
+  border-radius:5px; padding:18px 20px; margin:16px 0;
+  box-shadow:0 2px 10px var(--golge);
+}
+.kutu p:last-child{margin-bottom:0}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+.kaydir{overflow-x:auto}
+th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--cizgi-2); vertical-align:top}
+th{
+  font-family:"DM Mono",ui-monospace,monospace; font-size:10.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);
+}
+td{color:var(--ink-2)}
+footer{border-top:1px solid var(--cizgi); padding:26px 0 44px}
+footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+.kunye{font-family:"DM Mono",ui-monospace,monospace; font-size:11px;
+       letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+[hidden]{display:none !important}
+</style>
+<style>.note{background:var(--panel);border:1px solid var(--cizgi-2);border-radius:5px;padding:18px 20px;margin:16px 0;box-shadow:0 2px 10px var(--golge);color:var(--ink-2)}.muted{color:var(--ink-3)}hr{border:0;border-top:1px solid var(--cizgi-2);margin:36px 0}details{margin:8px 0}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}</style>
+</head>
+<body>
+<header><div class="sar"><span class="marka">cagan_inc · İşini Kap</span><div class="diller"><button id="btnTr" aria-pressed="true">Türkçe</button><button id="btnEn" aria-pressed="false">English</button></div></div></header>
+<main>
+<section id="tr" class="sar">
+<h1>İşini Kap</h1>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 25 Ekim 2026</p>
+<div class="kutu"><p><b>Kısaca:</b> CV bilgilerin, başvuru cüzdanın ve notların yalnızca cihazında tutulur; hesap açman gerekmez. Yapay zekâ özelliklerini kullandığında yalnızca o işlem için gereken metin sunucumuz üzerinden OpenAI'ye iletilir; adın, soyadın, e-postan, telefonun ve şehrin gönderilmez ve sunucumuz bu metinleri saklamaz. Reklam, analitik ve izleme aracı yoktur.</p></div>
+<p>Bu sayfa, <b>İşini Kap: CV ve İş Başvurusu</b> uygulamasının iOS (App Store, <code>com.caganinc.isinikap</code>) ve Android (Google Play, <code>com.caganinc.cvusta</code>) sürümleri için geçerlidir.</p>
+
+<h2 id="gizlilik">Gizlilik Politikası</h2>
+<h3>1. Kapsam ve veri sorumlusu</h3>
+<p>Veri sorumlusu Çağın Emek Davarcı'dır (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, İzmir, Türkiye). İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>.</p>
+<h3>2. Cihazında kalan bilgiler</h3>
+<p>Ad, soyad, unvan, e-posta, telefon, şehir, profil özeti, deneyim, eğitim ve yetenekler; başvuru cüzdanındaki şirket, pozisyon, aşama ve notlar; oluşturduğun ön yazılar ve mülakat cevapları <b>yalnızca cihazında</b> saklanır. Bu bilgiler bize gönderilmez ve bir hesaba bağlanmaz.</p>
+<h3>3. Yapay zekâ özellikleri (isteğe bağlı)</h3>
+<p>İlan analizi, CV uyarlama, ön yazı ve mülakat geri bildirimi yalnızca ilgili düğmeye bastığında çalışır. Bu durumda şu metinler sunucumuz (Cloudflare Workers) üzerinden OpenAI API'sine iletilir:</p>
+<ul>
+<li>yapıştırdığın ilan metni, şirket ve pozisyon adı, seçtiğin ton;</li>
+<li>CV'nin unvan, profil özeti, deneyim, eğitim ve yetenek kısımları;</li>
+<li>mülakat sorusu ve cevabın.</li>
+</ul>
+<p><b>Ad, soyad, e-posta, telefon ve şehir hiçbir zaman gönderilmez.</b> Sunucumuz bu metinleri kaydetmez. OpenAI, API üzerinden gelen verileri varsayılan olarak modellerini eğitmek için kullanmadığını ve kötüye kullanım denetimi için en fazla 30 gün sakladığını belirtmektedir. Lütfen ilan metnine veya cevaplarına başkalarına ait kişisel bilgi ekleme. Yapay zekâ çıktıları tahmindir; başvurunda kullanmadan önce kontrol et.</p>
+<h3>4. Sunucu kayıtları</h3>
+<p>Kötüye kullanımı ve aşırı faturayı önlemek için Cloudflare, IP adresine göre dakikalık istek sınırı uygular. İçerik barındırmayan teknik hata kayıtları birkaç gün tutulur.</p>
+<h3>5. İzinler</h3>
+<ul>
+<li><b>Bildirimler</b>: başvuruların için takip hatırlatması kurmak istersen sorulur.</li>
+<li><b>Mikrofon ve konuşma tanıma</b> (yalnızca iOS): mülakat koçunda sesli cevap vermek istersen sorulur. Ses, Apple'ın konuşma tanıma hizmetiyle yazıya çevrilir; ses kaydı uygulamada saklanmaz ve bize gönderilmez. Android sürümü mikrofon izni istemez.</li>
+</ul>
+<p>İzinleri cihaz ayarlarından istediğin zaman kapatabilirsin. Konumuna, rehberine veya fotoğraflarına erişmiyoruz.</p>
+<h3>6. Abonelik ve satın alma</h3>
+<p>İşini Kap Plus satın alımları App Store veya Google Play tarafından yürütülür. Kart ve fatura bilgilerin yalnızca Apple'da veya Google'da kalır; bize ulaşmaz. Uygulama yalnızca aboneliğinin etkin olup olmadığını mağazadan öğrenir.</p>
+<h3>7. Reklam, analitik ve izleme</h3>
+<p>Uygulamada reklam, analitik veya izleme SDK'sı yoktur. Kişisel verilerini satmıyor, veri simsarlarına aktarmıyor ve uygulamalar arası izleme yapmıyoruz.</p>
+<h3>8. Yurt dışına aktarım</h3>
+<p>Yapay zekâ isteğin Cloudflare ağı üzerinden OpenAI'ye (ABD) iletilir; bu hizmetlerin sunucuları Türkiye dışında bulunabilir. Aktarım yalnızca senin başlattığın işlem için yapılır.</p>
+<h3>9. Yaş sınırı</h3>
+<p>Uygulama 16 yaş ve üzeri kullanıcılar içindir.</p>
+<h3>10. Senin seçeneklerin</h3>
+<ul>
+<li>Yapay zekâ özelliklerini kullanmadan da CV oluşturabilir ve başvurularını takip edebilirsin.</li>
+<li>Hesap &gt; Örnek verilere dön ile cihazdaki verileri sıfırlayabilir, uygulamayı silerek tüm verileri kaldırabilirsin.</li>
+</ul>
+<h3>11. Değişiklikler</h3>
+<p>Bu metin güncellenirse yeni sürüm ve tarih bu sayfada yayımlanır.</p>
+<h3>12. İletişim</h3>
+<p><a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2 id="kvkk">KVKK Aydınlatma Metni</h2>
+<p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m.10 uyarınca hazırlanmıştır.</p>
+<h3>1. Veri sorumlusu</h3>
+<p>Çağın Emek Davarcı (cagan_inc), İzmir, Türkiye · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
+<div class="kaydir"><table>
+<tr><th>Veri</th><th>Nerede</th><th>Amaç</th><th>Hukuki sebep</th></tr>
+<tr><td>CV bilgileri, başvuru cüzdanı kayıtları, notlar</td><td>Yalnızca cihazında</td><td>CV oluşturma, başvuru takibi</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
+<tr><td>İlan metni; CV'nin unvan, özet, deneyim, eğitim, yetenek kısmı; mülakat cevabı</td><td>İsteğinle Cloudflare üzerinden OpenAI'ye iletilir; bizde saklanmaz</td><td>Uyum puanı, CV uyarlama, ön yazı, mülakat geri bildirimi</td><td>Sözleşmenin ifası (m.5/2-c); yurt dışı aktarım için açık rıza (m.9)</td></tr>
+<tr><td>IP adresi (geçici)</td><td>Cloudflare</td><td>Kötüye kullanımı önleme, istek sınırı</td><td>Meşru menfaat (m.5/2-f)</td></tr>
+<tr><td>Ses (yalnızca iOS, sesli cevap verirsen)</td><td>Apple konuşma tanıma; uygulamada saklanmaz</td><td>Sesli cevabı yazıya çevirme</td><td>Açık rıza (m.5/1)</td></tr>
+<tr><td>Abonelik durumu</td><td>App Store / Google Play; cihaz</td><td>Plus özelliklerinin sunulması</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
+<tr><td>E-posta yazışmaları</td><td>E-posta kutumuz</td><td>Destek ve başvuruların yanıtlanması</td><td>Meşru menfaat (m.5/2-f)</td></tr>
+</table></div>
+<h3>3. Toplama yöntemi</h3>
+<p>Veriler, uygulamaya senin girdiğin bilgilerden ve yalnızca senin başlattığın işlemler sırasında elektronik ortamda toplanır.</p>
+<h3>4. Aktarım</h3>
+<p>Yapay zekâ işlemleri için OpenAI, L.L.C. (ABD) ve barındırma için Cloudflare, Inc. (ABD) hizmet sağlayıcı olarak kullanılır. Abonelikler Apple Inc. ve Google LLC tarafından yürütülür. Yurt dışına aktarım, yalnızca senin başlattığın işlem için ve KVKK m.9 kapsamında açık rızana dayanılarak yapılır. Verilerin bunun dışında üçüncü kişilere aktarılmaz.</p>
+<h3>5. Saklama süreleri</h3>
+<ul>
+<li>Cihazındaki veriler: uygulamayı silene veya sıfırlayana kadar.</li>
+<li>Yapay zekâya gönderilen metinler: sunucumuzda kaydedilmez; OpenAI'nin saklama koşulları kendi politikasına tabidir (en fazla 30 gün).</li>
+<li>Teknik kayıtlar: birkaç gün.</li>
+<li>E-posta yazışmaları: talep sonuçlandıktan sonra en fazla 2 yıl.</li>
+</ul>
+<h3>6. Hakların (KVKK m.11)</h3>
+<p>Kişisel verinin işlenip işlenmediğini öğrenme, bilgi talep etme, işlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini isteme, bu işlemlerin aktarılan üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi sonucu aleyhine bir sonuca itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme haklarına sahipsin.</p>
+<h3>7. Başvuru</h3>
+<p>Taleplerini <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazabilirsin; en geç 30 gün içinde ücretsiz yanıtlanır. Verilerin cihazında tutulduğu için uygulamayı silmen tüm verilerini siler.</p>
+<hr>
+
+<h2 id="kosullar">Kullanım Koşulları</h2>
+<p>Bu Koşullar, <b>İşini Kap</b> uygulamasının ("Uygulama") kullanımını düzenler. Uygulama Çağın Emek Davarcı (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, Türkiye) ("biz") tarafından sunulur. Uygulamayı kullanarak bu Koşulları kabul etmiş olursun.</p>
+<h3>1. Mağaza koşulları</h3>
+<p>iOS'ta lisans, <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standart Son Kullanıcı Lisans Sözleşmesi</a> kapsamında verilir; bu Koşullar onu tamamlar ve lisans konusunda çelişki olursa Apple EULA uygulanır. Bu Koşullar Apple ile değil, seninle bizim aramızdadır; Uygulamanın içeriği, bakımı ve desteğinden Apple değil biz sorumluyuz. Apple ve iştirakleri bu Koşulların lehdar üçüncü kişileridir. Android'de <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Hizmet Şartları</a> ayrıca uygulanır.</p>
+<h3>2. Yaş</h3>
+<p>Uygulama 16 yaş ve üzeri içindir.</p>
+<h3>3. Hizmetin niteliği</h3>
+<p>Uygulama CV hazırlama, başvuru takibi ve mülakat pratiği için bir yardımcıdır. Uyum puanları, öneriler, ön yazılar ve mülakat puanları yapay zekâ ya da kurallarla üretilen tahminlerdir; <b>işe alınacağını garanti etmez</b> ve kariyer, hukuk veya insan kaynakları danışmanlığı yerine geçmez. Oluşturulan belgeleri göndermeden önce kontrol etmek ve doğruluğundan emin olmak senin sorumluluğundadır.</p>
+<h3>4. Plus aboneliği</h3>
+<ul>
+<li>Plus; yapay zekâ destekli ilan analizi, CV ve ön yazı üretimi ve mülakat koçu gibi ek özellikler sunar. Fiyat, dönem ve içerik satın alma ekranında gösterilir.</li>
+<li>Yıllık plan <b>7 günlük ücretsiz deneme</b> ile başlar; aylık planda deneme yoktur. Deneme yalnızca daha önce abonelik almamış hesaplar içindir. Deneme bitmeden en az 24 saat önce iptal etmezsen abonelik, satın alma ekranında yazan ücretle otomatik başlar; deneme içinde iptal edersen ücret alınmaz.</li>
+<li>Abonelik mağaza hesabına faturalandırılır ve dönem bitmeden en az 24 saat önce iptal edilmezse aynı süre için otomatik yenilenir.</li>
+<li>Aboneliği <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> / <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> sayfasından yönetebilir ve iptal edebilirsin. İptal, içinde bulunulan dönemin sonunda geçerli olur.</li>
+<li>Satın almalar ve iadeler App Store veya Google Play kurallarına tabidir. Anında ifa edilen dijital içeriklerde, Mesafeli Sözleşmeler Yönetmeliği m.15/1(ğ) uyarınca, onayınla ifaya başlanmasıyla cayma hakkı kullanılamayabilir. Kanundan doğan tüketici hakların saklıdır.</li>
+</ul>
+<h3>5. Kullanım kuralları ve içerik</h3>
+<p>Yalnızca sana ait veya paylaşmaya yetkili olduğun bilgileri gir. Başkalarına ait kişisel verileri işlemek, gerçeğe aykırı belge veya sahte referans üretmek için Uygulamayı kullanamazsın. Yapay zekâ hizmetini kötüye kullanmak, otomatik istek göndermek veya sınırları aşmaya çalışmak yasaktır. Girdiğin içerik ve ürettiğin belgeler sana aittir.</p>
+<h3>6. Lisans ve fikri mülkiyet</h3>
+<p>Uygulamayı kişisel, ticari olmayan amaçlarla kullanman için sınırlı, devredilemez bir hak verilir. Uygulamanın adı, tasarımı, kodu ve içerikleri 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunur. Açık kaynak bileşenler kendi lisanslarına tabidir (Lisanslar bölümü).</p>
+<h3>7. Hizmetin sürekliliği</h3>
+<p>Yapay zekâ özellikleri üçüncü taraf hizmetlere (Cloudflare, OpenAI) bağlıdır; zaman zaman yavaşlayabilir veya kullanılamayabilir. Özellikleri geliştirme, değiştirme veya kaldırma hakkımız saklıdır; ücretli bir özelliği kaldırırsak mevzuattan doğan hakların korunur.</p>
+<h3>8. Sorumluluk</h3>
+<p>Uygulama "olduğu gibi" sunulur. Mevzuatın izin verdiği ölçüde dolaylı zararlardan ve iş başvurularının sonucundan sorumlu değiliz. Bu sınırlama, kast veya ağır ihmalden doğan sorumluluğumuzu (6098 sayılı TBK m.115) ve 6502 sayılı Tüketicinin Korunması Hakkında Kanun başta olmak üzere sözleşmeyle kaldırılamayan haklarını etkilemez.</p>
+<h3>9. Değişiklikler</h3>
+<p>Koşulları güncelleyebiliriz; güncel metin <a href="https://caganinc.com/isini-kap.html">caganinc.com/isini-kap.html</a> adresinde yayımlanır.</p>
+<h3>10. Uygulanacak hukuk ve uyuşmazlık</h3>
+<p>Türkiye Cumhuriyeti hukuku uygulanır. Önce <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresinden bize ulaşmanı rica ederiz. Tüketici olarak, Ticaret Bakanlığı'nın her yıl ilan ettiği parasal sınırlar içinde <b>Tüketici Hakem Heyeti</b>'ne, bu sınırların üzerinde <b>Tüketici Mahkemesi</b>'ne başvurabilirsin. Türkiye dışında yaşıyorsan kendi ülkendeki zorunlu tüketici hakların saklıdır.</p>
+<h3>11. İletişim</h3>
+<p>Çağın Emek Davarcı (<b>cagan_inc</b>) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<hr>
+
+<h2 id="lisanslar">Lisanslar</h2>
+<h3>Hizmetler</h3>
+<ul>
+<li><b>OpenAI API</b> — <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">OpenAI API veri politikası</a></li>
+<li><b>Cloudflare Workers</b> — <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">Cloudflare koşulları</a></li>
+</ul>
+<h3>Açık kaynak yazılımlar ve yazı tipleri</h3>
+<ul>
+<li>Capacitor (@capacitor/core, ios, android, filesystem, haptics, local-notifications, share) 8.x — MIT</li>
+<li>@capgo/native-purchases 8.9.6 — Mozilla Public License 2.0</li>
+<li>jsPDF 2.5.2 — MIT</li>
+<li>html2canvas 1.4.1 — MIT</li>
+<li>Plus Jakarta Sans — SIL Open Font License 1.1</li>
+</ul>
+</section>
+
+<section id="en" class="sar" hidden>
+<h1>İşini Kap</h1>
+<p class="tarih">Privacy · Terms · Licenses · Last updated 25 October 2026</p>
+<div class="kutu"><p><b>In short:</b> your CV, application wallet and notes stay on your device; no account is needed. When you use an AI feature, only the text needed for that request is sent through our server to OpenAI; your name, email, phone and city are never sent, and our server does not store the text. No ads, analytics or tracking.</p></div>
+<p>This page covers <b>İşini Kap: CV &amp; Job Tracker</b> on iOS (App Store, <code>com.caganinc.isinikap</code>) and Android (Google Play, <code>com.caganinc.cvusta</code>).</p>
+<h2 id="privacy">Privacy Policy</h2>
+<h3>1. Controller</h3>
+<p>Çağın Emek Davarcı (independent developer publishing as <b>cagan_inc</b>, İzmir, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
+<h3>2. Data on your device</h3>
+<p>Your CV details (name, title, contact details, summary, experience, education, skills), application wallet entries, notes, cover letters and interview answers are stored <b>only on your device</b>. They are not sent to us and are not linked to an account.</p>
+<h3>3. AI features (optional)</h3>
+<p>Job-ad analysis, CV tailoring, cover letters and interview feedback run only when you tap the related button. The job-ad text, company and role, chosen tone, the title/summary/experience/education/skills parts of your CV, and your interview question and answer are sent through our server (Cloudflare Workers) to the OpenAI API. <b>Your name, email, phone number and city are never sent.</b> Our server does not store this text. OpenAI states that API data is not used to train its models by default and is retained for up to 30 days for abuse monitoring. AI output is an estimate; review it before using it.</p>
+<h3>4. Server logs</h3>
+<p>Cloudflare applies a per-minute request limit based on IP address to prevent abuse. Technical error logs without content are kept for a few days.</p>
+<h3>5. Permissions</h3>
+<p>Notifications are requested only if you set follow-up reminders. Microphone and speech recognition (iOS only) are requested only if you answer by voice in the interview coach; audio is transcribed by Apple's speech recognition and is not stored or sent to us. The Android version does not request microphone access. We do not access your location, contacts or photos.</p>
+<h3>6. Subscriptions</h3>
+<p>İşini Kap Plus purchases are handled by the App Store or Google Play. Your payment details stay with Apple or Google and never reach us; the app only checks whether your subscription is active.</p>
+<h3>7. Ads, analytics and tracking</h3>
+<p>The app contains no advertising, analytics or tracking SDKs. We do not sell personal data or track you across apps.</p>
+<h3>8. International transfers</h3>
+<p>AI requests are sent via Cloudflare to OpenAI (USA), only for requests you start.</p>
+<h3>9. Age</h3>
+<p>The app is intended for users aged 16 and over.</p>
+<h3>10. Your choices and rights</h3>
+<p>You can use the CV builder and tracker without AI features, reset data in Account, or delete the app to remove all data. Contact <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> to exercise your rights; we reply within 30 days.</p>
+<h2 id="terms">Terms of Use</h2>
+<p>On iOS, the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a> applies; on Android, the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a> also apply. The app is a helper for CVs, applications and interview practice; match scores, suggestions and generated documents are estimates and do not guarantee a job offer. İşini Kap Plus is offered as monthly and yearly auto-renewing subscriptions; the yearly plan includes a 7-day free trial for first-time subscribers. Payment is charged to your store account; the subscription renews unless cancelled at least 24 hours before the end of the period, and can be managed in your <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> account. Do not use the app to create false documents or to process other people's personal data. The app is provided "as is" to the extent permitted by law; mandatory consumer rights are not affected. Turkish law applies; the Turkish version of these terms prevails.</p>
+<h2 id="licenses">Licenses</h2>
+<p>OpenAI API, Cloudflare Workers; Capacitor 8.x (MIT), @capgo/native-purchases (MPL-2.0), jsPDF (MIT), html2canvas (MIT), Plus Jakarta Sans (OFL-1.1).</p>
+</section>
+</main>
+<footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
+<script>
+const t = document.getElementById('tr'), e = document.getElementById('en'), bt = document.getElementById('btnTr'), be = document.getElementById('btnEn');
+function set(isEn){ t.hidden = isEn; e.hidden = !isEn; bt.setAttribute('aria-pressed', !isEn); be.setAttribute('aria-pressed', isEn); document.documentElement.lang = isEn ? 'en' : 'tr'; }
+bt.onclick = () => set(false); be.onclick = () => set(true); if (location.hash === '#en') set(true);
+</script>
+</body>
+</html>
