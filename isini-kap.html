@@ -114,8 +114,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <li>mülakat sorusu ve cevabın.</li>
 </ul>
 <p><b>Ad, soyad, e-posta, telefon ve şehir hiçbir zaman gönderilmez.</b> Sunucumuz bu metinleri kaydetmez. OpenAI, API üzerinden gelen verileri varsayılan olarak modellerini eğitmek için kullanmadığını ve kötüye kullanım denetimi için en fazla 30 gün sakladığını belirtmektedir. Lütfen ilan metnine veya cevaplarına başkalarına ait kişisel bilgi ekleme. Yapay zekâ çıktıları tahmindir; başvurunda kullanmadan önce kontrol et.</p>
-<h3>4. Sunucu kayıtları</h3>
+<h3>4. Sunucu kayıtları, kullanım hakları ve abonelik doğrulaması</h3>
 <p>Kötüye kullanımı ve aşırı faturayı önlemek için Cloudflare, IP adresine göre dakikalık istek sınırı uygular. İçerik barındırmayan teknik hata kayıtları birkaç gün tutulur.</p>
+<p>Uygulama ilk açılışta rastgele bir <b>kurulum kimliği</b> üretir. Bu kimlik adına, telefonuna ya da reklam kimliğine bağlı değildir; yapay zekâ isteklerinde sunucumuza gönderilir ve yalnızca ücretsiz hakların ve günlük kullanım sayısının tutulması için kullanılır. Sunucumuzda bu kimlikle birlikte yalnızca kullanılan hak sayısı, günlük istek sayısı ve Plus bitiş tarihi saklanır.</p>
+<p>Plus aboneliğin olduğunda uygulama, aboneliğin gerçek olduğunu doğrulamak için mağazanın verdiği işlem kimliğini (iOS) ya da satın alma jetonunu (Android) sunucumuza gönderir. Sunucumuz bunu yalnızca Apple'a veya Google'a sorup aboneliğin bitiş tarihini öğrenmek için kullanır; Android jetonunun kendisi saklanmaz, yalnızca geri döndürülemez bir özeti tutulur. Kart veya ödeme bilgilerin hiçbir zaman bize ulaşmaz.</p>
 <h3>5. İzinler</h3>
 <ul>
 <li><b>Bildirimler</b>: bir ilana başvurduğunu işaretlediğinde, 7 gün sonra takip hatırlatması göstermek için sorulur. Hatırlatma telefonunda kurulur; bize bir şey gönderilmez.</li>
@@ -151,6 +153,8 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <tr><th>Veri</th><th>Nerede</th><th>Amaç</th><th>Hukuki sebep</th></tr>
 <tr><td>CV bilgileri, kayıtlı ilanlar, başvuru kayıtları, oluşturulan belgeler</td><td>Yalnızca cihazında</td><td>CV oluşturma, başvuru takibi</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
 <tr><td>İlan metni; CV'nin unvan, özet, deneyim, eğitim, yetenek kısmı; içe aktarılan CV metni (iletişim bilgileri ayıklanmış); mülakat cevabı; e-posta için şirket, pozisyon, gün sayısı</td><td>İsteğinle Cloudflare üzerinden OpenAI'ye iletilir; bizde saklanmaz</td><td>Uyum puanı, CV uyarlama, CV içe aktarma, İngilizce çeviri, ön yazı ve e-posta yazma, mülakat geri bildirimi</td><td>Sözleşmenin ifası (m.5/2-c); yurt dışına aktarım için uygulama içinde alınan açık rıza (m.9/6-a)</td></tr>
+<tr><td>Rastgele kurulum kimliği, kullanılan hak ve günlük istek sayısı</td><td>Sunucumuz (Cloudflare)</td><td>Ücretsiz hakların ve kötüye kullanım sınırlarının uygulanması</td><td>Sözleşmenin ifası (m.5/2-c), meşru menfaat (m.5/2-f)</td></tr>
+<tr><td>Abonelik işlem kimliği / satın alma jetonu (özet), Plus bitiş tarihi</td><td>Sunucumuz; Apple veya Google'a doğrulama için iletilir</td><td>Plus aboneliğinin doğrulanması</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
 <tr><td>IP adresi (geçici)</td><td>Cloudflare</td><td>Kötüye kullanımı önleme, istek sınırı</td><td>Meşru menfaat (m.5/2-f)</td></tr>
 <tr><td>Abonelik durumu</td><td>App Store / Google Play; cihaz</td><td>Plus özelliklerinin sunulması</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
 <tr><td>E-posta yazışmaları</td><td>E-posta kutumuz</td><td>Destek ve başvuruların yanıtlanması</td><td>Meşru menfaat (m.5/2-f)</td></tr>
@@ -233,8 +237,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <p>Your CV details (name, title, contact details, summary, experience, education, skills), the English translation of your CV, saved job ads and match results, applications, cover letters, emails and interview answers are stored <b>only on your device</b>. They are not sent to us and are not linked to an account.</p>
 <h3>3. AI features (optional)</h3>
 <p>Job-ad analysis, CV tailoring, cover letters, follow-up and thank-you emails, English CV translation, CV import and interview feedback run only when you tap the related button. The first time you use one of them, the app asks for your explicit consent to transfer the text to service providers abroad; without consent AI features stay off and the rest of the app works. With consent, the job-ad text, company and role, chosen tone, the title/summary/experience/education/skills parts of your CV, imported CV text (the PDF is read on your device; name, email, phone and links are removed on the device and again on our server; the file itself is never sent), the number of days since you applied, and your interview question and answer are sent through our server (Cloudflare Workers) to the OpenAI API. <b>Your name, email, phone number and city are never sent.</b> Our server does not store this text. OpenAI states that API data is not used to train its models by default and is retained for up to 30 days for abuse monitoring. AI output is an estimate; review it before using it.</p>
-<h3>4. Server logs</h3>
+<h3>4. Server logs, usage limits and subscription verification</h3>
 <p>Cloudflare applies a per-minute request limit based on IP address to prevent abuse. Technical error logs without content are kept for a few days.</p>
+<p>On first launch the app creates a random <b>installation ID</b>. It is not linked to your name, phone or advertising ID; it is sent with AI requests and used only to count your free uses and daily requests. Our server stores only this ID with the number of uses, the daily request count and the Plus expiry date.</p>
+<p>If you have Plus, the app sends the store's transaction ID (iOS) or purchase token (Android) to our server to verify the subscription. Our server only asks Apple or Google for the subscription's expiry date; the Android token itself is not stored, only an irreversible hash. Your card or payment details never reach us.</p>
 <h3>5. Permissions</h3>
 <p>Notifications are requested when you mark that you applied to a job, to show a follow-up reminder 7 days later; the reminder is scheduled on your device. When importing a CV, only the PDF you pick is read. The app does not request microphone, camera, location, contacts or photo access.</p>
 <h3>6. Subscriptions</h3>
