@@ -96,19 +96,21 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <section id="tr" class="sar">
 <h1>İşini Kap</h1>
 <p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 25 Ekim 2026</p>
-<div class="kutu"><p><b>Kısaca:</b> CV bilgilerin, başvuru cüzdanın ve notların yalnızca cihazında tutulur; hesap açman gerekmez. Yapay zekâ özelliklerini kullandığında yalnızca o işlem için gereken metin sunucumuz üzerinden OpenAI'ye iletilir; adın, soyadın, e-postan, telefonun ve şehrin gönderilmez ve sunucumuz bu metinleri saklamaz. Reklam, analitik ve izleme aracı yoktur.</p></div>
+<div class="kutu"><p><b>Kısaca:</b> CV bilgilerin, kaydettiğin ilanlar ve başvuruların yalnızca cihazında tutulur; hesap açman gerekmez. Yapay zekâ özelliklerini kullandığında, ilk kullanımda vereceğin onayla, yalnızca o işlem için gereken metin sunucumuz üzerinden OpenAI'ye iletilir; adın, soyadın, e-postan, telefonun ve şehrin gönderilmez ve sunucumuz bu metinleri saklamaz. Reklam, analitik ve izleme aracı yoktur.</p></div>
 <p>Bu sayfa, <b>İşini Kap: CV ve İş Başvurusu</b> uygulamasının iOS (App Store, <code>com.caganinc.isinikap</code>) ve Android (Google Play, <code>com.caganinc.cvusta</code>) sürümleri için geçerlidir.</p>
 
 <h2 id="gizlilik">Gizlilik Politikası</h2>
 <h3>1. Kapsam ve veri sorumlusu</h3>
 <p>Veri sorumlusu Çağın Emek Davarcı'dır (<b>cagan_inc</b> adıyla yayın yapan bağımsız geliştirici, İzmir, Türkiye). İletişim: <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a>.</p>
 <h3>2. Cihazında kalan bilgiler</h3>
-<p>Ad, soyad, unvan, e-posta, telefon, şehir, profil özeti, deneyim, eğitim ve yetenekler; başvuru cüzdanındaki şirket, pozisyon, aşama ve notlar; oluşturduğun ön yazılar ve mülakat cevapları <b>yalnızca cihazında</b> saklanır. Bu bilgiler bize gönderilmez ve bir hesaba bağlanmaz.</p>
+<p>Ad, soyad, unvan, e-posta, telefon, şehir, profil özeti, deneyim, eğitim ve yetenekler; CV'nin İngilizce çevirisi; kaydettiğin ilanlar ve uyum sonuçları; başvurularının şirket, pozisyon, aşama ve tarihleri; oluşturduğun ön yazılar, e-postalar ve mülakat cevapları <b>yalnızca cihazında</b> saklanır. Bu bilgiler bize gönderilmez ve bir hesaba bağlanmaz.</p>
 <h3>3. Yapay zekâ özellikleri (isteğe bağlı)</h3>
-<p>İlan analizi, CV uyarlama, ön yazı ve mülakat geri bildirimi yalnızca ilgili düğmeye bastığında çalışır. Bu durumda şu metinler sunucumuz (Cloudflare Workers) üzerinden OpenAI API'sine iletilir:</p>
+<p>İlan analizi, CV uyarlama, ön yazı, takip ve teşekkür e-postası, CV'yi İngilizceye çevirme, CV içe aktarma ve mülakat geri bildirimi yalnızca ilgili düğmeye bastığında çalışır. Bunlardan herhangi birini ilk kez kullandığında uygulama, metinlerin yurt dışındaki hizmet sağlayıcılara aktarılması için açık rızanı ister; onay vermezsen yapay zekâ özellikleri çalışmaz, uygulamanın geri kalanı çalışır. Onay verirsen şu metinler sunucumuz (Cloudflare Workers) üzerinden OpenAI API'sine iletilir:</p>
 <ul>
 <li>yapıştırdığın ilan metni, şirket ve pozisyon adı, seçtiğin ton;</li>
 <li>CV'nin unvan, profil özeti, deneyim, eğitim ve yetenek kısımları;</li>
+<li>CV içe aktarırken: seçtiğin PDF'ten ya da yapıştırdığın metinden çıkan CV metni. PDF telefonunda okunur; ad, e-posta, telefon ve bağlantılar gönderilmeden önce cihazında ayıklanır ve sunucumuzda bir kez daha temizlenir. PDF dosyasının kendisi gönderilmez;</li>
+<li>e-posta yazarken: şirket ve pozisyon adı, başvurunun üzerinden geçen gün sayısı;</li>
 <li>mülakat sorusu ve cevabın.</li>
 </ul>
 <p><b>Ad, soyad, e-posta, telefon ve şehir hiçbir zaman gönderilmez.</b> Sunucumuz bu metinleri kaydetmez. OpenAI, API üzerinden gelen verileri varsayılan olarak modellerini eğitmek için kullanmadığını ve kötüye kullanım denetimi için en fazla 30 gün sakladığını belirtmektedir. Lütfen ilan metnine veya cevaplarına başkalarına ait kişisel bilgi ekleme. Yapay zekâ çıktıları tahmindir; başvurunda kullanmadan önce kontrol et.</p>
@@ -116,10 +118,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <p>Kötüye kullanımı ve aşırı faturayı önlemek için Cloudflare, IP adresine göre dakikalık istek sınırı uygular. İçerik barındırmayan teknik hata kayıtları birkaç gün tutulur.</p>
 <h3>5. İzinler</h3>
 <ul>
-<li><b>Bildirimler</b>: başvuruların için takip hatırlatması kurmak istersen sorulur.</li>
-<li><b>Mikrofon ve konuşma tanıma</b> (yalnızca iOS): mülakat koçunda sesli cevap vermek istersen sorulur. Ses, Apple'ın konuşma tanıma hizmetiyle yazıya çevrilir; ses kaydı uygulamada saklanmaz ve bize gönderilmez. Android sürümü mikrofon izni istemez.</li>
+<li><b>Bildirimler</b>: bir ilana başvurduğunu işaretlediğinde, 7 gün sonra takip hatırlatması göstermek için sorulur. Hatırlatma telefonunda kurulur; bize bir şey gönderilmez.</li>
+<li><b>Dosya seçimi</b>: CV içe aktarırken yalnızca seçtiğin PDF dosyası okunur; diğer dosyalarına erişilmez.</li>
 </ul>
-<p>İzinleri cihaz ayarlarından istediğin zaman kapatabilirsin. Konumuna, rehberine veya fotoğraflarına erişmiyoruz.</p>
+<p>İzinleri cihaz ayarlarından istediğin zaman kapatabilirsin. Uygulama mikrofon, kamera, konum, rehber veya fotoğraf izni istemez.</p>
 <h3>6. Abonelik ve satın alma</h3>
 <p>İşini Kap Plus satın alımları App Store veya Google Play tarafından yürütülür. Kart ve fatura bilgilerin yalnızca Apple'da veya Google'da kalır; bize ulaşmaz. Uygulama yalnızca aboneliğinin etkin olup olmadığını mağazadan öğrenir.</p>
 <h3>7. Reklam, analitik ve izleme</h3>
@@ -131,7 +133,8 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>10. Senin seçeneklerin</h3>
 <ul>
 <li>Yapay zekâ özelliklerini kullanmadan da CV oluşturabilir ve başvurularını takip edebilirsin.</li>
-<li>Hesap &gt; Örnek verilere dön ile cihazdaki verileri sıfırlayabilir, uygulamayı silerek tüm verileri kaldırabilirsin.</li>
+<li>Hesap &gt; Tüm verilerimi sil ile cihazdaki bütün verileri silebilir ya da uygulamayı kaldırarak verileri tamamen silebilirsin.</li>
+<li>Yapay zekâ için verdiğin açık rızayı Hesap ekranından istediğin zaman geri alabilirsin; geri alırsan bundan sonra hiçbir metin gönderilmez.</li>
 </ul>
 <h3>11. Değişiklikler</h3>
 <p>Bu metin güncellenirse yeni sürüm ve tarih bu sayfada yayımlanır.</p>
@@ -146,17 +149,16 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
 <div class="kaydir"><table>
 <tr><th>Veri</th><th>Nerede</th><th>Amaç</th><th>Hukuki sebep</th></tr>
-<tr><td>CV bilgileri, başvuru cüzdanı kayıtları, notlar</td><td>Yalnızca cihazında</td><td>CV oluşturma, başvuru takibi</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
-<tr><td>İlan metni; CV'nin unvan, özet, deneyim, eğitim, yetenek kısmı; mülakat cevabı</td><td>İsteğinle Cloudflare üzerinden OpenAI'ye iletilir; bizde saklanmaz</td><td>Uyum puanı, CV uyarlama, ön yazı, mülakat geri bildirimi</td><td>Sözleşmenin ifası (m.5/2-c); yurt dışı aktarım için açık rıza (m.9)</td></tr>
+<tr><td>CV bilgileri, kayıtlı ilanlar, başvuru kayıtları, oluşturulan belgeler</td><td>Yalnızca cihazında</td><td>CV oluşturma, başvuru takibi</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
+<tr><td>İlan metni; CV'nin unvan, özet, deneyim, eğitim, yetenek kısmı; içe aktarılan CV metni (iletişim bilgileri ayıklanmış); mülakat cevabı; e-posta için şirket, pozisyon, gün sayısı</td><td>İsteğinle Cloudflare üzerinden OpenAI'ye iletilir; bizde saklanmaz</td><td>Uyum puanı, CV uyarlama, CV içe aktarma, İngilizce çeviri, ön yazı ve e-posta yazma, mülakat geri bildirimi</td><td>Sözleşmenin ifası (m.5/2-c); yurt dışına aktarım için uygulama içinde alınan açık rıza (m.9/6-a)</td></tr>
 <tr><td>IP adresi (geçici)</td><td>Cloudflare</td><td>Kötüye kullanımı önleme, istek sınırı</td><td>Meşru menfaat (m.5/2-f)</td></tr>
-<tr><td>Ses (yalnızca iOS, sesli cevap verirsen)</td><td>Apple konuşma tanıma; uygulamada saklanmaz</td><td>Sesli cevabı yazıya çevirme</td><td>Açık rıza (m.5/1)</td></tr>
 <tr><td>Abonelik durumu</td><td>App Store / Google Play; cihaz</td><td>Plus özelliklerinin sunulması</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
 <tr><td>E-posta yazışmaları</td><td>E-posta kutumuz</td><td>Destek ve başvuruların yanıtlanması</td><td>Meşru menfaat (m.5/2-f)</td></tr>
 </table></div>
 <h3>3. Toplama yöntemi</h3>
 <p>Veriler, uygulamaya senin girdiğin bilgilerden ve yalnızca senin başlattığın işlemler sırasında elektronik ortamda toplanır.</p>
 <h3>4. Aktarım</h3>
-<p>Yapay zekâ işlemleri için OpenAI, L.L.C. (ABD) ve barındırma için Cloudflare, Inc. (ABD) hizmet sağlayıcı olarak kullanılır. Abonelikler Apple Inc. ve Google LLC tarafından yürütülür. Yurt dışına aktarım, yalnızca senin başlattığın işlem için ve KVKK m.9 kapsamında açık rızana dayanılarak yapılır. Verilerin bunun dışında üçüncü kişilere aktarılmaz.</p>
+<p>Yapay zekâ işlemleri için OpenAI, L.L.C. (ABD) ve barındırma için Cloudflare, Inc. (ABD) hizmet sağlayıcı olarak kullanılır. Abonelikler Apple Inc. ve Google LLC tarafından yürütülür. Yurt dışına aktarım, yalnızca senin başlattığın işlem için ve KVKK m.9/6-a kapsamında, ilk yapay zekâ kullanımında uygulama içinde verdiğin açık rızaya dayanılarak yapılır. Rızanı Hesap ekranından istediğin zaman geri alabilirsin; geri alma, önceki aktarımları etkilemez. Verilerin bunun dışında üçüncü kişilere aktarılmaz.</p>
 <h3>5. Saklama süreleri</h3>
 <ul>
 <li>Cihazındaki veriler: uygulamayı silene veya sıfırlayana kadar.</li>
@@ -167,7 +169,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>6. Hakların (KVKK m.11)</h3>
 <p>Kişisel verinin işlenip işlenmediğini öğrenme, bilgi talep etme, işlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini isteme, bu işlemlerin aktarılan üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi sonucu aleyhine bir sonuca itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme haklarına sahipsin.</p>
 <h3>7. Başvuru</h3>
-<p>Taleplerini <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazabilirsin; en geç 30 gün içinde ücretsiz yanıtlanır. Verilerin cihazında tutulduğu için uygulamayı silmen tüm verilerini siler.</p>
+<p>Taleplerini <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> adresine yazabilirsin; en geç 30 gün içinde ücretsiz yanıtlanır. Verilerin cihazında tutulduğu için Hesap &gt; Tüm verilerimi sil ya da uygulamayı silmek tüm verilerini siler.</p>
 <hr>
 
 <h2 id="kosullar">Kullanım Koşulları</h2>
@@ -177,10 +179,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>2. Yaş</h3>
 <p>Uygulama 16 yaş ve üzeri içindir.</p>
 <h3>3. Hizmetin niteliği</h3>
-<p>Uygulama CV hazırlama, başvuru takibi ve mülakat pratiği için bir yardımcıdır. Uyum puanları, öneriler, ön yazılar ve mülakat puanları yapay zekâ ya da kurallarla üretilen tahminlerdir; <b>işe alınacağını garanti etmez</b> ve kariyer, hukuk veya insan kaynakları danışmanlığı yerine geçmez. Oluşturulan belgeleri göndermeden önce kontrol etmek ve doğruluğundan emin olmak senin sorumluluğundadır.</p>
+<p>Uygulama CV hazırlama, başvuru takibi ve mülakat pratiği için bir yardımcıdır. Uyum puanları, öneriler, uyarlanmış ve çevrilmiş CV'ler, ön yazılar, e-postalar ve mülakat puanları yapay zekâ ya da kurallarla üretilen tahminlerdir; <b>işe alınacağını garanti etmez</b> ve kariyer, hukuk veya insan kaynakları danışmanlığı yerine geçmez. Oluşturulan belgeleri göndermeden önce kontrol etmek ve doğruluğundan emin olmak senin sorumluluğundadır.</p>
 <h3>4. Plus aboneliği</h3>
 <ul>
-<li>Plus; yapay zekâ destekli ilan analizi, CV ve ön yazı üretimi ve mülakat koçu gibi ek özellikler sunar. Fiyat, dönem ve içerik satın alma ekranında gösterilir.</li>
+<li>Plus; yapay zekâ destekli ilan analizi, CV uyarlama, ön yazı, takip ve teşekkür e-postası, İngilizce CV çevirisi, CV içe aktarma ve mülakat geri bildirimi sunar. Ücretsiz sürümde bu özellikler sınırlı sayıda denenebilir. Fiyat, dönem ve içerik satın alma ekranında gösterilir.</li>
 <li>Yıllık plan <b>7 günlük ücretsiz deneme</b> ile başlar; aylık planda deneme yoktur. Deneme yalnızca daha önce abonelik almamış hesaplar içindir. Deneme bitmeden en az 24 saat önce iptal etmezsen abonelik, satın alma ekranında yazan ücretle otomatik başlar; deneme içinde iptal edersen ücret alınmaz.</li>
 <li>Abonelik mağaza hesabına faturalandırılır ve dönem bitmeden en az 24 saat önce iptal edilmezse aynı süre için otomatik yenilenir.</li>
 <li>Aboneliği <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> / <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> sayfasından yönetebilir ve iptal edebilirsin. İptal, içinde bulunulan dönemin sonunda geçerli olur.</li>
@@ -214,6 +216,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <li>@capgo/native-purchases 8.9.6 — Mozilla Public License 2.0</li>
 <li>jsPDF 2.5.2 — MIT</li>
 <li>html2canvas 1.4.1 — MIT</li>
+<li>PDF.js (pdfjs-dist) 3.11.174 — Apache License 2.0</li>
 <li>Plus Jakarta Sans — SIL Open Font License 1.1</li>
 </ul>
 </section>
@@ -221,33 +224,33 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <section id="en" class="sar" hidden>
 <h1>İşini Kap</h1>
 <p class="tarih">Privacy · Terms · Licenses · Last updated 25 October 2026</p>
-<div class="kutu"><p><b>In short:</b> your CV, application wallet and notes stay on your device; no account is needed. When you use an AI feature, only the text needed for that request is sent through our server to OpenAI; your name, email, phone and city are never sent, and our server does not store the text. No ads, analytics or tracking.</p></div>
+<div class="kutu"><p><b>In short:</b> your CV, saved job ads and applications stay on your device; no account is needed. When you use an AI feature, after the consent you give on first use, only the text needed for that request is sent through our server to OpenAI; your name, email, phone and city are never sent, and our server does not store the text. No ads, analytics or tracking.</p></div>
 <p>This page covers <b>İşini Kap: CV &amp; Job Tracker</b> on iOS (App Store, <code>com.caganinc.isinikap</code>) and Android (Google Play, <code>com.caganinc.cvusta</code>).</p>
 <h2 id="privacy">Privacy Policy</h2>
 <h3>1. Controller</h3>
 <p>Çağın Emek Davarcı (independent developer publishing as <b>cagan_inc</b>, İzmir, Türkiye) · <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a></p>
 <h3>2. Data on your device</h3>
-<p>Your CV details (name, title, contact details, summary, experience, education, skills), application wallet entries, notes, cover letters and interview answers are stored <b>only on your device</b>. They are not sent to us and are not linked to an account.</p>
+<p>Your CV details (name, title, contact details, summary, experience, education, skills), the English translation of your CV, saved job ads and match results, applications, cover letters, emails and interview answers are stored <b>only on your device</b>. They are not sent to us and are not linked to an account.</p>
 <h3>3. AI features (optional)</h3>
-<p>Job-ad analysis, CV tailoring, cover letters and interview feedback run only when you tap the related button. The job-ad text, company and role, chosen tone, the title/summary/experience/education/skills parts of your CV, and your interview question and answer are sent through our server (Cloudflare Workers) to the OpenAI API. <b>Your name, email, phone number and city are never sent.</b> Our server does not store this text. OpenAI states that API data is not used to train its models by default and is retained for up to 30 days for abuse monitoring. AI output is an estimate; review it before using it.</p>
+<p>Job-ad analysis, CV tailoring, cover letters, follow-up and thank-you emails, English CV translation, CV import and interview feedback run only when you tap the related button. The first time you use one of them, the app asks for your explicit consent to transfer the text to service providers abroad; without consent AI features stay off and the rest of the app works. With consent, the job-ad text, company and role, chosen tone, the title/summary/experience/education/skills parts of your CV, imported CV text (the PDF is read on your device; name, email, phone and links are removed on the device and again on our server; the file itself is never sent), the number of days since you applied, and your interview question and answer are sent through our server (Cloudflare Workers) to the OpenAI API. <b>Your name, email, phone number and city are never sent.</b> Our server does not store this text. OpenAI states that API data is not used to train its models by default and is retained for up to 30 days for abuse monitoring. AI output is an estimate; review it before using it.</p>
 <h3>4. Server logs</h3>
 <p>Cloudflare applies a per-minute request limit based on IP address to prevent abuse. Technical error logs without content are kept for a few days.</p>
 <h3>5. Permissions</h3>
-<p>Notifications are requested only if you set follow-up reminders. Microphone and speech recognition (iOS only) are requested only if you answer by voice in the interview coach; audio is transcribed by Apple's speech recognition and is not stored or sent to us. The Android version does not request microphone access. We do not access your location, contacts or photos.</p>
+<p>Notifications are requested when you mark that you applied to a job, to show a follow-up reminder 7 days later; the reminder is scheduled on your device. When importing a CV, only the PDF you pick is read. The app does not request microphone, camera, location, contacts or photo access.</p>
 <h3>6. Subscriptions</h3>
 <p>İşini Kap Plus purchases are handled by the App Store or Google Play. Your payment details stay with Apple or Google and never reach us; the app only checks whether your subscription is active.</p>
 <h3>7. Ads, analytics and tracking</h3>
 <p>The app contains no advertising, analytics or tracking SDKs. We do not sell personal data or track you across apps.</p>
 <h3>8. International transfers</h3>
-<p>AI requests are sent via Cloudflare to OpenAI (USA), only for requests you start.</p>
+<p>AI requests are sent via Cloudflare to OpenAI (USA), only for requests you start and based on your explicit consent, which you can withdraw in Account at any time.</p>
 <h3>9. Age</h3>
 <p>The app is intended for users aged 16 and over.</p>
 <h3>10. Your choices and rights</h3>
-<p>You can use the CV builder and tracker without AI features, reset data in Account, or delete the app to remove all data. Contact <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> to exercise your rights; we reply within 30 days.</p>
+<p>You can use the CV builder and tracker without AI features, delete all data in Account &gt; Delete all my data, withdraw AI consent in Account, or delete the app to remove all data. Contact <a href="mailto:cagan@caganinc.com">cagan@caganinc.com</a> to exercise your rights; we reply within 30 days.</p>
 <h2 id="terms">Terms of Use</h2>
-<p>On iOS, the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a> applies; on Android, the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a> also apply. The app is a helper for CVs, applications and interview practice; match scores, suggestions and generated documents are estimates and do not guarantee a job offer. İşini Kap Plus is offered as monthly and yearly auto-renewing subscriptions; the yearly plan includes a 7-day free trial for first-time subscribers. Payment is charged to your store account; the subscription renews unless cancelled at least 24 hours before the end of the period, and can be managed in your <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> account. Do not use the app to create false documents or to process other people's personal data. The app is provided "as is" to the extent permitted by law; mandatory consumer rights are not affected. Turkish law applies; the Turkish version of these terms prevails.</p>
+<p>On iOS, the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a> applies; on Android, the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a> also apply. The app is a helper for CVs, applications and interview practice; match scores, suggestions, tailored or translated CVs and generated documents are estimates and do not guarantee a job offer. İşini Kap Plus is offered as monthly and yearly auto-renewing subscriptions; the yearly plan includes a 7-day free trial for first-time subscribers. Payment is charged to your store account; the subscription renews unless cancelled at least 24 hours before the end of the period, and can be managed in your <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> account. Do not use the app to create false documents or to process other people's personal data. The app is provided "as is" to the extent permitted by law; mandatory consumer rights are not affected. Turkish law applies; the Turkish version of these terms prevails.</p>
 <h2 id="licenses">Licenses</h2>
-<p>OpenAI API, Cloudflare Workers; Capacitor 8.x (MIT), @capgo/native-purchases (MPL-2.0), jsPDF (MIT), html2canvas (MIT), Plus Jakarta Sans (OFL-1.1).</p>
+<p>OpenAI API, Cloudflare Workers; Capacitor 8.x (MIT), @capgo/native-purchases (MPL-2.0), jsPDF (MIT), html2canvas (MIT), PDF.js (Apache-2.0), Plus Jakarta Sans (OFL-1.1).</p>
 </section>
 </main>
 <footer><div class="sar"><span class="kunye">© 2026 cagan_inc</span><span class="kunye"><a href="index.html">caganinc.com</a></span></div></footer>
