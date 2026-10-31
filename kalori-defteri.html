@@ -95,7 +95,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <main>
 <section id="tr" class="sar">
 <h1>Kalori Defteri AI</h1>
-<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 29 Ekim 2026</p>
+<p class="tarih">Gizlilik · KVKK · Kullanım Koşulları · Lisanslar · Son güncelleme 31 Ekim 2026</p>
 
 <h2>Gizlilik Politikası</h2>
 <div class="note"><b>Kısa özet:</b> Hesap ve giriş yok. Günlüğün (öğünler, su, adın, kalori hesaplayıcıya girdiğin bilgiler) yalnızca cihazında durur ve bize gönderilmez. Fotoğraf analizi isteğe bağlıdır; bir fotoğraf yalnızca o fotoğraf için onay kutusunu işaretlediğinde, analiz için OpenAI'ye (yedek olarak Google Gemini'ye) gönderilir. Uygulama reklam gösterir (Google AdMob) ve reklam ölçümü için TikTok ve Meta SDK'ları, Android'de kullanım istatistiği için Firebase Analytics kullanır; bu hizmetler cihazınla ilgili bazı teknik veriler alır.</div>
@@ -114,10 +114,13 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <ul>
 <li>Bir fotoğrafı çektiğinde ya da galeriden seçtiğinde, fotoğraf <b>yalnızca o fotoğraf için onay kutusunu işaretlersen</b> gönderilir. Onay vermezsen hiçbir görsel gönderilmez.</li>
 <li>Fotoğraf en fazla 1280 piksele küçültülür ve şifreli bağlantıyla (HTTPS) Cloudflare üzerinde çalışan aracı sunucumuza, oradan da OpenAI API hizmetine iletilir. OpenAI'ye ulaşılamazsa aynı fotoğraf yedek olarak Google'ın Gemini API hizmetine gönderilebilir. Fotoğrafla birlikte adın, günlüğün veya cihaz kimliğin gönderilmez.</li>
-<li>Aracı sunucumuz fotoğrafı ve sonucu kaydetmez; yalnızca iletir. Kötüye kullanımı önlemek için sunucu, tüm kullanıcılar için ortak bir toplam istek sınırı uygular; isteğin iletilmesi sırasında Cloudflare IP adresini geçici olarak işler.</li>
+<li>Aracı sunucumuz fotoğrafı ve sonucu kaydetmez; yalnızca iletir. Kötüye kullanımı önlemek için sunucu, kişi başına (IP adresine, Plus abonelerinde aboneliğe göre) ve tüm kullanıcılar için toplam istek sınırları uygular; isteğin iletilmesi sırasında Cloudflare IP adresini geçici olarak işler.</li>
 <li><b>Önemli:</b> OpenAI, <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">API veri politikasında</a> API ile gönderilen içeriği modellerini eğitmek için kullanmadığını, kötüye kullanımı izlemek için en fazla 30 gün saklayabileceğini belirtir. Yedek olarak kullanılan Gemini API'nin ücretsiz katmanında ise Google, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API koşullarında</a> gönderilen içeriğin ürünlerini geliştirmek için kullanılabileceğini ve insanlar tarafından incelenebileceğini belirtir. Bu yüzden fotoğrafta başka kişilerin yüzlerinin, belgelerin, ekranların veya sağlık bilgilerinin bulunmamasına dikkat et.</li>
 <li>Sonuç bir tahmindir; kaydetmeden önce her kalemi kontrol edip düzeltebilirsin. Öğünlerini fotoğrafsız, elle eklemek her zaman mümkündür.</li>
 </ul>
+<h3>3.1 Alışveriş listesi (isteğe bağlı)</h3>
+<p>Alışveriş sekmesinde bir yemek adı yazıp liste oluşturduğunda, <b>yalnızca yemek adı, kişi sayısı ve uygulama dili</b> şifreli bağlantıyla (HTTPS) aracı sunucumuz üzerinden OpenAI API hizmetine (ulaşılamazsa yedek olarak Google Gemini API'ye) gönderilir. Adın, günlüğün, fotoğrafların veya cihaz kimliğin gönderilmez. Aracı sunucumuz isteği ve sonucu kaydetmez. Oluşturulan liste ve işaretlediğin malzemeler yalnızca cihazında saklanır. Yemek adına kişisel bilgi (ad, adres, sağlık durumu gibi) yazmamanı öneririz.</p>
+<p>Listedeki market bağlantıları (Market Fiyatı, Migros, Getir, Yemeksepeti, Trendyol Go) yalnızca sen dokunduğunda tarayıcıda veya ilgili uygulamada açılır; bu sitelere bizim tarafımızdan veri gönderilmez. Açılan site veya uygulama kendi gizlilik kurallarına tabidir. Kalori Defteri bu marketlerle bağlantılı değildir.</p>
 <h3>4. İzinler</h3>
 <p>iOS'ta kamera ve fotoğraf arşivi izni yalnızca fotoğraf eklemek istediğinde sorulur. Android sürümü kamera izni istemez; fotoğrafı sistemin kamera veya galeri ekranından seçersin. Android'de reklam kimliği (AD_ID) izni reklam SDK'sı için kullanılır.</p>
 <h3>5. Reklamlar: Google AdMob</h3>
@@ -127,7 +130,7 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>6.1 Analitik: Google Analytics for Firebase (yalnızca Android)</h3>
 <p>Android sürümünde uygulamanın toplu olarak nasıl kullanıldığını anlamak için Firebase Analytics kullanılır. Firebase Analytics yalnızca ölçüm izni verirsen etkinleşir. Firebase; uygulama örneği kimliği, reklam kimliği, cihaz modeli, işletim sistemi, dil, ülke ve yaklaşık bölge ile ilk açılış, oturum ve uygulama içi satın alma gibi olayları otomatik olarak toplar. Ayrıca Plus ekranının görüntülenmesi ve satın alma adımları (başlatma, vazgeçme, tamamlama) kişisel veri içermeyen olaylar olarak ölçülür. Günlüğün, öğün fotoğrafların ve adın Firebase'e gönderilmez. Olay verileri 2 ay, kullanıcı düzeyindeki veriler en fazla 14 ay saklanır. Ayrıntılar: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase gizlilik bilgileri</a>.</p>
 <h3>7. Abonelik ve satın alma</h3>
-<p>Kalori Defteri Plus aboneliği Apple (iOS) veya Google Play (Android) üzerinden satılır ve doğrulanır. Kart ve fatura bilgilerin uygulamaya ve bize ulaşmaz; uygulamaya yalnızca aboneliğin etkin olup olmadığı bilgisi gelir. Araya başka bir ödeme veya abonelik hizmeti girmez.</p>
+<p>Kalori Defteri Plus aboneliği Apple (iOS) veya Google Play (Android) üzerinden satılır ve doğrulanır. Kart ve fatura bilgilerin uygulamaya ve bize ulaşmaz; uygulamaya yalnızca aboneliğin etkin olup olmadığı bilgisi gelir. Araya başka bir ödeme veya abonelik hizmeti girmez. Plus özelliklerini kullandığında uygulama, aboneliğin gerçekten etkin olduğunu doğrulamak için mağazanın verdiği satın alma jetonunu (Android) veya işlem kimliğini (iOS) aracı sunucumuza gönderir; sunucu bunu yalnızca ilgili mağazaya sorar ve kaydetmez. Bu bilgi kart, ad veya iletişim bilgisi içermez.</p>
 <h3>8. Değerlendirme isteği</h3>
 <p>Uygulama, Apple'ın veya Google Play'in uygulama içi değerlendirme penceresini gösterebilir. Puan ve yorumun doğrudan mağazaya gider; kimin puan verdiğini göremeyiz.</p>
 <h3>9. Bize e-posta gönderdiğinde</h3>
@@ -156,9 +159,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <h3>2. İşlenen veriler, amaçlar ve hukuki sebepler</h3>
 <ul>
 <li><b>Öğün fotoğrafı</b> (yalnızca onay verdiğin fotoğraf; beslenme alışkanlığına ilişkin bilgi içerebilir): tahmini besin değerlerinin hesaplanması. Hukuki sebep: KVKK m. 5/1 ve m. 6/3 kapsamında, her fotoğraf için ayrı ayrı verdiğin <b>açık rıza</b>.</li>
-<li><b>IP adresi</b> (fotoğraf analizinde, aracı sunucuda geçici): kötüye kullanımın ve aşırı isteklerin önlenmesi. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat.</li>
+<li><b>Yemek adı ve kişi sayısı</b> (yalnızca alışveriş listesi oluşturduğunda): malzeme listesinin hazırlanması. Hukuki sebep: KVKK m. 5/2(c), talep ettiğin hizmetin sunulması.</li>
+<li><b>IP adresi</b> (fotoğraf analizinde ve liste oluştururken, aracı sunucuda geçici): kötüye kullanımın ve aşırı isteklerin önlenmesi. Hukuki sebep: KVKK m. 5/2(f), meşru menfaat.</li>
 <li><b>Cihaz ve reklam verileri</b> (reklam kimliği veya uygulamaya özgü tanımlayıcılar, cihaz modeli, işletim sistemi, dil, IP adresi, yaklaşık bölge, reklam etkileşimleri): ücretsiz sürümün reklamla sunulması, reklam ölçümü ve dolandırıcılığın önlenmesi. Bu veriler Google AdMob, (etkin olduklarında) TikTok ve Meta SDK'ları ile Android sürümünde Google Analytics for Firebase tarafından toplanır. Hukuki sebep: AdMob reklamları için KVKK m. 5/2(f), meşru menfaat (reklamlar kişiselleştirilmeden gösterilir); TikTok, Meta ve Firebase Analytics için uygulama içindeki ölçüm izni ekranında verdiğin açık rıza (KVKK m. 5/1). İzin vermezsen bu üç hizmet hiç başlatılmaz; iznini Ayarlar › Ölçüm ve gizlilik tercihleri bölümünden istediğin zaman geri alabilirsin. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de ayrıca onay formu gösterilir.</li>
-<li><b>Abonelik durumu</b>: Plus özelliklerinin sunulması. Hukuki sebep: KVKK m. 5/2(c), sözleşmenin kurulması ve ifası.</li>
+<li><b>Abonelik durumu</b> ve doğrulama için mağazanın verdiği satın alma jetonu veya işlem kimliği: Plus özelliklerinin sunulması ve kötüye kullanımın önlenmesi. Hukuki sebep: KVKK m. 5/2(c), sözleşmenin kurulması ve ifası.</li>
 <li><b>İletişim verileri</b> (e-posta adresi, ad, mesaj içeriği; yalnızca bize yazarsan): taleplerinin cevaplanması ve KVKK başvurularının sonuçlandırılması. Hukuki sebep: KVKK m. 5/2(f) ve m. 5/2(ç).</li>
 </ul>
 <p>Günlük kayıtların (öğünler, su, ad) yalnızca cihazında tutulur ve tarafımızdan işlenmez.</p>
@@ -166,9 +170,10 @@ footer .sar{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwee
 <p>Veriler, uygulama ve uygulamadaki yazılım geliştirme kitleri (SDK) aracılığıyla elektronik ortamda, kısmen otomatik yollarla ve e-posta yoluyla toplanır.</p>
 <h3>4. Aktarım</h3>
 <ul>
+<li>Alışveriş listesi için yemek adı ve kişi sayısı: Cloudflare, Inc. (aracı sunucu), OpenAI, L.L.C. ve yedek olarak Google LLC — yurt dışı; KVKK m. 9'daki usul ve güvencelere uygun olarak.</li>
 <li>Öğün fotoğrafı: Cloudflare, Inc. (aracı sunucu) OpenAI, L.L.C. (OpenAI API) ve yedek olarak Google LLC (Gemini API) — yurt dışı. Dayanak: her fotoğrafta verdiğin açık rıza (KVKK m. 9).</li>
 <li>Cihaz ve reklam verileri: Google LLC ve iştirakleri (AdMob, Firebase), TikTok Pte. Ltd. ve ilgili TikTok şirketleri, Meta Platforms Ireland Ltd. ve Meta Platforms, Inc. — yurt dışı. TikTok, Meta ve Firebase Analytics için aktarım, ölçüm izni ekranında verdiğin açık rızaya dayanır (KVKK m. 9/6-a). Google AdMob için aktarım, kişiselleştirilmemiş reklam sunmak için gereken teknik verilerle sınırlıdır.</li>
-<li>Abonelik: Apple Inc. veya Google LLC (mağazaya göre) — ödeme ve doğrulama için.</li>
+<li>Abonelik: Cloudflare, Inc. (aracı sunucu, doğrulama isteği için) ve Apple Inc. veya Google LLC (mağazaya göre) — ödeme ve doğrulama için.</li>
 <li>E-posta yazışmaları: Google LLC (Gmail) — yurt dışı.</li>
 <li>Kanunen yetkili kamu kurum ve kuruluşları ile yargı mercileri — yasal talep hâlinde (KVKK m. 8/2(a)).</li>
 </ul>
@@ -736,7 +741,7 @@ SOFTWARE.</pre></details>
 </section>
 <section id="en" class="sar" hidden>
 <h1>Kalori Defteri AI</h1>
-<p class="tarih">Privacy · KVKK · Terms · Licenses · Last updated 29 October 2026</p>
+<p class="tarih">Privacy · KVKK · Terms · Licenses · Last updated 31 October 2026</p>
 
 <h2>Privacy Policy</h2>
 <div class="note"><b>In short:</b> No account and no sign-in. Your diary (meals, water, your name, what you enter in the calorie calculator) stays on your device and is never sent to us. Photo analysis is optional: a photo is sent to OpenAI (with Google Gemini as a fallback) for analysis only when you tick the consent box for that photo. The app shows ads (Google AdMob) and uses the TikTok and Meta SDKs for ad measurement, plus Firebase Analytics for usage statistics on Android; these services receive some technical data about your device.</div>
@@ -748,10 +753,13 @@ SOFTWARE.</pre></details>
 <ul>
 <li>A photo you take or pick is sent <b>only if you tick the consent box for that photo</b>. Without consent, no image is sent.</li>
 <li>The photo is resized to at most 1280 pixels and sent over HTTPS to our relay on Cloudflare and from there to the OpenAI API. If OpenAI cannot be reached, the same photo may be sent to Google's Gemini API as a fallback. Your name, diary or device identifiers are not sent with it.</li>
-<li>Our relay does not store the photo or the result; it only passes them on. To prevent abuse, the relay applies one overall request limit shared by all users; Cloudflare processes your IP address briefly while delivering the request.</li>
+<li>Our relay does not store the photo or the result; it only passes them on. To prevent abuse, the relay applies per-person limits (by IP address, or by subscription for Plus members) and an overall limit shared by all users; Cloudflare processes your IP address briefly while delivering the request.</li>
 <li><b>Important:</b> OpenAI's <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener">API data policy</a> says content sent through the API is not used to train its models and may be kept for up to 30 days for abuse monitoring. For the fallback free tier of the Gemini API, Google's <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API terms</a> say content may be used to improve Google's products and may be reviewed by people. Please avoid photos showing other people's faces, documents, screens or health information.</li>
 <li>The result is an estimate that you can check and correct before saving. You can always add meals by hand, without photos.</li>
 </ul>
+<h3>3.1 Shopping list (optional)</h3>
+<p>When you type a dish name in the Shopping tab and create a list, <b>only the dish name, the number of servings and the app language</b> are sent over an encrypted connection (HTTPS) through our relay server to the OpenAI API (or, if it cannot be reached, to the Google Gemini API as a fallback). Your name, diary, photos and device identifiers are not sent. Our relay does not store the request or the result. The list and the items you tick are stored only on your device. We recommend not typing personal information (such as names, addresses or health details) into the dish name.</p>
+<p>Store links in the list (Market Fiyatı, Migros, Getir, Yemeksepeti, Trendyol Go) open in your browser or the relevant app only when you tap them; we do not send any data to these sites. The site or app that opens follows its own privacy rules. Calorie Diary is not affiliated with these stores.</p>
 <h3>4. Permissions</h3>
 <p>On iOS, camera and photo access is requested only when you add a photo. The Android version does not request camera permission; you pick the photo through the system camera or gallery screen. On Android the advertising ID (AD_ID) permission is used by the ads SDK.</p>
 <h3>5. Ads: Google AdMob</h3>
@@ -761,7 +769,7 @@ SOFTWARE.</pre></details>
 <h3>6.1 Analytics: Google Analytics for Firebase (Android only)</h3>
 <p>On Android we use Firebase Analytics to understand how the app is used in aggregate. Firebase Analytics is enabled only if you give measurement consent. Firebase automatically collects the app instance ID, advertising ID, device model, OS, language, country and approximate region, and events such as first open, sessions and in-app purchases. We also measure, as events without personal data, when the Plus screen is shown and the purchase steps (started, dismissed, completed). Your diary, meal photos and name are never sent to Firebase. Event data is kept for 2 months and user-level data for up to 14 months. Details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a>.</p>
 <h3>7. Subscription and purchases</h3>
-<p>Kalori Defteri Plus is sold and verified by Apple (iOS) or Google Play (Android). Your card and billing details never reach the App or us; the App only learns whether your subscription is active. No other payment or subscription service is involved.</p>
+<p>Kalori Defteri Plus is sold and verified by Apple (iOS) or Google Play (Android). Your card and billing details never reach the App or us; the App only learns whether your subscription is active. No other payment or subscription service is involved. When you use Plus features, the App sends the purchase token (Android) or transaction ID (iOS) issued by the store to our relay to confirm that your subscription is active; the relay only asks that store and does not store it. It contains no card, name or contact details.</p>
 <h3>8. Review prompt</h3>
 <p>The App may show the store's in-app review prompt. Ratings and reviews go directly to the store; we cannot see who rated.</p>
 <h3>9. When you email us</h3>
@@ -790,9 +798,10 @@ SOFTWARE.</pre></details>
 <h3>2. Data, purposes and legal bases</h3>
 <ul>
 <li><b>Meal photo</b> (only photos you consent to; may reveal eating habits): estimating nutrition values. Legal basis: your <b>explicit consent</b>, given separately for each photo (KVKK Art. 5/1 and 6/3).</li>
-<li><b>IP address</b> (briefly, at the relay during photo analysis): preventing abuse and excessive requests. Legal basis: legitimate interest, Art. 5/2(f).</li>
+<li><b>Dish name and number of servings</b> (only when you create a shopping list): preparing the ingredient list. Legal basis: providing the service you request, Art. 5/2(c).</li>
+<li><b>IP address</b> (briefly, at the relay during photo analysis and list creation): preventing abuse and excessive requests. Legal basis: legitimate interest, Art. 5/2(f).</li>
 <li><b>Device and ad data</b> (advertising ID or app-specific identifiers, device model, OS, language, IP address, approximate region, ad interactions), collected by the Google AdMob SDK, the TikTok and Meta SDKs (when enabled) and, on Android, Google Analytics for Firebase: providing the free version with ads, ad measurement, aggregate usage statistics and fraud prevention. Legal basis: for AdMob ads, legitimate interest, Art. 5/2(f) (ads are not personalised); for TikTok, Meta and Firebase Analytics, the explicit consent you give on the in-app measurement consent screen (Art. 5/1). Without consent these three services never start; you can withdraw consent at any time in Settings › Measurement & privacy choices. In the EEA, UK and Switzerland Google's consent form is also shown.</li>
-<li><b>Subscription status</b>: providing Plus features. Legal basis: performance of a contract, Art. 5/2(c).</li>
+<li><b>Subscription status</b> and, for verification, the purchase token or transaction ID issued by the store: providing Plus features and preventing abuse. Legal basis: performance of a contract, Art. 5/2(c).</li>
 <li><b>Contact data</b> (email, name, message; only if you write to us): answering you and handling KVKK requests. Legal bases: Art. 5/2(f) and 5/2(ç).</li>
 </ul>
 <p>Your diary (meals, water, name) stays on your device and is not processed by us.</p>
@@ -800,9 +809,10 @@ SOFTWARE.</pre></details>
 <p>Electronically, partly by automated means, through the App and the SDKs in it, and by email.</p>
 <h3>4. Transfers</h3>
 <ul>
+<li>Dish name and servings for shopping lists: Cloudflare, Inc. (relay), OpenAI, L.L.C. and, as a fallback, Google LLC, abroad, following the procedures and safeguards of KVKK Art. 9.</li>
 <li>Meal photo: Cloudflare, Inc. (relay) OpenAI, L.L.C. (OpenAI API) and, as a fallback, Google LLC (Gemini API), abroad, based on your consent for each photo (KVKK Art. 9).</li>
 <li>Device and ad data: Google LLC and affiliates (AdMob, Firebase), TikTok Pte. Ltd. and related TikTok companies, Meta Platforms Ireland Ltd. and Meta Platforms, Inc., abroad. Transfers for TikTok, Meta and Firebase Analytics rely on the explicit consent you give on the measurement consent screen (KVKK Art. 9/6-a). Transfers for Google AdMob are limited to the technical data needed to serve non-personalised ads.</li>
-<li>Subscription: Apple Inc. or Google LLC, depending on the store, for payment and verification.</li>
+<li>Subscription: Cloudflare, Inc. (relay, for verification requests) and Apple Inc. or Google LLC, depending on the store, for payment and verification.</li>
 <li>Email: Google LLC (Gmail), abroad.</li>
 <li>Competent authorities and courts, when legally required (Art. 8/2(a)).</li>
 </ul>
