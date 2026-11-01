@@ -1,0 +1,18 @@
+# Cagan Inc
+
+> Cagan Inc, Türkiye'den mobil uygulamalar geliştiren bağımsız bir stüdyo (Çağın Emek Davarcı, cagan_inc). Bu site uygulamaların gizlilik, KVKK ve kullanım koşulu sayfalarını barındırır.
+
+## Uygulamalar
+- [Kalori Defteri AI](https://caganinc.com/kalori-defteri.html): Yemek fotoğrafından kalori ve besin değeri; Google Play ve App Store (Calorie Diary AI).
+- [SnapTown: Birleştirme Oyunu](https://caganinc.com/snaptown.html): Üç binayı birleştirme bulmacası; Google Play.
+- [Miniyurt](https://caganinc.com/camfanus.html): Türkiye'nin manzaralarıyla 3D coğrafya ve quiz uygulaması.
+- [Makara Hamam Böceği](https://caganinc.com/makara-hamam-bocegi.html): Konuşan sanal hamam böceği; Google Play.
+- [İşini Kap: CV ve İş Başvurusu](https://caganinc.com/isini-kap.html): İlana uyum puanı, ilana özel CV, ön yazı ve mülakat koçu.
+
+## Yasal
+- [Gizlilik Politikası](https://caganinc.com/gizlilik.html)
+- [Kullanım Koşulları](https://caganinc.com/sartlar.html)
+- [Veri Silme Talebi](https://caganinc.com/veri-silme.html)
+
+## İletişim
+- E-posta: cagan@caganinc.com
